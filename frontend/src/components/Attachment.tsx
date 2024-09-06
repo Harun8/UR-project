@@ -10,7 +10,12 @@ const Attachment = () => {
         <div className="back-side cover"></div>
       </div>
       <label className="custom-file-upload">
-        <input className="title" type="file" />
+        {/* Call fn to send a post request to the backend */}
+        <input
+          onChange={() => console.log("file has been added")}
+          className="title"
+          type="file"
+        />
         Choose a file
       </label>
     </div>
