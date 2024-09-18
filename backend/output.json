@@ -1,0 +1,102 @@
+[
+  {
+    "version": "0.0.3",
+    "type": "ur-move-to",
+    "allowsChildren": false,
+    "parameters": {
+      "moveType": "movel",
+      "waypoint": {
+        "name": "served",
+        "frame": "tcp",
+        "tcp": {
+          "name": "Tool_flange",
+          "id": "1855007c-7575-62f5-df63-69046ef9e9a7"
+        },
+        "qNear": {
+          "base": -1.2409990469561976,
+          "shoulder": -0.5888276857188721,
+          "elbow": 0.646334473286764,
+          "wrist1": -1.4995657217553635,
+          "wrist2": 1.5356171131134033,
+          "wrist3": -1.5984371344195765
+        },
+        "pose": {
+          "x": {
+            "entity": {
+              "value": 0.05,
+              "unit": "m"
+            },
+            "selectedType": "VALUE",
+            "value": 0.05
+          },
+          "y": {
+            "entity": {
+              "value": 0,
+              "unit": "m"
+            },
+            "selectedType": "VALUE",
+            "value": 0
+          },
+          "z": {
+            "entity": {
+              "value": 0,
+              "unit": "m"
+            },
+            "selectedType": "VALUE",
+            "value": 0
+          },
+          "rx": {
+            "entity": {
+              "value": 0,
+              "unit": "rad"
+            },
+            "selectedType": "VALUE",
+            "value": 0
+          },
+          "ry": {
+            "entity": {
+              "value": 0,
+              "unit": "rad"
+            },
+            "selectedType": "VALUE",
+            "value": 0
+          },
+          "rz": {
+            "entity": {
+              "value": 0,
+              "unit": "rad"
+            },
+            "selectedType": "VALUE",
+            "value": 0
+          }
+        }
+      },
+      "advanced": {
+        "speed": {
+          "speed": {
+            "entity": {
+              "value": 0.1,
+              "unit": "m/s"
+            },
+            "selectedType": "VALUE",
+            "value": 0.1
+          },
+          "acceleration": {
+            "entity": {
+              "value": 0.1,
+              "unit": "m/s^2"
+            },
+            "selectedType": "VALUE",
+            "value": 0.1
+          }
+        },
+        "blend": {
+          "enabled": false
+        },
+        "transform": {
+          "transform": false
+        }
+      }
+    }
+  }
+]

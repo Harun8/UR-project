@@ -1,0 +1,33 @@
+<URProgram name="skinkekutter2" installation="skinkekutter2" installationRelativePath="skinkekutter2" directory="/programs" createdIn="0.0.0" lastSavedIn="5.13.0" robotSerialNumber="20185300015" createdInPolyscopeProgramVersion="1" lastSavedInPolycopeProgramVersion="1" crcValue="3371092109">
+  <kinematics status="LINEARIZED" validChecksum="true">
+    <deltaTheta value="-3.956534036890502E-7, 0.09378309906152342, 0.02684255010817925, -0.12062750858720205, 1.0264726965411387E-5, -4.580162421725931E-8"/>
+    <a value="-8.635038393346348E-5, -0.24256482236148144, -0.21183570684466566, 4.5517677281820306E-5, -1.372128850609364E-4, 0.0"/>
+    <d value="0.15198572074673994, 5.97615002100393, 11.782146332815056, -17.627443327003647, 0.08527030991806976, 0.0923148653196972"/>
+    <alpha value="1.5710494027789694, 0.003817648862601711, 0.0014459187033665606, 1.5705196856928418, -1.5708997204785373, 0.0"/>
+    <jointChecksum value="-1374708771, -1374372955, 768971654, -1381520542, -1381745982, -1381384189"/>
+  </kinematics>
+  <children>
+    <MainProgram runOnlyOnce="true" InitVariablesNode="false">
+        <Move motionType="MoveL" speed="0.1" acceleration="0.1" useActiveTCP="true" positionType="CartesianPose">
+          <feature class="GeomFeatureReference" reference="../../Folder/children/Move/feature"/>
+          <children>
+            <Waypoint type="Fixed" name="served" kinematicsFlags="1">
+              <motionParameters/>
+              <position>
+                <JointAngles angles="-1.2409990469561976, -0.5888276857188721, 0.646334473286764, -1.4995657217553635, 1.5356171131134033, -1.5984371344195765"/>
+                <TCPOffset pose="0.05, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                <Kinematics status="LINEARIZED" validChecksum="true">
+                  <deltaTheta value="-3.956534036890502E-7, 0.09378309906152342, 0.02684255010817925, -0.12062750858720205, 1.0264726965411387E-5, -4.580162421725931E-8"/>
+                  <a value="-8.635038393346348E-5, -0.24256482236148144, -0.21183570684466566, 4.5517677281820306E-5, -1.372128850609364E-4, 0.0"/>
+                  <d value="0.15198572074673994, 5.97615002100393, 11.782146332815056, -17.627443327003647, 0.08527030991806976, 0.0923148653196972"/>
+                  <alpha value="1.5710494027789694, 0.003817648862601711, 0.0014459187033665606, 1.5705196856928418, -1.5708997204785373, 0.0"/>
+                  <jointChecksum value="-1374708771, -1374372955, 768971654, -1381520542, -1381745982, -1381384189"/>
+                </Kinematics>
+              </position>
+              <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+            </Waypoint>
+          </children>
+        </Move>
+    </MainProgram>
+  </children>
+</URProgram>
