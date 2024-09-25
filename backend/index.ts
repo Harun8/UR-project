@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as xml2js from 'xml2js';
+import { getUUID } from './utils/uuid';
 
 interface JointAngles {
   base: number;
@@ -262,7 +263,7 @@ function convertMoveToJSON(move: any): any {
       allowsChildren: false,
       parameters,
     },
-    guid: 'a748a067-235b-d882-7956-5d8ee0bda641', // Use the same guid as desired output
+    guid: getUUID, // Use the same guid as desired output
     parentId: '873fe730-b8d3-ac7e-1496-b4401107a1c7', // Parent guid
     programLabel,
   };
@@ -1261,7 +1262,7 @@ fs.readFile('files/skinkekutter2.urp', 'utf8', (err, data) => {
                 allowsChildren: true,
                 lockChildren: false,
               },
-              guid: '65426717-29ee-278d-ef18-38edad7bca0a',
+              guid: getUUID(),
               parentId: '46e0acdd-f641-d632-53ad-04ad50071697',
             },
             {
@@ -1272,7 +1273,7 @@ fs.readFile('files/skinkekutter2.urp', 'utf8', (err, data) => {
                 allowsChildren: true,
                 lockChildren: false,
               },
-              guid: '9e01b478-2955-03a7-5dd1-a2bc5def39ab',
+              guid: getUUID(),
               parentId: '46e0acdd-f641-d632-53ad-04ad50071697',
             },
             {
@@ -1282,7 +1283,7 @@ fs.readFile('files/skinkekutter2.urp', 'utf8', (err, data) => {
                 version: '0.0.1',
                 allowsChildren: true,
               },
-              guid: '3c5d58f0-0efc-feaf-ee82-cd6e1478651a',
+              guid: getUUID(),
               parentId: '46e0acdd-f641-d632-53ad-04ad50071697',
             },
             {
@@ -1293,7 +1294,7 @@ fs.readFile('files/skinkekutter2.urp', 'utf8', (err, data) => {
                 allowsChildren: true,
                 parameters: {},
               },
-              guid: 'f8c50f27-da4a-9bcf-e01f-4fdff930330f',
+              guid: getUUID(),
               parentId: '46e0acdd-f641-d632-53ad-04ad50071697',
             },
             {
@@ -1304,7 +1305,7 @@ fs.readFile('files/skinkekutter2.urp', 'utf8', (err, data) => {
                 allowsChildren: true,
                 parameters: {},
               },
-              guid: 'bf5a91e1-5838-6910-3179-5961572f3844',
+              guid: getUUID(),
               parentId: '46e0acdd-f641-d632-53ad-04ad50071697',
             },
             {
@@ -1318,7 +1319,7 @@ fs.readFile('files/skinkekutter2.urp', 'utf8', (err, data) => {
                   loopForever: false,
                 },
               },
-              guid: '873fe730-b8d3-ac7e-1496-b4401107a1c7',
+              guid: getUUID(),
               parentId: '46e0acdd-f641-d632-53ad-04ad50071697',
             },
           ],
@@ -1372,7 +1373,7 @@ fs.readFile('files/skinkekutter2.urp', 'utf8', (err, data) => {
               name: 'Default program',
             },
           },
-          guid: '46e0acdd-f641-d632-53ad-04ad50071697',
+          guid: getUUID(),
         },
         programInformation,
         urscript,
@@ -1389,3 +1390,6 @@ fs.readFile('files/skinkekutter2.urp', 'utf8', (err, data) => {
     });
   });
 });
+
+
+
