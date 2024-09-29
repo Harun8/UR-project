@@ -1349,7 +1349,7 @@ fs.readFile('files/skinkekutter2.urp', 'utf8', (err, data) => {
                 allowsChildren: true,
                 parameters: {}
               },
-              {
+              { 
                 type: "ur-status",
                 version: "0.0.1",
                 allowsChildren: true,
