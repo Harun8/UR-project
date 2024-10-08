@@ -4,12 +4,12 @@ import { JointAnglesFactory } from "./JointAngelsFactory";
 import { PoseFactory } from "./PoseFactory";
 
 export class WaypointFactory {
-  static createWaypoint(waypointData: any): Waypoint | null {
+  static async createWaypoint(waypointData: any): Promise<Waypoint | null> {
     try {
       // removed name
       // const name = waypointData.$.name;
       const position = waypointData.position;
- 
+
       if (!position) {
         console.error(`Waypoint "${name}" is missing the "position" field.`);
         return null;
@@ -46,14 +46,19 @@ export class WaypointFactory {
       }
 
       const qNear = JointAnglesFactory.createJointAngles(jointAnglesStr);
-      const pose = PoseFactory.createPose(poseStr);
 
       // safely handle pose values
-      let getDelthaTheta = PoseFactory.getKinematicPose(position.Kinematics)
-      
-      let deltaTheta = PoseFactory.createKinematics(getDelthaTheta, qNear)
+      let getDelthaTheta = PoseFactory.getKinematicPose(position.Kinematics);
 
-      console.log("deltha theta", deltaTheta)
+      let pose: Pose;
+      try {
+        // Await the resolved value of createKinematics
+        pose = await PoseFactory.createKinematics(getDelthaTheta, qNear);
+        console.log(pose);
+      } catch (error) {
+        console.error("Error getting pose:", error);
+        throw error; // If needed, rethrow the error to handle it upstream
+      }
 
       const tcp = {
         name: "Tool_flange",

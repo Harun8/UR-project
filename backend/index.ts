@@ -28,11 +28,11 @@ interface programLabel {
   value: string;
 }
 const programLabel = [
-    {
-      type: "secondary",
-      value: "Looping: Enabled",
-    },
-  ]
+  {
+    type: "secondary",
+    value: "Looping: Enabled",
+  },
+];
 
 // Read the XML file
 fs.readFile("files/you.urp", "utf8", (err, data) => {
@@ -60,8 +60,7 @@ fs.readFile("files/you.urp", "utf8", (err, data) => {
       lastSavedDate: null,
       lastModifiedDate: 1727260810398,
       programState: "DRAFT",
-      functionsBlockShown: false
-     
+      functionsBlockShown: false,
     };
 
     // Define the urscript object
@@ -89,159 +88,198 @@ fs.readFile("files/you.urp", "utf8", (err, data) => {
       return;
     }
 
-    const convertedMoves = moves
-      .map(MoveAdapter.convertMoveToJSON)
-      .filter((move) => move !== null) as ContributedNode[];
+    // Function to convert moves to nodes
+    async function convertMovesToNodes(
+      moves: any[]
+    ): Promise<ContributedNode[]> {
+      try {
+        // Map each move to a promise and await all of them
+        const convertedMoves = await Promise.all(
+          moves.map(MoveAdapter.convertMoveToJSON)
+        );
 
-    // Create the final JSON output
-    const finalOutput = {
-      application,
-      program: {
-        id: "5",
-        programContent: {
-          children: [
-            {
-              children: [],
-              contributedNode: {
-                children: [],
-                type: "ur-modules",
-                version: "0.0.1",
-                allowsChildren: true,
-                lockChildren: false,
-              },
-              guid: randomId1,
-              parentId: parentId,
-            },
-            {
-              children: [],
-              contributedNode: {
-                type: "ur-functions",
-                version: "0.0.1",
-                allowsChildren: true,
-                lockChildren: false,
-              },
-              guid: randomId2,
-              parentId: parentId,
-            },
-            {
-              children: [],
-              contributedNode: {
-                type: "ur-before-start",
-                version: "0.0.1",
-                allowsChildren: true,
-              },
-              guid: randomId3,
-              parentId: parentId,
-            },
-            {
-              children: [],
-              contributedNode: {
-                type: "ur-configuration",
-                version: "0.0.1",
-                allowsChildren: true,
-                parameters: {},
-              },
-              guid: randomId4,
-              parentId: parentId,
-            },
-            {
-              children: [],
-              contributedNode: {
-                type: "ur-status",
-                version: "0.0.1",
-                allowsChildren: true,
-                parameters: {},
-              },
-              guid: randomId5,
-              parentId: parentId,
-            },
-            {
-              children: convertedMoves,
-              contributedNode: {
-                type: "ur-code",
-                version: "0.0.1",
-                allowsChildren: true,
-                lockChildren: false,
-                parameters: {
-                  loopForever: false,
-                },
-              },
-              guid: waypointGUID,
-              parentId: parentId,
-              programLabel: programLabel,
-            },
+        // Filter out any null results
+        const nonNullMoves: ContributedNode[] = convertedMoves.filter(
+          (move): move is ContributedNode => move !== null
+        );
 
-          ],
-          contributedNode: {
+        console.log("Converted Moves:", nonNullMoves);
+        return nonNullMoves;
+      } catch (error) {
+        console.error("Error converting moves to nodes:", error);
+        throw error; // Rethrow the error to be handled upstream if necessary
+      }
+    }
+
+    // Function to create the final output object
+    function createFinalOutput(convertedMoves: ContributedNode[]): any {
+      return {
+        application,
+        program: {
+          id: "5",
+          programContent: {
             children: [
               {
                 children: [],
-                type: "ur-modules",
-                version: "0.0.1",
-                allowsChildren: true,
-                lockChildren: false,
-              },
-              {
-                type: "ur-functions",
-                version: "0.0.1",
-                allowsChildren: true,
-                lockChildren: false,
-              },
-              {
-                type: "ur-before-start",
-                version: "0.0.1",
-                allowsChildren: true,
-              },
-              {
-                type: "ur-configuration",
-                version: "0.0.1",
-                allowsChildren: true,
-                parameters: {},
-              },
-              {
-                type: "ur-status",
-                version: "0.0.1",
-                allowsChildren: true,
-                parameters: {},
-              },
-              {
-                type: "ur-code",
-                version: "0.0.1",
-                allowsChildren: true,
-                lockChildren: false,
-                parameters: {
-                  loopForever: false,
+                contributedNode: {
+                  children: [],
+                  type: "ur-modules",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  lockChildren: false,
                 },
+                guid: randomId1,
+                parentId: parentId,
+              },
+              {
+                children: [],
+                contributedNode: {
+                  type: "ur-functions",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  lockChildren: false,
+                },
+                guid: randomId2,
+                parentId: parentId,
+              },
+              {
+                children: [],
+                contributedNode: {
+                  type: "ur-before-start",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                },
+                guid: randomId3,
+                parentId: parentId,
+              },
+              {
+                children: [],
+                contributedNode: {
+                  type: "ur-configuration",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  parameters: {},
+                },
+                guid: randomId4,
+                parentId: parentId,
+              },
+              {
+                children: [],
+                contributedNode: {
+                  type: "ur-status",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  parameters: {},
+                },
+                guid: randomId5,
+                parentId: parentId,
+              },
+              {
+                children: convertedMoves, // Ensure this is the resolved array
+                contributedNode: {
+                  type: "ur-code",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  lockChildren: false,
+                  parameters: {
+                    loopForever: false,
+                  },
+                },
+                guid: waypointGUID,
+                parentId: parentId,
+                programLabel: programLabel,
               },
             ],
-            type: "ur-program",
-            version: "0.0.1",
-            allowsChildren: true,
-            lockChildren: true,
-            parameters: {
-              name: urProgram.$.name,
+            contributedNode: {
+              children: [
+                {
+                  children: [],
+                  type: "ur-modules",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  lockChildren: false,
+                },
+                {
+                  type: "ur-functions",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  lockChildren: false,
+                },
+                {
+                  type: "ur-before-start",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                },
+                {
+                  type: "ur-configuration",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  parameters: {},
+                },
+                {
+                  type: "ur-status",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  parameters: {},
+                },
+                {
+                  type: "ur-code",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  lockChildren: false,
+                  parameters: {
+                    loopForever: false,
+                  },
+                },
+              ],
+              type: "ur-program",
+              version: "0.0.1",
+              allowsChildren: true,
+              lockChildren: true,
+              parameters: {
+                name: urProgram.$.name,
+              },
             },
+            guid: parentId,
           },
-          guid: parentId,
+          programInformation,
+          urscript,
         },
-        programInformation,
-        urscript,
-      },
-    };
+      };
+    }
 
-    // Output the JSON
-    fs.writeFile(
-      "output.urpx",
-      JSON.stringify(finalOutput, null, 2),
-      (writeErr) => {
-        if (writeErr) {
-          console.error("Error writing the JSON file:", writeErr);
-          return;
-        }
+    // Async function to write the final output to a file
+    async function writeFile(moves: any[]) {
+      try {
+        // Convert moves to nodes
+        const convertedMoves = await convertMovesToNodes(moves);
+
+        // Create the final output object
+        const finalOutput = createFinalOutput(convertedMoves);
+
+        // Write the JSON to a file
+        fs.writeFile(
+          "output.urpx",
+          JSON.stringify(finalOutput, null, 2),
+          (writeErr) => {
+            if (writeErr) {
+              console.error("Error writing the JSON file:", writeErr);
+              return;
+            }
+            console.log(
+              "Conversion completed successfully. Output written to output.urpx"
+            );
+          }
+        );
         console.log(
           "Conversion completed successfully. Output written to output.urpx"
         );
+      } catch (error) {
+        console.error("Error during file writing:", error);
       }
-    );
+    }
+
+    // Invoke the writeFile function with the moves array
+    writeFile(moves);
   });
 });

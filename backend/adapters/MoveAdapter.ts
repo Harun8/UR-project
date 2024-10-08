@@ -5,7 +5,7 @@ import { isArray } from "../utils/ArrayChecker";
 import { waypointGUID, waypointParentId } from "../utils/uuid";
 
 export class MoveAdapter {
-  static convertMoveToJSON(move: any): ContributedNode | null {
+  static async convertMoveToJSON(move: any): Promise<ContributedNode | null> {
     try {
       const moveTypeText = move.$.motionType;
       const moveType = moveTypeText === "MoveL" ? "moveL" : "moveJ";
@@ -17,11 +17,17 @@ export class MoveAdapter {
         return null;
       }
 
+      // validation
       const waypointsXML = isArray(move.children.Waypoint);
-      const waypoints = waypointsXML
-        .map(WaypointFactory.createWaypoint)
-        .filter((wp): wp is any => wp !== null);
 
+      // call factory pattern
+      const waypoints = await Promise.all(
+        waypointsXML
+          .map(WaypointFactory.createWaypoint) // This returns an array of Promises
+          .filter((wp): wp is any => wp !== null) // Filtering out null results
+      );
+
+      // validation
       if (waypoints.length === 0) {
         console.error(
           "No valid waypoints could be created from the Move node."
