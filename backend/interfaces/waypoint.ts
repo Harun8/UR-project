@@ -69,11 +69,12 @@ export interface Parameters {
 
 export interface ProgramInformation {
   name: string;
-  installation: string;
-  directory: string;
-  createdIn: string;
-  lastSavedIn: string;
-  robotSerialNumber: string;
+  description: string;
+  createdDate: number;
+  lastSavedDate: null;
+  lastModifiedDate: number;
+  programState: string;
+  functionsBlockShown: false
 }
 
 export interface URScript {

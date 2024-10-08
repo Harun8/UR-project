@@ -27,17 +27,15 @@ interface programLabel {
   type: string;
   value: string;
 }
-const programLabelAfterUR_code = {
-  programLabel: [
+const programLabel = [
     {
       type: "secondary",
       value: "Looping: Enabled",
     },
-  ],
-};
+  ]
 
 // Read the XML file
-fs.readFile("files/skinkekutter2.urp", "utf8", (err, data) => {
+fs.readFile("files/you.urp", "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the XML file:", err);
     return;
@@ -54,13 +52,16 @@ fs.readFile("files/skinkekutter2.urp", "utf8", (err, data) => {
     // Extract program information from the root element
     const urProgram = result.URProgram;
 
+    // hardcoded
     const programInformation: ProgramInformation = {
       name: urProgram.$.name,
-      installation: urProgram.$.installation,
-      directory: urProgram.$.directory,
-      createdIn: urProgram.$.createdIn,
-      lastSavedIn: urProgram.$.lastSavedIn,
-      robotSerialNumber: urProgram.$.robotSerialNumber,
+      description: "",
+      createdDate: 1727260350196,
+      lastSavedDate: null,
+      lastModifiedDate: 1727260810398,
+      programState: "DRAFT",
+      functionsBlockShown: false
+     
     };
 
     // Define the urscript object
@@ -75,8 +76,8 @@ fs.readFile("files/skinkekutter2.urp", "utf8", (err, data) => {
         randomId3,
         randomId4,
         randomId5,
-        waypointParentId,
         waypointGUID,
+        waypointParentId,
       ],
     };
 
@@ -167,9 +168,9 @@ fs.readFile("files/skinkekutter2.urp", "utf8", (err, data) => {
               },
               guid: waypointGUID,
               parentId: parentId,
+              programLabel: programLabel,
             },
 
-            programLabelAfterUR_code,
           ],
           contributedNode: {
             children: [
@@ -218,7 +219,7 @@ fs.readFile("files/skinkekutter2.urp", "utf8", (err, data) => {
             allowsChildren: true,
             lockChildren: true,
             parameters: {
-              name: "Default program",
+              name: urProgram.$.name,
             },
           },
           guid: parentId,

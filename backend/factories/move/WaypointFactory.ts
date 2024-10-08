@@ -9,7 +9,7 @@ export class WaypointFactory {
       // removed name
       // const name = waypointData.$.name;
       const position = waypointData.position;
-
+ 
       if (!position) {
         console.error(`Waypoint "${name}" is missing the "position" field.`);
         return null;
@@ -48,9 +48,18 @@ export class WaypointFactory {
       const qNear = JointAnglesFactory.createJointAngles(jointAnglesStr);
       const pose = PoseFactory.createPose(poseStr);
 
+      // safely handle pose values
+      let getDelthaTheta = PoseFactory.getKinematicPose(position.Kinematics)
+      
+      let deltaTheta = PoseFactory.createKinematics(getDelthaTheta, qNear)
+
+      console.log("deltha theta", deltaTheta)
+
       const tcp = {
         name: "Tool_flange",
-        id: "1855007c-7575-62f5-df63-69046ef9e9a7",
+        // THIS ID NEEDS TO MATCH THE TCP ID'S IN APPLICATION,
+        // UNDER TCPS ARRAY AND UNDER DEFAULTCP OBJECT
+        id: "708f6642-ea70-6871-7619-14318c664153",
       };
 
       return {

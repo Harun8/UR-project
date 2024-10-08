@@ -1,0 +1,36 @@
+<URProgram name="positionTest" installation="default_3" installationRelativePath="default_3" directory="/programs/usbdisk" createdIn="5.18.0" lastSavedIn="5.18.0" robotSerialNumber="20245388888" createdInPolyscopeProgramVersion="2" lastSavedInPolycopeProgramVersion="2" crcValue="1255644692">
+  <kinematics status="NOT_INITIALIZED" validChecksum="true">
+    <deltaTheta value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+    <a value="0.0, -0.24355, -0.2132, 0.0, 0.0, 0.0"/>
+    <d value="0.15185, 0.0, 0.0, 0.13105, 0.08535, 0.0921"/>
+    <alpha value="1.570796327, 0.0, 0.0, 1.570796327, -1.570796327, 0.0"/>
+    <jointChecksum value="-1374750260, -1374707111, 768941904, -1381775440, -1381702029, -1381674875"/>
+  </kinematics>
+  <children>
+    <InitVariablesNode/>
+    <MainProgram runOnlyOnce="false" InitVariablesNode="false">
+      <children>
+        <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose" optimoveEnabled="true" optiMovePercentage="30">
+          <feature class="GeomFeatureReference" referencedName="Joint_0_name"/>
+          <children>
+            <Waypoint type="Fixed" name="Waypoint_1" kinematicsFlags="0">
+              <motionParameters/>
+              <position>
+                <JointAngles angles="3.1788227558135986, -3.1004377804198207, 1.5212577025042933, 0.014183564777038526, 1.53292715549469, 0.0014025651616975665"/>
+                <TCPOffset pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                <Kinematics status="NOT_INITIALIZED" validChecksum="true">
+                  <deltaTheta value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  <a value="0.0, -0.24355, -0.2132, 0.0, 0.0, 0.0"/>
+                  <d value="0.15185, 0.0, 0.0, 0.13105, 0.08535, 0.0921"/>
+                  <alpha value="1.570796327, 0.0, 0.0, 1.570796327, -1.570796327, 0.0"/>
+                  <jointChecksum value="-1374750260, -1374707111, 768941904, -1381775440, -1381702029, -1381674875"/>
+                </Kinematics>
+              </position>
+              <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+            </Waypoint>
+          </children>
+        </Move>
+      </children>
+    </MainProgram>
+  </children>
+</URProgram>
