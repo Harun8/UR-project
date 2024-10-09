@@ -11,6 +11,8 @@ export class MoveAdapter {
       const moveType = moveTypeText === "MoveL" ? "moveL" : "moveJ";
       const speedValue = parseFloat(move.$.speed);
       const accelerationValue = parseFloat(move.$.acceleration);
+      const speedUnit = moveType === "moveL" ? "m/s" : "rad/s"
+      const accelerationUnit = moveType === "moveL" ? "m/s^2" : "rad/s^2"
 
       if (!move.children || !move.children.Waypoint) {
         console.error("No Waypoints found in Move node.");
@@ -54,7 +56,7 @@ export class MoveAdapter {
             speed: {
               entity: {
                 value: speedValue,
-                unit: "m/s",
+                unit: speedUnit,
               },
               selectedType: "VALUE",
               value: speedValue,
@@ -62,7 +64,7 @@ export class MoveAdapter {
             acceleration: {
               entity: {
                 value: accelerationValue,
-                unit: "m/s^2",
+                unit: accelerationUnit,
               },
               selectedType: "VALUE",
               value: accelerationValue,
@@ -98,11 +100,11 @@ export class MoveAdapter {
         },
         {
           type: "secondary",
-          value: `S: ${speedValue * 1000} mm/s`,
+          value: `S: ${ moveType === "moveL" ? speedValue * 1000 : speedValue}  ${speedUnit} `,
         },
         {
           type: "secondary",
-          value: `A: ${accelerationValue * 1000} mm/s²`,
+          value: `A: ${ moveType === "moveL" ? accelerationValue * 1000 : speedValue} ${accelerationUnit}`,
         },
       ];
 
