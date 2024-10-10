@@ -2,7 +2,6 @@
 import * as fs from "fs";
 import * as xml2js from "xml2js";
 import {
-  getUUID,
   nil,
   parentId,
   randomId1,
@@ -34,8 +33,21 @@ const programLabel = [
   },
 ];
 
+// Define nodeIDList
+const nodeIDList = [
+  nil,
+  parentId,
+  randomId1,
+  randomId2,
+  randomId3,
+  randomId4,
+  randomId5,
+  waypointGUID,
+  waypointParentId,
+];
+
 // Read the XML file
-fs.readFile("files/you.urp", "utf8", (err, data) => {
+fs.readFile("files/cc.urp", "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the XML file:", err);
     return;
@@ -67,17 +79,7 @@ fs.readFile("files/you.urp", "utf8", (err, data) => {
     const scriptContent = urProgram.Script ? urProgram.Script : "";
     const urscript: URScript = {
       script: scriptContent,
-      nodeIDList: [
-        nil,
-        parentId,
-        randomId1,
-        randomId2,
-        randomId3,
-        randomId4,
-        randomId5,
-        waypointGUID,
-        waypointParentId,
-      ],
+      nodeIDList
     };
 
     // Find all Move nodes
@@ -89,19 +91,17 @@ fs.readFile("files/you.urp", "utf8", (err, data) => {
     }
 
     // Function to convert moves to nodes
-    async function convertMovesToNodes(
-      moves: any[]
-    ): Promise<ContributedNode[]> {
+    async function convertMovesToNodes(moves: any[]): Promise<ContributedNode[]> {
       try {
-        // Map each move to a promise and await all of them
         const convertedMoves = await Promise.all(
-          moves.map(MoveAdapter.convertMoveToJSON)
+            moves.map((move) => MoveAdapter.convertMoveToJSON(move, nodeIDList))
         );
 
         // Filter out any null results
         const nonNullMoves: ContributedNode[] = convertedMoves.filter(
-          (move): move is ContributedNode => move !== null
+            (move): move is ContributedNode => move !== null
         );
+        console.log(nodeIDList);
 
         console.log("Converted Moves:", nonNullMoves);
         return nonNullMoves;

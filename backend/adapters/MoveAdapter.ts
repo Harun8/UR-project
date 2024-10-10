@@ -2,10 +2,10 @@
 import { ContributedNode, Parameters } from "../interfaces/waypoint";
 import { WaypointFactory } from "../factories/move/WaypointFactory";
 import { isArray } from "../utils/ArrayChecker";
-import { waypointGUID, waypointParentId } from "../utils/uuid";
+import {getUUID, waypointGUID, waypointParentId} from "../utils/uuid";
 
 export class MoveAdapter {
-  static async convertMoveToJSON(move: any): Promise<ContributedNode | null> {
+  static async convertMoveToJSON(move: any, nodeIDList: string[]): Promise<ContributedNode | null> {
     try {
       const moveTypeText = move.$.motionType;
       const moveType = moveTypeText === "MoveL" ? "moveL" : "moveJ";
@@ -37,6 +37,10 @@ export class MoveAdapter {
         return null;
       }
 
+      const newUUID =getUUID();
+      nodeIDList.push(newUUID); // Add new waypointGUID to nodeIDList
+      console.log(`Added new UUID: ${newUUID} to nodeIDList`);
+
       const parameters: Parameters = {
         moveType,
         variable: {
@@ -45,7 +49,7 @@ export class MoveAdapter {
             reference: false,
             type: "$$Variable",
             valueType: "waypoint",
-            declaredByID: waypointParentId,
+            declaredByID: newUUID,
           },
           selectedType: "VALUE",
           value: "Point",
@@ -116,7 +120,7 @@ export class MoveAdapter {
           allowsChildren: false,
           parameters,
         },
-        guid: waypointParentId, // Use the same guid as desired output
+        guid: newUUID, // Use the same guid as desired output
         parentId: waypointGUID, // Parent guid
         programLabel,
       };
