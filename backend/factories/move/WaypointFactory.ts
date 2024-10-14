@@ -1,4 +1,4 @@
-import { Waypoint, JointAngles, Pose } from "../../interfaces/waypoint";
+import {Waypoint, JointAngles, Pose, PoseValue} from "../../interfaces/waypoint";
 import { isArray } from "../../utils/ArrayChecker";
 import { JointAnglesFactory } from "./JointAngelsFactory";
 import { PoseFactory } from "./PoseFactory";
@@ -58,13 +58,13 @@ console.log(jointAnglesNumber);
 
     const getTCPPose = async (jointAnglesNumber: Number[]) => {
       try {
-        const response = await fetch('your_url_here', {
+        const response = await fetch('http://localhost:/universal-robots/java-backend/java-backend/rest-api/robot/state/tcp', {
           method: 'POST', // Set method to POST
           headers: {
             'Content-Type': 'application/json', // Ensure correct headers are set
           },
           body: JSON.stringify({
-            jointAngles: [jointAnglesNumber], // Pass your data here
+            jointPositions: jointAnglesNumber, // Pass your data here
           }),
         });
     
@@ -80,7 +80,32 @@ console.log(jointAnglesNumber);
     };
 
 
-  let pose = await getTCPPose(jointAnglesNumber)
+      let pose = await getTCPPose(jointAnglesNumber);
+
+      if (pose) {
+        const values = [
+          pose.x,
+          pose.y,
+          pose.z,
+          pose.rx,
+          pose.ry,
+          pose.rz
+        ];
+
+        const units = ["m", "m", "m", "rad", "rad", "rad"]; // Ensure units correspond to each value
+
+        // Function to map index to PoseValue
+        const poseValue = (index: number): PoseValue => ({
+          entity: {
+            value: values[index],
+            unit: units[index],
+          },
+          selectedType: "VALUE",
+          value: values[index],
+        });
+
+        pose = values.map((_, index) => poseValue(index));
+      }
     
 
       // try {
