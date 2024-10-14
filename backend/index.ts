@@ -101,9 +101,7 @@ fs.readFile("files/skinkekutterFull.urp", "utf8", (err, data) => {
         const nonNullMoves: ContributedNode[] = convertedMoves.filter(
             (move): move is ContributedNode => move !== null
         );
-        console.log(nodeIDList);
 
-        console.log("Converted Moves:", nonNullMoves);
         return nonNullMoves;
       } catch (error) {
         console.error("Error converting moves to nodes:", error);

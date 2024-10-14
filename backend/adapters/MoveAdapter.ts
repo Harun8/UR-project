@@ -39,7 +39,6 @@ export class MoveAdapter {
 
       const newUUID =getUUID();
       nodeIDList.push(newUUID); // Add new waypointGUID to nodeIDList
-      console.log(`Added new UUID: ${newUUID} to nodeIDList`);
 
       const parameters: Parameters = {
         moveType,

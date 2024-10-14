@@ -1131,8 +1131,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "11880f1e-b762-705f-bca2-06261a2b5105",
-          "parentId": "32e960ff-9cd0-d63f-7373-53e6d1250376"
+          "guid": "fb41b20c-d14e-67e1-225a-b493a22f9e46",
+          "parentId": "ad0b7720-a1cf-0918-1b1f-41dcab0833a7"
         },
         {
           "children": [],
@@ -1142,8 +1142,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "3bfc6593-769b-acce-f259-cf9e79b56d31",
-          "parentId": "32e960ff-9cd0-d63f-7373-53e6d1250376"
+          "guid": "b359564c-faae-a405-b710-ad61bca059fb",
+          "parentId": "ad0b7720-a1cf-0918-1b1f-41dcab0833a7"
         },
         {
           "children": [],
@@ -1152,8 +1152,8 @@
             "version": "0.0.1",
             "allowsChildren": true
           },
-          "guid": "1803b8a3-8786-63fc-98ce-67c8fecd9ce5",
-          "parentId": "32e960ff-9cd0-d63f-7373-53e6d1250376"
+          "guid": "3a2303ac-6e99-6313-fcd8-cb0f1485c94f",
+          "parentId": "ad0b7720-a1cf-0918-1b1f-41dcab0833a7"
         },
         {
           "children": [],
@@ -1163,8 +1163,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "55277331-6f5c-05e5-ae81-3a46f578412f",
-          "parentId": "32e960ff-9cd0-d63f-7373-53e6d1250376"
+          "guid": "0fe24a0a-8e68-4dd5-0194-1bb04d4ff25e",
+          "parentId": "ad0b7720-a1cf-0918-1b1f-41dcab0833a7"
         },
         {
           "children": [],
@@ -1174,8 +1174,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "23016bac-b819-8eb1-e360-de877b468d60",
-          "parentId": "32e960ff-9cd0-d63f-7373-53e6d1250376"
+          "guid": "46570e5c-0b40-6219-345a-d4df03f0591d",
+          "parentId": "ad0b7720-a1cf-0918-1b1f-41dcab0833a7"
         },
         {
           "children": [
@@ -1193,7 +1193,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "d52501ad-bd9d-b7aa-50ca-2809135d24a3"
+                      "declaredByID": "5b0b4483-1149-e234-7015-ede19835dbad"
                     },
                     "selectedType": "VALUE",
                     "value": "Point"
@@ -1211,88 +1211,38 @@
                       "wrist1": -1.4995657217553635,
                       "wrist2": 1.5356171131134033,
                       "wrist3": -1.5984371344195765
-                    },
-                    "pose": {
-                      "x": {
-                        "entity": {
-                          "value": -0.292606,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.292606
-                      },
-                      "y": {
-                        "entity": {
-                          "value": 0.441352,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.441352
-                      },
-                      "z": {
-                        "entity": {
-                          "value": 0.354866,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.354866
-                      },
-                      "rx": {
-                        "entity": {
-                          "value": -0.04376593879613999,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.04376593879613999
-                      },
-                      "ry": {
-                        "entity": {
-                          "value": 0.12746892895100392,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.12746892895100392
-                      },
-                      "rz": {
-                        "entity": {
-                          "value": 1.8708221154156286,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 1.8708221154156286
-                      }
                     }
                   },
                   "advanced": {
                     "speed": {
-                        "speed": {
-                            "entity": {
-                                "value": 0.25,
-                                "unit": "m/s"
-                            },
-                            "selectedType": "VALUE",
-                            "value": 0.25
+                      "speed": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "mm/s"
                         },
-                        "acceleration": {
-                            "entity": {
-                                "value": 1.2,
-                                "unit": "m/s^2"
-                            },
-                            "selectedType": "VALUE",
-                            "value": 1.2
-                        }
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      },
+                      "acceleration": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "mm/s^2"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      }
                     },
                     "blend": {
-                        "enabled": false
+                      "enabled": false
                     },
                     "transform": {
-                        "transform": false
+                      "transform": false
                     }
-                }
+                  }
                 }
               },
-              "guid": "d52501ad-bd9d-b7aa-50ca-2809135d24a3",
-              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "guid": "5b0b4483-1149-e234-7015-ede19835dbad",
+              "parentId": "986e9851-aae4-d420-6f09-6d34a1650dc6",
               "programLabel": [
                 {
                   "type": "primary",
@@ -1334,7 +1284,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "ad50a060-b19a-e874-5ee2-7c24508d488d"
+                      "declaredByID": "785824b7-b26d-6dc0-db8c-760897817e73"
                     },
                     "selectedType": "VALUE",
                     "value": "Point"
@@ -1352,56 +1302,6 @@
                       "wrist1": -2.636131902734274,
                       "wrist2": 1.5362917184829712,
                       "wrist3": 0.5701126456260681
-                    },
-                    "pose": {
-                      "x": {
-                        "entity": {
-                          "value": -0.430746,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.430746
-                      },
-                      "y": {
-                        "entity": {
-                          "value": 0.073303,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.073303
-                      },
-                      "z": {
-                        "entity": {
-                          "value": 0.161162,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.161162
-                      },
-                      "rx": {
-                        "entity": {
-                          "value": -0.013160073826670369,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.013160073826670369
-                      },
-                      "ry": {
-                        "entity": {
-                          "value": 0.05471728164465162,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.05471728164465162
-                      },
-                      "rz": {
-                        "entity": {
-                          "value": -1.4805570643081547,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -1.4805570643081547
-                      }
                     }
                   },
                   "advanced": {
@@ -1409,7 +1309,7 @@
                       "speed": {
                         "entity": {
                           "value": 0.1,
-                          "unit": "m/s"
+                          "unit": "mm/s"
                         },
                         "selectedType": "VALUE",
                         "value": 0.1
@@ -1417,7 +1317,7 @@
                       "acceleration": {
                         "entity": {
                           "value": 0.1,
-                          "unit": "m/s^2"
+                          "unit": "mm/s^2"
                         },
                         "selectedType": "VALUE",
                         "value": 0.1
@@ -1432,8 +1332,8 @@
                   }
                 }
               },
-              "guid": "ad50a060-b19a-e874-5ee2-7c24508d488d",
-              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "guid": "785824b7-b26d-6dc0-db8c-760897817e73",
+              "parentId": "986e9851-aae4-d420-6f09-6d34a1650dc6",
               "programLabel": [
                 {
                   "type": "primary",
@@ -1453,11 +1353,11 @@
                 },
                 {
                   "type": "secondary",
-                  "value": "S: 100  m/s "
+                  "value": "S: 100  mm/s "
                 },
                 {
                   "type": "secondary",
-                  "value": "A: 100 m/s^2"
+                  "value": "A: 100 mm/s^2"
                 }
               ]
             },
@@ -1475,7 +1375,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "62ece8e5-58b1-d5a8-5265-8f0507206f1c"
+                      "declaredByID": "880d8d1d-bf2a-9931-c7e1-992c3d91f6ce"
                     },
                     "selectedType": "VALUE",
                     "value": "Point"
@@ -1493,56 +1393,6 @@
                       "wrist1": -2.636131902734274,
                       "wrist2": 1.5362917184829712,
                       "wrist3": 0.5701126456260681
-                    },
-                    "pose": {
-                      "x": {
-                        "entity": {
-                          "value": -0.430746,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.430746
-                      },
-                      "y": {
-                        "entity": {
-                          "value": 0.073303,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.073303
-                      },
-                      "z": {
-                        "entity": {
-                          "value": 0.161162,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.161162
-                      },
-                      "rx": {
-                        "entity": {
-                          "value": -0.013160073826670369,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.013160073826670369
-                      },
-                      "ry": {
-                        "entity": {
-                          "value": 0.05471728164465162,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.05471728164465162
-                      },
-                      "rz": {
-                        "entity": {
-                          "value": -1.4805570643081547,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -1.4805570643081547
-                      }
                     }
                   },
                   "advanced": {
@@ -1550,7 +1400,7 @@
                       "speed": {
                         "entity": {
                           "value": 0.1,
-                          "unit": "m/s"
+                          "unit": "mm/s"
                         },
                         "selectedType": "VALUE",
                         "value": 0.1
@@ -1558,7 +1408,7 @@
                       "acceleration": {
                         "entity": {
                           "value": 0.1,
-                          "unit": "m/s^2"
+                          "unit": "mm/s^2"
                         },
                         "selectedType": "VALUE",
                         "value": 0.1
@@ -1573,8 +1423,8 @@
                   }
                 }
               },
-              "guid": "62ece8e5-58b1-d5a8-5265-8f0507206f1c",
-              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "guid": "880d8d1d-bf2a-9931-c7e1-992c3d91f6ce",
+              "parentId": "986e9851-aae4-d420-6f09-6d34a1650dc6",
               "programLabel": [
                 {
                   "type": "primary",
@@ -1594,11 +1444,11 @@
                 },
                 {
                   "type": "secondary",
-                  "value": "S: 100  m/s "
+                  "value": "S: 100  mm/s "
                 },
                 {
                   "type": "secondary",
-                  "value": "A: 100 m/s^2"
+                  "value": "A: 100 mm/s^2"
                 }
               ]
             },
@@ -1616,7 +1466,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "990abc5c-82f9-9bb6-8208-27a9f74a4ee6"
+                      "declaredByID": "26ecd1e0-13fb-f806-d0b1-8fe5bf40e585"
                     },
                     "selectedType": "VALUE",
                     "value": "Point"
@@ -1634,56 +1484,6 @@
                       "wrist1": -2.6556059322752894,
                       "wrist2": 1.5639961957931519,
                       "wrist3": -1.57798940340151
-                    },
-                    "pose": {
-                      "x": {
-                        "entity": {
-                          "value": 0.187318,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.187318
-                      },
-                      "y": {
-                        "entity": {
-                          "value": -0.359268,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.359268
-                      },
-                      "z": {
-                        "entity": {
-                          "value": 0.208865,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.208865
-                      },
-                      "rx": {
-                        "entity": {
-                          "value": -0.010594450297099703,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.010594450297099703
-                      },
-                      "ry": {
-                        "entity": {
-                          "value": -0.03947524539594206,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.03947524539594206
-                      },
-                      "rz": {
-                        "entity": {
-                          "value": -1.4266912360007098,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -1.4266912360007098
-                      }
                     }
                   },
                   "advanced": {
@@ -1691,7 +1491,7 @@
                       "speed": {
                         "entity": {
                           "value": 0.1,
-                          "unit": "m/s"
+                          "unit": "mm/s"
                         },
                         "selectedType": "VALUE",
                         "value": 0.1
@@ -1699,7 +1499,7 @@
                       "acceleration": {
                         "entity": {
                           "value": 0.1,
-                          "unit": "m/s^2"
+                          "unit": "mm/s^2"
                         },
                         "selectedType": "VALUE",
                         "value": 0.1
@@ -1714,8 +1514,8 @@
                   }
                 }
               },
-              "guid": "990abc5c-82f9-9bb6-8208-27a9f74a4ee6",
-              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "guid": "26ecd1e0-13fb-f806-d0b1-8fe5bf40e585",
+              "parentId": "986e9851-aae4-d420-6f09-6d34a1650dc6",
               "programLabel": [
                 {
                   "type": "primary",
@@ -1735,11 +1535,11 @@
                 },
                 {
                   "type": "secondary",
-                  "value": "S: 100  m/s "
+                  "value": "S: 100  mm/s "
                 },
                 {
                   "type": "secondary",
-                  "value": "A: 100 m/s^2"
+                  "value": "A: 100 mm/s^2"
                 }
               ]
             },
@@ -1757,7 +1557,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "e9551b7c-f368-f477-ad63-989775f0ea06"
+                      "declaredByID": "b1cc9213-67c5-58e4-8ad7-74081b79092c"
                     },
                     "selectedType": "VALUE",
                     "value": "Point"
@@ -1775,56 +1575,6 @@
                       "wrist1": -2.6792646847166957,
                       "wrist2": 1.5659189224243164,
                       "wrist3": -1.5269940535174769
-                    },
-                    "pose": {
-                      "x": {
-                        "entity": {
-                          "value": 0.167961,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.167961
-                      },
-                      "y": {
-                        "entity": {
-                          "value": -0.362073,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.362073
-                      },
-                      "z": {
-                        "entity": {
-                          "value": 0.20906,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.20906
-                      },
-                      "rx": {
-                        "entity": {
-                          "value": -0.010635469293685446,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.010635469293685446
-                      },
-                      "ry": {
-                        "entity": {
-                          "value": -0.039440206583230816,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.039440206583230816
-                      },
-                      "rz": {
-                        "entity": {
-                          "value": -1.4266378822468666,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -1.4266378822468666
-                      }
                     }
                   },
                   "advanced": {
@@ -1832,7 +1582,7 @@
                       "speed": {
                         "entity": {
                           "value": 0.05,
-                          "unit": "m/s"
+                          "unit": "mm/s"
                         },
                         "selectedType": "VALUE",
                         "value": 0.05
@@ -1840,7 +1590,7 @@
                       "acceleration": {
                         "entity": {
                           "value": 0.1,
-                          "unit": "m/s^2"
+                          "unit": "mm/s^2"
                         },
                         "selectedType": "VALUE",
                         "value": 0.1
@@ -1855,8 +1605,8 @@
                   }
                 }
               },
-              "guid": "e9551b7c-f368-f477-ad63-989775f0ea06",
-              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "guid": "b1cc9213-67c5-58e4-8ad7-74081b79092c",
+              "parentId": "986e9851-aae4-d420-6f09-6d34a1650dc6",
               "programLabel": [
                 {
                   "type": "primary",
@@ -1876,11 +1626,11 @@
                 },
                 {
                   "type": "secondary",
-                  "value": "S: 50  m/s "
+                  "value": "S: 50  mm/s "
                 },
                 {
                   "type": "secondary",
-                  "value": "A: 100 m/s^2"
+                  "value": "A: 100 mm/s^2"
                 }
               ]
             },
@@ -1898,7 +1648,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "a4bd704b-c9bf-eda2-df21-5f0ea32be3f4"
+                      "declaredByID": "bda4f864-02ab-504a-8c6d-efb749280309"
                     },
                     "selectedType": "VALUE",
                     "value": "Point"
@@ -1916,56 +1666,6 @@
                       "wrist1": -2.1279527149596156,
                       "wrist2": 1.4819626808166504,
                       "wrist3": -0.589205567036764
-                    },
-                    "pose": {
-                      "x": {
-                        "entity": {
-                          "value": -0.278928,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.278928
-                      },
-                      "y": {
-                        "entity": {
-                          "value": -0.427163,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.427163
-                      },
-                      "z": {
-                        "entity": {
-                          "value": 0.028073,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.028073
-                      },
-                      "rx": {
-                        "entity": {
-                          "value": -0.019091030153956894,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.019091030153956894
-                      },
-                      "ry": {
-                        "entity": {
-                          "value": 0.09973321148997626,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.09973321148997626
-                      },
-                      "rz": {
-                        "entity": {
-                          "value": -1.4409281020212827,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -1.4409281020212827
-                      }
                     }
                   },
                   "advanced": {
@@ -1973,7 +1673,7 @@
                       "speed": {
                         "entity": {
                           "value": 0.1,
-                          "unit": "m/s"
+                          "unit": "mm/s"
                         },
                         "selectedType": "VALUE",
                         "value": 0.1
@@ -1981,7 +1681,7 @@
                       "acceleration": {
                         "entity": {
                           "value": 0.1,
-                          "unit": "m/s^2"
+                          "unit": "mm/s^2"
                         },
                         "selectedType": "VALUE",
                         "value": 0.1
@@ -1996,8 +1696,8 @@
                   }
                 }
               },
-              "guid": "a4bd704b-c9bf-eda2-df21-5f0ea32be3f4",
-              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "guid": "bda4f864-02ab-504a-8c6d-efb749280309",
+              "parentId": "986e9851-aae4-d420-6f09-6d34a1650dc6",
               "programLabel": [
                 {
                   "type": "primary",
@@ -2017,11 +1717,11 @@
                 },
                 {
                   "type": "secondary",
-                  "value": "S: 100  m/s "
+                  "value": "S: 100  mm/s "
                 },
                 {
                   "type": "secondary",
-                  "value": "A: 100 m/s^2"
+                  "value": "A: 100 mm/s^2"
                 }
               ]
             },
@@ -2039,7 +1739,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "f2a9e693-329d-2c1d-6ab1-5dd161af5801"
+                      "declaredByID": "731ca628-b090-6833-1b99-edf3faeb43ba"
                     },
                     "selectedType": "VALUE",
                     "value": "Point"
@@ -2057,56 +1757,6 @@
                       "wrist1": -2.459135194818014,
                       "wrist2": 1.4871273040771484,
                       "wrist3": -0.7063973585711878
-                    },
-                    "pose": {
-                      "x": {
-                        "entity": {
-                          "value": -0.204457,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.204457
-                      },
-                      "y": {
-                        "entity": {
-                          "value": -0.4307,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.4307
-                      },
-                      "z": {
-                        "entity": {
-                          "value": 0.028086,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.028086
-                      },
-                      "rx": {
-                        "entity": {
-                          "value": -0.01910308788750227,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.01910308788750227
-                      },
-                      "ry": {
-                        "entity": {
-                          "value": 0.09973629973523543,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.09973629973523543
-                      },
-                      "rz": {
-                        "entity": {
-                          "value": -1.4409360742738935,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -1.4409360742738935
-                      }
                     }
                   },
                   "advanced": {
@@ -2114,7 +1764,7 @@
                       "speed": {
                         "entity": {
                           "value": 0.02,
-                          "unit": "m/s"
+                          "unit": "mm/s"
                         },
                         "selectedType": "VALUE",
                         "value": 0.02
@@ -2122,7 +1772,7 @@
                       "acceleration": {
                         "entity": {
                           "value": 0.1,
-                          "unit": "m/s^2"
+                          "unit": "mm/s^2"
                         },
                         "selectedType": "VALUE",
                         "value": 0.1
@@ -2137,8 +1787,8 @@
                   }
                 }
               },
-              "guid": "f2a9e693-329d-2c1d-6ab1-5dd161af5801",
-              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "guid": "731ca628-b090-6833-1b99-edf3faeb43ba",
+              "parentId": "986e9851-aae4-d420-6f09-6d34a1650dc6",
               "programLabel": [
                 {
                   "type": "primary",
@@ -2158,11 +1808,11 @@
                 },
                 {
                   "type": "secondary",
-                  "value": "S: 20  m/s "
+                  "value": "S: 20  mm/s "
                 },
                 {
                   "type": "secondary",
-                  "value": "A: 100 m/s^2"
+                  "value": "A: 100 mm/s^2"
                 }
               ]
             },
@@ -2180,7 +1830,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "ba70d2e2-2e6c-dd34-1ff3-7305dd2ff329"
+                      "declaredByID": "d6aa4304-659b-9745-debc-8ba63345509d"
                     },
                     "selectedType": "VALUE",
                     "value": "Point"
@@ -2198,56 +1848,6 @@
                       "wrist1": -2.7152348957457484,
                       "wrist2": 1.4977257251739502,
                       "wrist3": -0.8936870733844202
-                    },
-                    "pose": {
-                      "x": {
-                        "entity": {
-                          "value": -0.097333,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.097333
-                      },
-                      "y": {
-                        "entity": {
-                          "value": -0.420956,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.420956
-                      },
-                      "z": {
-                        "entity": {
-                          "value": 0.028077,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.028077
-                      },
-                      "rx": {
-                        "entity": {
-                          "value": -0.01907899158798234,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.01907899158798234
-                      },
-                      "ry": {
-                        "entity": {
-                          "value": 0.0997453518565001,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.0997453518565001
-                      },
-                      "rz": {
-                        "entity": {
-                          "value": -1.4408427013313239,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -1.4408427013313239
-                      }
                     }
                   },
                   "advanced": {
@@ -2255,7 +1855,7 @@
                       "speed": {
                         "entity": {
                           "value": 0.02,
-                          "unit": "m/s"
+                          "unit": "mm/s"
                         },
                         "selectedType": "VALUE",
                         "value": 0.02
@@ -2263,7 +1863,7 @@
                       "acceleration": {
                         "entity": {
                           "value": 0.1,
-                          "unit": "m/s^2"
+                          "unit": "mm/s^2"
                         },
                         "selectedType": "VALUE",
                         "value": 0.1
@@ -2278,8 +1878,8 @@
                   }
                 }
               },
-              "guid": "ba70d2e2-2e6c-dd34-1ff3-7305dd2ff329",
-              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "guid": "d6aa4304-659b-9745-debc-8ba63345509d",
+              "parentId": "986e9851-aae4-d420-6f09-6d34a1650dc6",
               "programLabel": [
                 {
                   "type": "primary",
@@ -2299,11 +1899,11 @@
                 },
                 {
                   "type": "secondary",
-                  "value": "S: 20  m/s "
+                  "value": "S: 20  mm/s "
                 },
                 {
                   "type": "secondary",
-                  "value": "A: 100 m/s^2"
+                  "value": "A: 100 mm/s^2"
                 }
               ]
             },
@@ -2321,7 +1921,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "05855953-2d96-6258-0064-bc8ce525e9bf"
+                      "declaredByID": "0ee70598-6e3f-f1a5-f744-80aa986d1988"
                     },
                     "selectedType": "VALUE",
                     "value": "Point"
@@ -2339,56 +1939,6 @@
                       "wrist1": -2.9654270611205042,
                       "wrist2": 1.5012197494506836,
                       "wrist3": -0.7612960974322718
-                    },
-                    "pose": {
-                      "x": {
-                        "entity": {
-                          "value": -0.261693,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.261693
-                      },
-                      "y": {
-                        "entity": {
-                          "value": -0.274346,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.274346
-                      },
-                      "z": {
-                        "entity": {
-                          "value": -0.031476,
-                          "unit": "m"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.031476
-                      },
-                      "rx": {
-                        "entity": {
-                          "value": -0.020690467251203694,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -0.020690467251203694
-                      },
-                      "ry": {
-                        "entity": {
-                          "value": 0.08169081314041753,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 0.08169081314041753
-                      },
-                      "rz": {
-                        "entity": {
-                          "value": -1.8893035800317177,
-                          "unit": "rad"
-                        },
-                        "selectedType": "VALUE",
-                        "value": -1.8893035800317177
-                      }
                     }
                   },
                   "advanced": {
@@ -2419,8 +1969,8 @@
                   }
                 }
               },
-              "guid": "05855953-2d96-6258-0064-bc8ce525e9bf",
-              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "guid": "0ee70598-6e3f-f1a5-f744-80aa986d1988",
+              "parentId": "986e9851-aae4-d420-6f09-6d34a1650dc6",
               "programLabel": [
                 {
                   "type": "primary",
@@ -2458,8 +2008,8 @@
               "loopForever": false
             }
           },
-          "guid": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
-          "parentId": "32e960ff-9cd0-d63f-7373-53e6d1250376",
+          "guid": "986e9851-aae4-d420-6f09-6d34a1650dc6",
+          "parentId": "ad0b7720-a1cf-0918-1b1f-41dcab0833a7",
           "programLabel": [
             {
               "type": "secondary",
@@ -2518,7 +2068,7 @@
           "name": "skinkekutter2"
         }
       },
-      "guid": "32e960ff-9cd0-d63f-7373-53e6d1250376"
+      "guid": "ad0b7720-a1cf-0918-1b1f-41dcab0833a7"
     },
     "programInformation": {
       "name": "skinkekutter2",
@@ -2533,22 +2083,22 @@
       "script": "",
       "nodeIDList": [
         "00000000-0000-0000-0000-000000000000",
-        "32e960ff-9cd0-d63f-7373-53e6d1250376",
-        "11880f1e-b762-705f-bca2-06261a2b5105",
-        "3bfc6593-769b-acce-f259-cf9e79b56d31",
-        "1803b8a3-8786-63fc-98ce-67c8fecd9ce5",
-        "55277331-6f5c-05e5-ae81-3a46f578412f",
-        "23016bac-b819-8eb1-e360-de877b468d60",
-        "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
-        "d52501ad-bd9d-b7aa-50ca-2809135d24a3",
-        "ad50a060-b19a-e874-5ee2-7c24508d488d",
-        "62ece8e5-58b1-d5a8-5265-8f0507206f1c",
-        "990abc5c-82f9-9bb6-8208-27a9f74a4ee6",
-        "e9551b7c-f368-f477-ad63-989775f0ea06",
-        "a4bd704b-c9bf-eda2-df21-5f0ea32be3f4",
-        "f2a9e693-329d-2c1d-6ab1-5dd161af5801",
-        "ba70d2e2-2e6c-dd34-1ff3-7305dd2ff329",
-        "05855953-2d96-6258-0064-bc8ce525e9bf"
+        "ad0b7720-a1cf-0918-1b1f-41dcab0833a7",
+        "fb41b20c-d14e-67e1-225a-b493a22f9e46",
+        "b359564c-faae-a405-b710-ad61bca059fb",
+        "3a2303ac-6e99-6313-fcd8-cb0f1485c94f",
+        "0fe24a0a-8e68-4dd5-0194-1bb04d4ff25e",
+        "46570e5c-0b40-6219-345a-d4df03f0591d",
+        "986e9851-aae4-d420-6f09-6d34a1650dc6",
+        "5b0b4483-1149-e234-7015-ede19835dbad",
+        "785824b7-b26d-6dc0-db8c-760897817e73",
+        "880d8d1d-bf2a-9931-c7e1-992c3d91f6ce",
+        "26ecd1e0-13fb-f806-d0b1-8fe5bf40e585",
+        "b1cc9213-67c5-58e4-8ad7-74081b79092c",
+        "bda4f864-02ab-504a-8c6d-efb749280309",
+        "731ca628-b090-6833-1b99-edf3faeb43ba",
+        "d6aa4304-659b-9745-debc-8ba63345509d",
+        "0ee70598-6e3f-f1a5-f744-80aa986d1988"
       ]
     }
   }

@@ -50,15 +50,46 @@ export class WaypointFactory {
       // safely handle pose values
       let getDelthaTheta = PoseFactory.getKinematicPose(position.Kinematics);
 
-      let pose: Pose;
+
+    // conversion from string to number
+    const jointAnglesNumber = jointAnglesStr.split(',').map((angle: string) => parseFloat(angle.trim()));
+
+console.log(jointAnglesNumber);
+
+    const getTCPPose = async (jointAnglesNumber: Number[]) => {
       try {
-        // Await the resolved value of createKinematics
-        pose = await PoseFactory.createKinematics(getDelthaTheta, qNear);
-        console.log(pose);
+        const response = await fetch('your_url_here', {
+          method: 'POST', // Set method to POST
+          headers: {
+            'Content-Type': 'application/json', // Ensure correct headers are set
+          },
+          body: JSON.stringify({
+            jointAngles: [jointAnglesNumber], // Pass your data here
+          }),
+        });
+    
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    
+        const data = await response.json(); // Extract the JSON body from the response
+        return data; // Return the data (processed result)
       } catch (error) {
-        console.error("Error getting pose:", error);
-        throw error; // If needed, rethrow the error to handle it upstream
+        console.error('Error fetching the pose:', error);
       }
+    };
+
+
+  let pose = await getTCPPose(jointAnglesNumber)
+    
+
+      // try {
+      //   // Await the resolved value of createKinematics
+      //   pose = await PoseFactory.createKinematics(getDelthaTheta, qNear);
+      // } catch (error) {
+      //   console.error("Error getting pose:", error);
+      //   throw error; // If needed, rethrow the error to handle it upstream
+      // }
 
       const tcp = {
         name: "Tool_flange",
