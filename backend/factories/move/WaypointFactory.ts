@@ -71,8 +71,12 @@ console.log(jointAnglesNumber);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
+
+
     
         const data = await response.json(); // Extract the JSON body from the response
+        console.log("data", data);
+
         return data; // Return the data (processed result)
       } catch (error) {
         console.error('Error fetching the pose:', error);
@@ -83,15 +87,10 @@ console.log(jointAnglesNumber);
       let pose = await getTCPPose(jointAnglesNumber);
 
       if (pose) {
-        const values = [
-          pose.x,
-          pose.y,
-          pose.z,
-          pose.rx,
-          pose.ry,
-          pose.rz
-        ];
 
+        const values = [ ...pose.position, ...pose.orientation]
+
+        console.log("values", values);
         const units = ["m", "m", "m", "rad", "rad", "rad"]; // Ensure units correspond to each value
 
         // Function to map index to PoseValue
@@ -104,9 +103,15 @@ console.log(jointAnglesNumber);
           value: values[index],
         });
 
-        pose = values.map((_, index) => poseValue(index));
-      }
-    
+        pose = {
+          x: poseValue(0),
+          y: poseValue(1),
+          z: poseValue(2),
+          rx: poseValue(3),
+          ry: poseValue(4),
+          rz: poseValue(5),
+        };      }
+    console.log("fffff", pose)
 
       // try {
       //   // Await the resolved value of createKinematics
