@@ -42,7 +42,6 @@ const nodeIDList = [
   randomId3,
   randomId4,
   randomId5,
-  waypointGUID,
   waypointParentId,
 ];
 
