@@ -11,8 +11,8 @@ export class MoveAdapter {
       const moveType = moveTypeText === "MoveL" ? "moveL" : "moveJ";
       const speedValue = parseFloat(move.$.speed);
       const accelerationValue = parseFloat(move.$.acceleration);
-      const speedUnit = moveType === "moveL" ? "m/s" : "rad/s"
-      const accelerationUnit = moveType === "moveL" ? "m/s^2" : "rad/s^2"
+      const speedUnit = moveType === "moveL" ? "mm/s" : "rad/s"
+      const accelerationUnit = moveType === "moveL" ? "mm/s^2" : "rad/s^2"
 
       if (!move.children || !move.children.Waypoint) {
         console.error("No Waypoints found in Move node.");

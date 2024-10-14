@@ -1131,8 +1131,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "f91845ac-33dd-d00b-f33f-abbd1594ea65",
-          "parentId": "23e4c7a4-f94d-0566-65fe-78a526b14e51"
+          "guid": "11880f1e-b762-705f-bca2-06261a2b5105",
+          "parentId": "32e960ff-9cd0-d63f-7373-53e6d1250376"
         },
         {
           "children": [],
@@ -1142,8 +1142,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "a1c465b6-b952-c85d-2c5b-7b24b0c4e7d4",
-          "parentId": "23e4c7a4-f94d-0566-65fe-78a526b14e51"
+          "guid": "3bfc6593-769b-acce-f259-cf9e79b56d31",
+          "parentId": "32e960ff-9cd0-d63f-7373-53e6d1250376"
         },
         {
           "children": [],
@@ -1152,8 +1152,8 @@
             "version": "0.0.1",
             "allowsChildren": true
           },
-          "guid": "9f94bfe3-88d6-a8c1-381e-99daf7a687ab",
-          "parentId": "23e4c7a4-f94d-0566-65fe-78a526b14e51"
+          "guid": "1803b8a3-8786-63fc-98ce-67c8fecd9ce5",
+          "parentId": "32e960ff-9cd0-d63f-7373-53e6d1250376"
         },
         {
           "children": [],
@@ -1163,8 +1163,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "d1a53ba5-2fb3-0725-f898-5e3c8e9381ed",
-          "parentId": "23e4c7a4-f94d-0566-65fe-78a526b14e51"
+          "guid": "55277331-6f5c-05e5-ae81-3a46f578412f",
+          "parentId": "32e960ff-9cd0-d63f-7373-53e6d1250376"
         },
         {
           "children": [],
@@ -1174,8 +1174,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "b79b3443-5849-3a42-cda4-45463099a8d8",
-          "parentId": "23e4c7a4-f94d-0566-65fe-78a526b14e51"
+          "guid": "23016bac-b819-8eb1-e360-de877b468d60",
+          "parentId": "32e960ff-9cd0-d63f-7373-53e6d1250376"
         },
         {
           "children": [
@@ -1193,7 +1193,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "b3ab17ee-b036-5f9f-3216-da44b2ce7c20"
+                      "declaredByID": "d52501ad-bd9d-b7aa-50ca-2809135d24a3"
                     },
                     "selectedType": "VALUE",
                     "value": "Point"
@@ -1205,94 +1205,94 @@
                       "id": "708f6642-ea70-6871-7619-14318c664153"
                     },
                     "qNear": {
-                      "base": -3.7519615332232874,
-                      "shoulder": -0.03912420690570073,
-                      "elbow": -1.5287017822265625,
-                      "wrist1": 0.0032860475727538585,
-                      "wrist2": 1.583559274673462,
-                      "wrist3": 1.2900444269180298
+                      "base": -1.2409990469561976,
+                      "shoulder": -0.5888276857188721,
+                      "elbow": 0.646334473286764,
+                      "wrist1": -1.4995657217553635,
+                      "wrist2": 1.5356171131134033,
+                      "wrist3": -1.5984371344195765
                     },
                     "pose": {
                       "x": {
                         "entity": {
-                          "value": 0.344161,
+                          "value": -0.292606,
                           "unit": "m"
                         },
                         "selectedType": "VALUE",
-                        "value": 0.344161
+                        "value": -0.292606
                       },
                       "y": {
                         "entity": {
-                          "value": -0.083486,
+                          "value": 0.441352,
                           "unit": "m"
                         },
                         "selectedType": "VALUE",
-                        "value": -0.083486
+                        "value": 0.441352
                       },
                       "z": {
                         "entity": {
-                          "value": 0.466172,
+                          "value": 0.354866,
                           "unit": "m"
                         },
                         "selectedType": "VALUE",
-                        "value": 0.466172
+                        "value": 0.354866
                       },
                       "rx": {
                         "entity": {
-                          "value": -0.013350902357831368,
+                          "value": -0.04376593879613999,
                           "unit": "rad"
                         },
                         "selectedType": "VALUE",
-                        "value": -0.013350902357831368
+                        "value": -0.04376593879613999
                       },
                       "ry": {
                         "entity": {
-                          "value": -0.008734110813927267,
+                          "value": 0.12746892895100392,
                           "unit": "rad"
                         },
                         "selectedType": "VALUE",
-                        "value": -0.008734110813927267
+                        "value": 0.12746892895100392
                       },
                       "rz": {
                         "entity": {
-                          "value": 2.249035545584648,
+                          "value": 1.8708221154156286,
                           "unit": "rad"
                         },
                         "selectedType": "VALUE",
-                        "value": 2.249035545584648
+                        "value": 1.8708221154156286
                       }
                     }
                   },
                   "advanced": {
                     "speed": {
-                      "speed": {
-                        "entity": {
-                          "value": 0.25,
-                          "unit": "m/s"
+                        "speed": {
+                            "entity": {
+                                "value": 0.25,
+                                "unit": "m/s"
+                            },
+                            "selectedType": "VALUE",
+                            "value": 0.25
                         },
-                        "selectedType": "VALUE",
-                        "value": 0.25
-                      },
-                      "acceleration": {
-                        "entity": {
-                          "value": 1.2,
-                          "unit": "m/s^2"
-                        },
-                        "selectedType": "VALUE",
-                        "value": 1.2
-                      }
+                        "acceleration": {
+                            "entity": {
+                                "value": 1.2,
+                                "unit": "m/s^2"
+                            },
+                            "selectedType": "VALUE",
+                            "value": 1.2
+                        }
                     },
                     "blend": {
-                      "enabled": false
+                        "enabled": false
                     },
                     "transform": {
-                      "transform": false
+                        "transform": false
                     }
-                  }
+                }
                 }
               },
-              "guid": "b3ab17ee-b036-5f9f-3216-da44b2ce7c20",
-              "parentId": "a92e1b83-a89c-f44b-fcb8-1af774d13657",
+              "guid": "d52501ad-bd9d-b7aa-50ca-2809135d24a3",
+              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
               "programLabel": [
                 {
                   "type": "primary",
@@ -1312,11 +1312,1139 @@
                 },
                 {
                   "type": "secondary",
-                  "value": "S: 250 mm/s"
+                  "value": "S: 100  mm/s "
                 },
                 {
                   "type": "secondary",
-                  "value": "A: 1200 mm/s²"
+                  "value": "A: 100 mm/s^2"
+                }
+              ]
+            },
+            {
+              "children": [],
+              "contributedNode": {
+                "version": "0.0.3",
+                "type": "ur-move-to",
+                "allowsChildren": false,
+                "parameters": {
+                  "moveType": "moveL",
+                  "variable": {
+                    "entity": {
+                      "name": "Point",
+                      "reference": false,
+                      "type": "$$Variable",
+                      "valueType": "waypoint",
+                      "declaredByID": "ad50a060-b19a-e874-5ee2-7c24508d488d"
+                    },
+                    "selectedType": "VALUE",
+                    "value": "Point"
+                  },
+                  "waypoint": {
+                    "frame": "base",
+                    "tcp": {
+                      "name": "Tool_flange",
+                      "id": "708f6642-ea70-6871-7619-14318c664153"
+                    },
+                    "qNear": {
+                      "base": -0.47932321230043584,
+                      "shoulder": -0.40746481836352544,
+                      "elbow": 1.4323104063617151,
+                      "wrist1": -2.636131902734274,
+                      "wrist2": 1.5362917184829712,
+                      "wrist3": 0.5701126456260681
+                    },
+                    "pose": {
+                      "x": {
+                        "entity": {
+                          "value": -0.430746,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.430746
+                      },
+                      "y": {
+                        "entity": {
+                          "value": 0.073303,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.073303
+                      },
+                      "z": {
+                        "entity": {
+                          "value": 0.161162,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.161162
+                      },
+                      "rx": {
+                        "entity": {
+                          "value": -0.013160073826670369,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.013160073826670369
+                      },
+                      "ry": {
+                        "entity": {
+                          "value": 0.05471728164465162,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.05471728164465162
+                      },
+                      "rz": {
+                        "entity": {
+                          "value": -1.4805570643081547,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -1.4805570643081547
+                      }
+                    }
+                  },
+                  "advanced": {
+                    "speed": {
+                      "speed": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "m/s"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      },
+                      "acceleration": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "m/s^2"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      }
+                    },
+                    "blend": {
+                      "enabled": false
+                    },
+                    "transform": {
+                      "transform": false
+                    }
+                  }
+                }
+              },
+              "guid": "ad50a060-b19a-e874-5ee2-7c24508d488d",
+              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "programLabel": [
+                {
+                  "type": "primary",
+                  "value": "Point"
+                },
+                {
+                  "type": "secondary",
+                  "value": "base"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Tool_flange"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Linear"
+                },
+                {
+                  "type": "secondary",
+                  "value": "S: 100  m/s "
+                },
+                {
+                  "type": "secondary",
+                  "value": "A: 100 m/s^2"
+                }
+              ]
+            },
+            {
+              "children": [],
+              "contributedNode": {
+                "version": "0.0.3",
+                "type": "ur-move-to",
+                "allowsChildren": false,
+                "parameters": {
+                  "moveType": "moveL",
+                  "variable": {
+                    "entity": {
+                      "name": "Point",
+                      "reference": false,
+                      "type": "$$Variable",
+                      "valueType": "waypoint",
+                      "declaredByID": "62ece8e5-58b1-d5a8-5265-8f0507206f1c"
+                    },
+                    "selectedType": "VALUE",
+                    "value": "Point"
+                  },
+                  "waypoint": {
+                    "frame": "base",
+                    "tcp": {
+                      "name": "Tool_flange",
+                      "id": "708f6642-ea70-6871-7619-14318c664153"
+                    },
+                    "qNear": {
+                      "base": -0.47932321230043584,
+                      "shoulder": -0.40746481836352544,
+                      "elbow": 1.4323104063617151,
+                      "wrist1": -2.636131902734274,
+                      "wrist2": 1.5362917184829712,
+                      "wrist3": 0.5701126456260681
+                    },
+                    "pose": {
+                      "x": {
+                        "entity": {
+                          "value": -0.430746,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.430746
+                      },
+                      "y": {
+                        "entity": {
+                          "value": 0.073303,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.073303
+                      },
+                      "z": {
+                        "entity": {
+                          "value": 0.161162,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.161162
+                      },
+                      "rx": {
+                        "entity": {
+                          "value": -0.013160073826670369,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.013160073826670369
+                      },
+                      "ry": {
+                        "entity": {
+                          "value": 0.05471728164465162,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.05471728164465162
+                      },
+                      "rz": {
+                        "entity": {
+                          "value": -1.4805570643081547,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -1.4805570643081547
+                      }
+                    }
+                  },
+                  "advanced": {
+                    "speed": {
+                      "speed": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "m/s"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      },
+                      "acceleration": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "m/s^2"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      }
+                    },
+                    "blend": {
+                      "enabled": false
+                    },
+                    "transform": {
+                      "transform": false
+                    }
+                  }
+                }
+              },
+              "guid": "62ece8e5-58b1-d5a8-5265-8f0507206f1c",
+              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "programLabel": [
+                {
+                  "type": "primary",
+                  "value": "Point"
+                },
+                {
+                  "type": "secondary",
+                  "value": "base"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Tool_flange"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Linear"
+                },
+                {
+                  "type": "secondary",
+                  "value": "S: 100  m/s "
+                },
+                {
+                  "type": "secondary",
+                  "value": "A: 100 m/s^2"
+                }
+              ]
+            },
+            {
+              "children": [],
+              "contributedNode": {
+                "version": "0.0.3",
+                "type": "ur-move-to",
+                "allowsChildren": false,
+                "parameters": {
+                  "moveType": "moveL",
+                  "variable": {
+                    "entity": {
+                      "name": "Point",
+                      "reference": false,
+                      "type": "$$Variable",
+                      "valueType": "waypoint",
+                      "declaredByID": "990abc5c-82f9-9bb6-8208-27a9f74a4ee6"
+                    },
+                    "selectedType": "VALUE",
+                    "value": "Point"
+                  },
+                  "waypoint": {
+                    "frame": "base",
+                    "tcp": {
+                      "name": "Tool_flange",
+                      "id": "708f6642-ea70-6871-7619-14318c664153"
+                    },
+                    "qNear": {
+                      "base": 1.7223320007324219,
+                      "shoulder": -0.6450650852969666,
+                      "elbow": 1.6905792395221155,
+                      "wrist1": -2.6556059322752894,
+                      "wrist2": 1.5639961957931519,
+                      "wrist3": -1.57798940340151
+                    },
+                    "pose": {
+                      "x": {
+                        "entity": {
+                          "value": 0.187318,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.187318
+                      },
+                      "y": {
+                        "entity": {
+                          "value": -0.359268,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.359268
+                      },
+                      "z": {
+                        "entity": {
+                          "value": 0.208865,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.208865
+                      },
+                      "rx": {
+                        "entity": {
+                          "value": -0.010594450297099703,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.010594450297099703
+                      },
+                      "ry": {
+                        "entity": {
+                          "value": -0.03947524539594206,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.03947524539594206
+                      },
+                      "rz": {
+                        "entity": {
+                          "value": -1.4266912360007098,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -1.4266912360007098
+                      }
+                    }
+                  },
+                  "advanced": {
+                    "speed": {
+                      "speed": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "m/s"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      },
+                      "acceleration": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "m/s^2"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      }
+                    },
+                    "blend": {
+                      "enabled": false
+                    },
+                    "transform": {
+                      "transform": false
+                    }
+                  }
+                }
+              },
+              "guid": "990abc5c-82f9-9bb6-8208-27a9f74a4ee6",
+              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "programLabel": [
+                {
+                  "type": "primary",
+                  "value": "Point"
+                },
+                {
+                  "type": "secondary",
+                  "value": "base"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Tool_flange"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Linear"
+                },
+                {
+                  "type": "secondary",
+                  "value": "S: 100  m/s "
+                },
+                {
+                  "type": "secondary",
+                  "value": "A: 100 m/s^2"
+                }
+              ]
+            },
+            {
+              "children": [],
+              "contributedNode": {
+                "version": "0.0.3",
+                "type": "ur-move-to",
+                "allowsChildren": false,
+                "parameters": {
+                  "moveType": "moveL",
+                  "variable": {
+                    "entity": {
+                      "name": "Point",
+                      "reference": false,
+                      "type": "$$Variable",
+                      "valueType": "waypoint",
+                      "declaredByID": "e9551b7c-f368-f477-ad63-989775f0ea06"
+                    },
+                    "selectedType": "VALUE",
+                    "value": "Point"
+                  },
+                  "waypoint": {
+                    "frame": "base",
+                    "tcp": {
+                      "name": "Tool_flange",
+                      "id": "708f6642-ea70-6871-7619-14318c664153"
+                    },
+                    "qNear": {
+                      "base": 1.6713833808898926,
+                      "shoulder": -0.6583793324283143,
+                      "elbow": 1.7270825544940394,
+                      "wrist1": -2.6792646847166957,
+                      "wrist2": 1.5659189224243164,
+                      "wrist3": -1.5269940535174769
+                    },
+                    "pose": {
+                      "x": {
+                        "entity": {
+                          "value": 0.167961,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.167961
+                      },
+                      "y": {
+                        "entity": {
+                          "value": -0.362073,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.362073
+                      },
+                      "z": {
+                        "entity": {
+                          "value": 0.20906,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.20906
+                      },
+                      "rx": {
+                        "entity": {
+                          "value": -0.010635469293685446,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.010635469293685446
+                      },
+                      "ry": {
+                        "entity": {
+                          "value": -0.039440206583230816,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.039440206583230816
+                      },
+                      "rz": {
+                        "entity": {
+                          "value": -1.4266378822468666,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -1.4266378822468666
+                      }
+                    }
+                  },
+                  "advanced": {
+                    "speed": {
+                      "speed": {
+                        "entity": {
+                          "value": 0.05,
+                          "unit": "m/s"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.05
+                      },
+                      "acceleration": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "m/s^2"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      }
+                    },
+                    "blend": {
+                      "enabled": false
+                    },
+                    "transform": {
+                      "transform": false
+                    }
+                  }
+                }
+              },
+              "guid": "e9551b7c-f368-f477-ad63-989775f0ea06",
+              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "programLabel": [
+                {
+                  "type": "primary",
+                  "value": "Point"
+                },
+                {
+                  "type": "secondary",
+                  "value": "base"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Tool_flange"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Linear"
+                },
+                {
+                  "type": "secondary",
+                  "value": "S: 50  m/s "
+                },
+                {
+                  "type": "secondary",
+                  "value": "A: 100 m/s^2"
+                }
+              ]
+            },
+            {
+              "children": [],
+              "contributedNode": {
+                "version": "0.0.3",
+                "type": "ur-move-to",
+                "allowsChildren": false,
+                "parameters": {
+                  "moveType": "moveL",
+                  "variable": {
+                    "entity": {
+                      "name": "Point",
+                      "reference": false,
+                      "type": "$$Variable",
+                      "valueType": "waypoint",
+                      "declaredByID": "a4bd704b-c9bf-eda2-df21-5f0ea32be3f4"
+                    },
+                    "selectedType": "VALUE",
+                    "value": "Point"
+                  },
+                  "waypoint": {
+                    "frame": "base",
+                    "tcp": {
+                      "name": "Tool_flange",
+                      "id": "708f6642-ea70-6871-7619-14318c664153"
+                    },
+                    "qNear": {
+                      "base": 0.7153632044792175,
+                      "shoulder": 0.3863167005726318,
+                      "elbow": 0.21048432985414678,
+                      "wrist1": -2.1279527149596156,
+                      "wrist2": 1.4819626808166504,
+                      "wrist3": -0.589205567036764
+                    },
+                    "pose": {
+                      "x": {
+                        "entity": {
+                          "value": -0.278928,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.278928
+                      },
+                      "y": {
+                        "entity": {
+                          "value": -0.427163,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.427163
+                      },
+                      "z": {
+                        "entity": {
+                          "value": 0.028073,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.028073
+                      },
+                      "rx": {
+                        "entity": {
+                          "value": -0.019091030153956894,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.019091030153956894
+                      },
+                      "ry": {
+                        "entity": {
+                          "value": 0.09973321148997626,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.09973321148997626
+                      },
+                      "rz": {
+                        "entity": {
+                          "value": -1.4409281020212827,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -1.4409281020212827
+                      }
+                    }
+                  },
+                  "advanced": {
+                    "speed": {
+                      "speed": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "m/s"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      },
+                      "acceleration": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "m/s^2"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      }
+                    },
+                    "blend": {
+                      "enabled": false
+                    },
+                    "transform": {
+                      "transform": false
+                    }
+                  }
+                }
+              },
+              "guid": "a4bd704b-c9bf-eda2-df21-5f0ea32be3f4",
+              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "programLabel": [
+                {
+                  "type": "primary",
+                  "value": "Point"
+                },
+                {
+                  "type": "secondary",
+                  "value": "base"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Tool_flange"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Linear"
+                },
+                {
+                  "type": "secondary",
+                  "value": "S: 100  m/s "
+                },
+                {
+                  "type": "secondary",
+                  "value": "A: 100 m/s^2"
+                }
+              ]
+            },
+            {
+              "children": [],
+              "contributedNode": {
+                "version": "0.0.3",
+                "type": "ur-move-to",
+                "allowsChildren": false,
+                "parameters": {
+                  "moveType": "moveL",
+                  "variable": {
+                    "entity": {
+                      "name": "Point",
+                      "reference": false,
+                      "type": "$$Variable",
+                      "valueType": "waypoint",
+                      "declaredByID": "f2a9e693-329d-2c1d-6ab1-5dd161af5801"
+                    },
+                    "selectedType": "VALUE",
+                    "value": "Point"
+                  },
+                  "waypoint": {
+                    "frame": "base",
+                    "tcp": {
+                      "name": "Tool_flange",
+                      "id": "708f6642-ea70-6871-7619-14318c664153"
+                    },
+                    "qNear": {
+                      "base": 0.8327245712280273,
+                      "shoulder": 0.15935544549908442,
+                      "elbow": 0.7792733351336878,
+                      "wrist1": -2.459135194818014,
+                      "wrist2": 1.4871273040771484,
+                      "wrist3": -0.7063973585711878
+                    },
+                    "pose": {
+                      "x": {
+                        "entity": {
+                          "value": -0.204457,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.204457
+                      },
+                      "y": {
+                        "entity": {
+                          "value": -0.4307,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.4307
+                      },
+                      "z": {
+                        "entity": {
+                          "value": 0.028086,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.028086
+                      },
+                      "rx": {
+                        "entity": {
+                          "value": -0.01910308788750227,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.01910308788750227
+                      },
+                      "ry": {
+                        "entity": {
+                          "value": 0.09973629973523543,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.09973629973523543
+                      },
+                      "rz": {
+                        "entity": {
+                          "value": -1.4409360742738935,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -1.4409360742738935
+                      }
+                    }
+                  },
+                  "advanced": {
+                    "speed": {
+                      "speed": {
+                        "entity": {
+                          "value": 0.02,
+                          "unit": "m/s"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.02
+                      },
+                      "acceleration": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "m/s^2"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      }
+                    },
+                    "blend": {
+                      "enabled": false
+                    },
+                    "transform": {
+                      "transform": false
+                    }
+                  }
+                }
+              },
+              "guid": "f2a9e693-329d-2c1d-6ab1-5dd161af5801",
+              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "programLabel": [
+                {
+                  "type": "primary",
+                  "value": "Point"
+                },
+                {
+                  "type": "secondary",
+                  "value": "base"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Tool_flange"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Linear"
+                },
+                {
+                  "type": "secondary",
+                  "value": "S: 20  m/s "
+                },
+                {
+                  "type": "secondary",
+                  "value": "A: 100 m/s^2"
+                }
+              ]
+            },
+            {
+              "children": [],
+              "contributedNode": {
+                "version": "0.0.3",
+                "type": "ur-move-to",
+                "allowsChildren": false,
+                "parameters": {
+                  "moveType": "moveL",
+                  "variable": {
+                    "entity": {
+                      "name": "Point",
+                      "reference": false,
+                      "type": "$$Variable",
+                      "valueType": "waypoint",
+                      "declaredByID": "ba70d2e2-2e6c-dd34-1ff3-7305dd2ff329"
+                    },
+                    "selectedType": "VALUE",
+                    "value": "Point"
+                  },
+                  "waypoint": {
+                    "frame": "base",
+                    "tcp": {
+                      "name": "Tool_flange",
+                      "id": "708f6642-ea70-6871-7619-14318c664153"
+                    },
+                    "qNear": {
+                      "base": 1.020133137702942,
+                      "shoulder": 0.04047457754101558,
+                      "elbow": 1.1698263327227991,
+                      "wrist1": -2.7152348957457484,
+                      "wrist2": 1.4977257251739502,
+                      "wrist3": -0.8936870733844202
+                    },
+                    "pose": {
+                      "x": {
+                        "entity": {
+                          "value": -0.097333,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.097333
+                      },
+                      "y": {
+                        "entity": {
+                          "value": -0.420956,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.420956
+                      },
+                      "z": {
+                        "entity": {
+                          "value": 0.028077,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.028077
+                      },
+                      "rx": {
+                        "entity": {
+                          "value": -0.01907899158798234,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.01907899158798234
+                      },
+                      "ry": {
+                        "entity": {
+                          "value": 0.0997453518565001,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.0997453518565001
+                      },
+                      "rz": {
+                        "entity": {
+                          "value": -1.4408427013313239,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -1.4408427013313239
+                      }
+                    }
+                  },
+                  "advanced": {
+                    "speed": {
+                      "speed": {
+                        "entity": {
+                          "value": 0.02,
+                          "unit": "m/s"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.02
+                      },
+                      "acceleration": {
+                        "entity": {
+                          "value": 0.1,
+                          "unit": "m/s^2"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.1
+                      }
+                    },
+                    "blend": {
+                      "enabled": false
+                    },
+                    "transform": {
+                      "transform": false
+                    }
+                  }
+                }
+              },
+              "guid": "ba70d2e2-2e6c-dd34-1ff3-7305dd2ff329",
+              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "programLabel": [
+                {
+                  "type": "primary",
+                  "value": "Point"
+                },
+                {
+                  "type": "secondary",
+                  "value": "base"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Tool_flange"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Linear"
+                },
+                {
+                  "type": "secondary",
+                  "value": "S: 20  m/s "
+                },
+                {
+                  "type": "secondary",
+                  "value": "A: 100 m/s^2"
+                }
+              ]
+            },
+            {
+              "children": [],
+              "contributedNode": {
+                "version": "0.0.3",
+                "type": "ur-move-to",
+                "allowsChildren": false,
+                "parameters": {
+                  "moveType": "moveJ",
+                  "variable": {
+                    "entity": {
+                      "name": "Point",
+                      "reference": false,
+                      "type": "$$Variable",
+                      "valueType": "waypoint",
+                      "declaredByID": "05855953-2d96-6258-0064-bc8ce525e9bf"
+                    },
+                    "selectedType": "VALUE",
+                    "value": "Point"
+                  },
+                  "waypoint": {
+                    "frame": "base",
+                    "tcp": {
+                      "name": "Tool_flange",
+                      "id": "708f6642-ea70-6871-7619-14318c664153"
+                    },
+                    "qNear": {
+                      "base": 0.43926361203193665,
+                      "shoulder": 0.2484840589710693,
+                      "elbow": 1.1876190344439905,
+                      "wrist1": -2.9654270611205042,
+                      "wrist2": 1.5012197494506836,
+                      "wrist3": -0.7612960974322718
+                    },
+                    "pose": {
+                      "x": {
+                        "entity": {
+                          "value": -0.261693,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.261693
+                      },
+                      "y": {
+                        "entity": {
+                          "value": -0.274346,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.274346
+                      },
+                      "z": {
+                        "entity": {
+                          "value": -0.031476,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.031476
+                      },
+                      "rx": {
+                        "entity": {
+                          "value": -0.020690467251203694,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.020690467251203694
+                      },
+                      "ry": {
+                        "entity": {
+                          "value": 0.08169081314041753,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.08169081314041753
+                      },
+                      "rz": {
+                        "entity": {
+                          "value": -1.8893035800317177,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -1.8893035800317177
+                      }
+                    }
+                  },
+                  "advanced": {
+                    "speed": {
+                      "speed": {
+                        "entity": {
+                          "value": 1.0471975511965976,
+                          "unit": "rad/s"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 1.0471975511965976
+                      },
+                      "acceleration": {
+                        "entity": {
+                          "value": 1.3962634015954636,
+                          "unit": "rad/s^2"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 1.3962634015954636
+                      }
+                    },
+                    "blend": {
+                      "enabled": false
+                    },
+                    "transform": {
+                      "transform": false
+                    }
+                  }
+                }
+              },
+              "guid": "05855953-2d96-6258-0064-bc8ce525e9bf",
+              "parentId": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+              "programLabel": [
+                {
+                  "type": "primary",
+                  "value": "Point"
+                },
+                {
+                  "type": "secondary",
+                  "value": "base"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Tool_flange"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Joint"
+                },
+                {
+                  "type": "secondary",
+                  "value": "S: 1.0471975511965976  rad/s "
+                },
+                {
+                  "type": "secondary",
+                  "value": "A: 1.0471975511965976 rad/s^2"
                 }
               ]
             }
@@ -1330,8 +2458,8 @@
               "loopForever": false
             }
           },
-          "guid": "a92e1b83-a89c-f44b-fcb8-1af774d13657",
-          "parentId": "23e4c7a4-f94d-0566-65fe-78a526b14e51",
+          "guid": "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+          "parentId": "32e960ff-9cd0-d63f-7373-53e6d1250376",
           "programLabel": [
             {
               "type": "secondary",
@@ -1387,13 +2515,13 @@
         "allowsChildren": true,
         "lockChildren": true,
         "parameters": {
-          "name": "you"
+          "name": "skinkekutter2"
         }
       },
-      "guid": "23e4c7a4-f94d-0566-65fe-78a526b14e51"
+      "guid": "32e960ff-9cd0-d63f-7373-53e6d1250376"
     },
     "programInformation": {
-      "name": "you",
+      "name": "skinkekutter2",
       "description": "",
       "createdDate": 1727260350196,
       "lastSavedDate": null,
@@ -1405,14 +2533,22 @@
       "script": "",
       "nodeIDList": [
         "00000000-0000-0000-0000-000000000000",
-        "23e4c7a4-f94d-0566-65fe-78a526b14e51",
-        "f91845ac-33dd-d00b-f33f-abbd1594ea65",
-        "a1c465b6-b952-c85d-2c5b-7b24b0c4e7d4",
-        "9f94bfe3-88d6-a8c1-381e-99daf7a687ab",
-        "d1a53ba5-2fb3-0725-f898-5e3c8e9381ed",
-        "b79b3443-5849-3a42-cda4-45463099a8d8",
-        "a92e1b83-a89c-f44b-fcb8-1af774d13657",
-        "b3ab17ee-b036-5f9f-3216-da44b2ce7c20"
+        "32e960ff-9cd0-d63f-7373-53e6d1250376",
+        "11880f1e-b762-705f-bca2-06261a2b5105",
+        "3bfc6593-769b-acce-f259-cf9e79b56d31",
+        "1803b8a3-8786-63fc-98ce-67c8fecd9ce5",
+        "55277331-6f5c-05e5-ae81-3a46f578412f",
+        "23016bac-b819-8eb1-e360-de877b468d60",
+        "cb6db07f-59f3-ec0e-57f0-32d944c464b6",
+        "d52501ad-bd9d-b7aa-50ca-2809135d24a3",
+        "ad50a060-b19a-e874-5ee2-7c24508d488d",
+        "62ece8e5-58b1-d5a8-5265-8f0507206f1c",
+        "990abc5c-82f9-9bb6-8208-27a9f74a4ee6",
+        "e9551b7c-f368-f477-ad63-989775f0ea06",
+        "a4bd704b-c9bf-eda2-df21-5f0ea32be3f4",
+        "f2a9e693-329d-2c1d-6ab1-5dd161af5801",
+        "ba70d2e2-2e6c-dd34-1ff3-7305dd2ff329",
+        "05855953-2d96-6258-0064-bc8ce525e9bf"
       ]
     }
   }
