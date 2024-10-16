@@ -257,7 +257,7 @@ fs.readFile("files/VO.urp", "utf8", (err, data) => {
 
         // Write the JSON to a file
         fs.writeFile(
-          "output.urpx",
+          "vo2Check.urpx",
           JSON.stringify(finalOutput, null, 2),
           (writeErr) => {
             if (writeErr) {

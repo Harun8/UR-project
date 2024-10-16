@@ -9,10 +9,10 @@ export class MoveAdapter {
     try {
       const moveTypeText = move.$.motionType;
       const moveType = moveTypeText === "MoveL" ? "moveL" : "moveJ";
-      const speedValue = parseFloat(move.$.speed);
-      const accelerationValue = parseFloat(move.$.acceleration);
-      const speedUnit = moveType === "moveL" ? "mm/s" : "rad/s"
-      const accelerationUnit = moveType === "moveL" ? "mm/s^2" : "rad/s^2"
+      const speedValue: any = parseFloat(move.$.speed);
+      const accelerationValue:any = parseFloat(move.$.acceleration);
+      const speedUnit = moveType === "moveL" ? "m/s" : "rad/s"
+      const accelerationUnit = moveType === "moveL" ? "m/s^2" : "rad/s^2"
 
       if (!move.children || !move.children.Waypoint) {
         console.error("No Waypoints found in Move node.");
@@ -40,18 +40,20 @@ export class MoveAdapter {
       const newUUID =getUUID();
       nodeIDList.push(newUUID); // Add new waypointGUID to nodeIDList
 
+      let pointName = 1
+
       const parameters: Parameters = {
         moveType,
         variable: {
           entity: {
-            name: "Point",
+            name: pointName === 1 ? "Point" : `Point_${pointName++}`,
             reference: false,
             type: "$$Variable",
             valueType: "waypoint",
             declaredByID: newUUID,
           },
           selectedType: "VALUE",
-          value: "Point",
+          value: pointName === 1 ? "Point" : `Point_${pointName++}`,
         },
         waypoint: waypoints[0], // Modify if multiple waypoints are needed
         advanced: {
@@ -87,7 +89,7 @@ export class MoveAdapter {
         {
           type: "primary",
           // hardcoded
-          value: "Point",
+          value: pointName === 1 ? "Point" : `Point_${pointName++}`,
         },
         {
           type: "secondary",
@@ -103,11 +105,11 @@ export class MoveAdapter {
         },
         {
           type: "secondary",
-          value: `S: ${ moveType === "moveL" ? speedValue * 1000 : speedValue}  ${speedUnit} `,
+          value: `S: ${ moveType === "moveL" ? speedValue.toFixed(3) * 1000 : speedValue}  ${speedUnit} `,
         },
         {
           type: "secondary",
-          value: `A: ${ moveType === "moveL" ? accelerationValue * 1000 : speedValue} ${accelerationUnit}`,
+          value: `A: ${ moveType === "moveL" ? accelerationValue.toFixed(3) * 1000 : speedValue} ${accelerationUnit}`,
         },
       ];
 
