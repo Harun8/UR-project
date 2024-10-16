@@ -5,8 +5,9 @@ import { isArray } from "../utils/ArrayChecker";
 import {getUUID, waypointGUID, waypointParentId} from "../utils/uuid";
 
 export class MoveAdapter {
-  static async convertMoveToJSON(move: any, nodeIDList: string[]): Promise<ContributedNode | null> {
+  static async convertMoveToJSON(move: any, nodeIDList: string[], pointName: Number): Promise<ContributedNode | null> {
     try {
+      console.log("move", move)
       const moveTypeText = move.$.motionType;
       const moveType = moveTypeText === "MoveL" ? "moveL" : "moveJ";
       const speedValue: any = parseFloat(move.$.speed);
@@ -40,20 +41,19 @@ export class MoveAdapter {
       const newUUID =getUUID();
       nodeIDList.push(newUUID); // Add new waypointGUID to nodeIDList
 
-      let pointName = 1
 
       const parameters: Parameters = {
         moveType,
         variable: {
           entity: {
-            name: pointName === 1 ? "Point" : `Point_${pointName++}`,
+            name: pointName === 1 ? "Point"  : `Point_${pointName}`,
             reference: false,
             type: "$$Variable",
             valueType: "waypoint",
             declaredByID: newUUID,
           },
           selectedType: "VALUE",
-          value: pointName === 1 ? "Point" : `Point_${pointName++}`,
+          value: pointName === 1 ? "Point" : `Point_${pointName}`,
         },
         waypoint: waypoints[0], // Modify if multiple waypoints are needed
         advanced: {
@@ -89,7 +89,7 @@ export class MoveAdapter {
         {
           type: "primary",
           // hardcoded
-          value: pointName === 1 ? "Point" : `Point_${pointName++}`,
+          value: pointName === 1 ? "Point" : `Point_${pointName}`,
         },
         {
           type: "secondary",
@@ -112,8 +112,8 @@ export class MoveAdapter {
           value: `A: ${ moveType === "moveL" ? accelerationValue.toFixed(3) * 1000 : speedValue} ${accelerationUnit}`,
         },
       ];
-      pointName++
 
+      
       return {
         children: [],
         contributedNode: {

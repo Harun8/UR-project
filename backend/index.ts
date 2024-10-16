@@ -93,8 +93,14 @@ fs.readFile("files/VO.urp", "utf8", (err, data) => {
     // Function to convert moves to nodes
     async function convertMovesToNodes(moves: any[]): Promise<ContributedNode[]> {
       try {
+
+        let pointName = 1;
         const convertedMoves = await Promise.all(
-            moves.map((move) => MoveAdapter.convertMoveToJSON(move, nodeIDList))
+            moves.map((move) => {
+                const result = MoveAdapter.convertMoveToJSON(move, nodeIDList, pointName);
+                pointName++; // Increment pointName for each iteration
+                return result;
+            })
         );
 
         // Filter out any null results
