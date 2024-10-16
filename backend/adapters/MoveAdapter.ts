@@ -112,6 +112,7 @@ export class MoveAdapter {
           value: `A: ${ moveType === "moveL" ? accelerationValue.toFixed(3) * 1000 : speedValue} ${accelerationUnit}`,
         },
       ];
+      pointName++
 
       return {
         children: [],
