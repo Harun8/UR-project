@@ -109,11 +109,11 @@ export class MoveAdapter {
         },
         {
           type: "secondary",
-          value: `A: ${ moveType === "moveL" ? accelerationValue.toFixed(3) * 1000 : speedValue} ${accelerationUnit}`,
+          value: `A: ${ moveType === "moveL" ? accelerationValue.toFixed(3) * 1000 : accelerationValue} ${accelerationUnit}`,
         },
       ];
 
-      
+
       return {
         children: [],
         contributedNode: {

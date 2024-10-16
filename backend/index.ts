@@ -47,7 +47,7 @@ const nodeIDList = [
 
 
 // Read the XML file
-fs.readFile("files/VO.urp", "utf8", (err, data) => {
+fs.readFile("files/skinkekutterFull.urp", "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the XML file:", err);
     return;
