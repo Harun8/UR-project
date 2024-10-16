@@ -56,7 +56,7 @@ export class WaypointFactory {
 
 console.log(jointAnglesNumber);
 
-    const getTCPPose = async (jointAnglesNumber: Number[]) => {
+    const getTCPPose = async (jointAnglesNumber: number[]) => {
       try {
         const response = await fetch('http://localhost:/universal-robots/java-backend/java-backend/rest-api/robot/state/tcp', {
           method: 'POST', // Set method to POST
@@ -75,7 +75,6 @@ console.log(jointAnglesNumber);
 
     
         const data = await response.json(); // Extract the JSON body from the response
-        console.log("data", data);
 
         return data; // Return the data (processed result)
       } catch (error) {
@@ -84,9 +83,8 @@ console.log(jointAnglesNumber);
     };
 
 
-      let pose = await getTCPPose(jointAnglesNumber);
+        let pose = await getTCPPose(jointAnglesNumber);
 
-      if (pose) {
 
         const values = [ ...pose.position, ...pose.orientation]
 
@@ -110,16 +108,9 @@ console.log(jointAnglesNumber);
           rx: poseValue(3),
           ry: poseValue(4),
           rz: poseValue(5),
-        };      }
+        };      
     console.log("fffff", pose)
 
-      // try {
-      //   // Await the resolved value of createKinematics
-      //   pose = await PoseFactory.createKinematics(getDelthaTheta, qNear);
-      // } catch (error) {
-      //   console.error("Error getting pose:", error);
-      //   throw error; // If needed, rethrow the error to handle it upstream
-      // }
 
       const tcp = {
         name: "Tool_flange",
