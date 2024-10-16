@@ -46,14 +46,14 @@ export class MoveAdapter {
         moveType,
         variable: {
           entity: {
-            name: pointName === 1 ? "Point"  : `Point_${pointName}`,
+            name: pointName === 0 ? "Point"  : `Point_${pointName}`,
             reference: false,
             type: "$$Variable",
             valueType: "waypoint",
             declaredByID: newUUID,
           },
           selectedType: "VALUE",
-          value: pointName === 1 ? "Point" : `Point_${pointName}`,
+          value: pointName === 0 ? "Point" : `Point_${pointName}`,
         },
         waypoint: waypoints[0], // Modify if multiple waypoints are needed
         advanced: {
@@ -89,7 +89,7 @@ export class MoveAdapter {
         {
           type: "primary",
           // hardcoded
-          value: pointName === 1 ? "Point" : `Point_${pointName}`,
+          value: pointName === 0 ? "Point" : `Point_${pointName}`,
         },
         {
           type: "secondary",
