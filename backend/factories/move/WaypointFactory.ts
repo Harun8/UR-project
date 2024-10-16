@@ -54,7 +54,7 @@ export class WaypointFactory {
     // conversion from string to number
     const jointAnglesNumber = jointAnglesStr.split(',').map((angle: string) => parseFloat(angle.trim()));
 
-console.log(jointAnglesNumber);
+console.log("joint!!!!!!!!!!!!!" ,jointAnglesNumber);
 
     const getTCPPose = async (jointAnglesNumber: number[]) => {
       try {
@@ -88,7 +88,7 @@ console.log(jointAnglesNumber);
 
         const values = [ ...pose.position, ...pose.orientation]
 
-        console.log("values", values);
+       // console.log("values", values);
         const units = ["m", "m", "m", "rad", "rad", "rad"]; // Ensure units correspond to each value
 
         // Function to map index to PoseValue
@@ -108,7 +108,8 @@ console.log(jointAnglesNumber);
           rx: poseValue(3),
           ry: poseValue(4),
           rz: poseValue(5),
-        };      
+        };
+
     console.log("fffff", pose)
 
 
