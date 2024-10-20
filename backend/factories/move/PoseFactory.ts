@@ -88,7 +88,6 @@ export class PoseFactory {
     let gg = await forwardKinematics(dhParams, jointAnglesArr);
     let { eulerAngles, positionVector } = await formatMatrix(gg);
 
-    console.log(eulerAngles, positionVector);
 
     // Convert objects to arrays
     const eulerAnglesArr = Object.values(eulerAngles);

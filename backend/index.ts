@@ -42,12 +42,12 @@ const nodeIDList = [
   randomId3,
   randomId4,
   randomId5,
-  waypointGUID,
-  waypointParentId,
+  waypointGUID, // should not be removed, since the node id relies on it
 ];
 
+
 // Read the XML file
-fs.readFile("files/cc.urp", "utf8", (err, data) => {
+fs.readFile("files/skinkekutterFull.urp", "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the XML file:", err);
     return;
@@ -93,17 +93,21 @@ fs.readFile("files/cc.urp", "utf8", (err, data) => {
     // Function to convert moves to nodes
     async function convertMovesToNodes(moves: any[]): Promise<ContributedNode[]> {
       try {
+
+        let pointName = 0;
         const convertedMoves = await Promise.all(
-            moves.map((move) => MoveAdapter.convertMoveToJSON(move, nodeIDList))
+            moves.map((move) => {
+                const result = MoveAdapter.convertMoveToJSON(move, nodeIDList, pointName);
+                pointName++; // Increment pointName for each iteration
+                return result;
+            })
         );
 
         // Filter out any null results
         const nonNullMoves: ContributedNode[] = convertedMoves.filter(
             (move): move is ContributedNode => move !== null
         );
-        console.log(nodeIDList);
 
-        console.log("Converted Moves:", nonNullMoves);
         return nonNullMoves;
       } catch (error) {
         console.error("Error converting moves to nodes:", error);
@@ -259,7 +263,7 @@ fs.readFile("files/cc.urp", "utf8", (err, data) => {
 
         // Write the JSON to a file
         fs.writeFile(
-          "output.urpx",
+          "vo2Check.urpx",
           JSON.stringify(finalOutput, null, 2),
           (writeErr) => {
             if (writeErr) {

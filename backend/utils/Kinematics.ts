@@ -67,7 +67,6 @@ export async function formatMatrix(matrix: Matrix) {
     y: k[1][3],
     z: k[2][3],
   };
-  console.log("POSITION VECTOR", positionVector);
 
   const eulerAngles = await extractEulerAngles(k);
 
@@ -119,6 +118,5 @@ function rotationMatrixToEulerZYX(R: number[][]): {
     z = 0; // Yaw
   }
 
-  console.log(x, y, z);
   return { roll: x, pitch: y, yaw: z };
 }
