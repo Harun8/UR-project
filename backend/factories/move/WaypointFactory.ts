@@ -1,4 +1,9 @@
-import {Waypoint, JointAngles, Pose, PoseValue} from "../../interfaces/waypoint";
+import {
+  Waypoint,
+  JointAngles,
+  Pose,
+  PoseValue,
+} from "../../interfaces/waypoint";
 import { isArray } from "../../utils/ArrayChecker";
 import { JointAnglesFactory } from "./JointAngelsFactory";
 import { PoseFactory } from "./PoseFactory";
@@ -47,71 +52,7 @@ export class WaypointFactory {
 
       const qNear = JointAnglesFactory.createJointAngles(jointAnglesStr);
 
-      // safely handle pose values
-      let getDelthaTheta = PoseFactory.getKinematicPose(position.Kinematics);
-
-
-    // conversion from string to number
-    const jointAnglesNumber = jointAnglesStr.split(',').map((angle: string) => parseFloat(angle.trim()));
-
-console.log("joint!!!!!!!!!!!!!" ,jointAnglesNumber);
-
-    const getTCPPose = async (jointAnglesNumber: number[]) => {
-      try {
-        const response = await fetch('http://localhost:/universal-robots/java-backend/java-backend/rest-api/robot/state/tcp', {
-          method: 'POST', // Set method to POST
-          headers: {
-            'Content-Type': 'application/json', // Ensure correct headers are set
-          },
-          body: JSON.stringify({
-            jointPositions: jointAnglesNumber, // Pass your data here
-          }),
-        });
-    
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-
-    
-        const data = await response.json(); // Extract the JSON body from the response
-
-        return data; // Return the data (processed result)
-      } catch (error) {
-        console.error('Error fetching the pose:', error);
-      }
-    };
-
-
-        let pose = await getTCPPose(jointAnglesNumber);
-
-
-        const values = [ ...pose.position, ...pose.orientation]
-
-       // console.log("values", values);
-        const units = ["m", "m", "m", "rad", "rad", "rad"]; // Ensure units correspond to each value
-
-        // Function to map index to PoseValue
-        const poseValue = (index: number): PoseValue => ({
-          entity: {
-            value: values[index],
-            unit: units[index],
-          },
-          selectedType: "VALUE",
-          value: values[index],
-        });
-
-        pose = {
-          x: poseValue(0),
-          y: poseValue(1),
-          z: poseValue(2),
-          rx: poseValue(3),
-          ry: poseValue(4),
-          rz: poseValue(5),
-        };
-
-    console.log("fffff", pose)
-
+      let pose = await PoseFactory.getPose(jointAnglesStr);
 
       const tcp = {
         name: "Tool_flange",

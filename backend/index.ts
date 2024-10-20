@@ -45,9 +45,8 @@ const nodeIDList = [
   waypointGUID, // should not be removed, since the node id relies on it
 ];
 
-
 // Read the XML file
-fs.readFile("files/skinkekutterFull.urp", "utf8", (err, data) => {
+fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the XML file:", err);
     return;
@@ -79,7 +78,7 @@ fs.readFile("files/skinkekutterFull.urp", "utf8", (err, data) => {
     const scriptContent = urProgram.Script ? urProgram.Script : "";
     const urscript: URScript = {
       script: scriptContent,
-      nodeIDList
+      nodeIDList,
     };
 
     // Find all Move nodes
@@ -91,21 +90,26 @@ fs.readFile("files/skinkekutterFull.urp", "utf8", (err, data) => {
     }
 
     // Function to convert moves to nodes
-    async function convertMovesToNodes(moves: any[]): Promise<ContributedNode[]> {
+    async function convertMovesToNodes(
+      moves: any[]
+    ): Promise<ContributedNode[]> {
       try {
-
         let pointName = 0;
         const convertedMoves = await Promise.all(
-            moves.map((move) => {
-                const result = MoveAdapter.convertMoveToJSON(move, nodeIDList, pointName);
-                pointName++; // Increment pointName for each iteration
-                return result;
-            })
+          moves.map((move) => {
+            const result = MoveAdapter.convertMoveToJSON(
+              move,
+              nodeIDList,
+              pointName
+            );
+            pointName++; // Increment pointName for each iteration
+            return result;
+          })
         );
 
         // Filter out any null results
         const nonNullMoves: ContributedNode[] = convertedMoves.filter(
-            (move): move is ContributedNode => move !== null
+          (move): move is ContributedNode => move !== null
         );
 
         return nonNullMoves;
@@ -263,7 +267,7 @@ fs.readFile("files/skinkekutterFull.urp", "utf8", (err, data) => {
 
         // Write the JSON to a file
         fs.writeFile(
-          "vo2Check.urpx",
+          "files/output/vo2Check.urpx",
           JSON.stringify(finalOutput, null, 2),
           (writeErr) => {
             if (writeErr) {

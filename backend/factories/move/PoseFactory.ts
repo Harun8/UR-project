@@ -1,119 +1,88 @@
 import { Pose, PoseValue } from "../../interfaces/waypoint";
 import { isArray } from "../../utils/ArrayChecker";
-import { formatMatrix, forwardKinematics } from "../../utils/Kinematics";
 export class PoseFactory {
-  static getKinematicPose(kinematicsData: any) {
+  static async getPose(jointAnglesStr: any) {
     try {
-      if (!kinematicsData) {
-        console.error("Kinematics data is missing.");
-        return null;
-      }
-
-      // Handle the case where the parameters are arrays containing objects
-      const deltaThetaArray = isArray(kinematicsData.deltaTheta);
-      const aArray = isArray(kinematicsData.a);
-      const dArray = isArray(kinematicsData.d);
-      const alphaArray = isArray(kinematicsData.alpha);
-
-      if (
-        deltaThetaArray.length === 0 ||
-        aArray.length === 0 ||
-        dArray.length === 0 ||
-        alphaArray.length === 0
-      ) {
-        console.error(
-          "One or more DH parameter arrays are missing in the Kinematics data."
-        );
-        return null;
-      }
-
-      // Extract the value strings from the first element of each array
-      const deltaThetaStr = deltaThetaArray[0].$?.value;
-      const aStr = aArray[0].$?.value;
-      const dStr = dArray[0].$?.value;
-      const alphaStr = alphaArray[0].$?.value;
-
-      if (!deltaThetaStr || !aStr || !dStr || !alphaStr) {
-        console.error(
-          "One or more DH parameter values are missing in the Kinematics data."
-        );
-        return null;
-      }
-
-      // Split the strings into arrays of numbers
-      const deltaThetaValues = deltaThetaStr
+      // conversion from string to number
+      const jointAnglesNumber = jointAnglesStr
         .split(",")
-        .map((s: string) => parseFloat(s.trim()));
-      const aValues = aStr.split(",").map((s: string) => parseFloat(s.trim()));
-      const dValues = dStr.split(",").map((s: string) => parseFloat(s.trim()));
-      const alphaValues = alphaStr
-        .split(",")
-        .map((s: string) => parseFloat(s.trim()));
+        .map((angle: string) => parseFloat(angle.trim()));
 
-      const length = deltaThetaValues.length;
-      if (
-        aValues.length !== length ||
-        dValues.length !== length ||
-        alphaValues.length !== length
-      ) {
-        console.error("DH parameter arrays have inconsistent lengths.");
-        return null;
-      }
+      // const response = await fetch(
+      //   "http://localhost:/universal-robots/java-backend/java-backend/rest-api/robot/state/tcp",
+      //   {
+      //     method: "POST", // Set method to POST
+      //     headers: {
+      //       "Content-Type": "application/json", // Ensure correct headers are set
+      //     },
+      //     body: JSON.stringify({
+      //       jointPositions: jointAnglesNumber, // Pass your data here
+      //     }),
+      //   }
+      // );
 
-      const dhParams = [];
-      for (let i = 0; i < length; i++) {
-        dhParams.push({
-          a: aValues[i],
-          alpha: alphaValues[i],
-          d: dValues[i],
-          deltaTheta: deltaThetaValues[i],
-        });
-      }
+      // if (!response.ok) {
+      //   throw new Error(`HTTP error! status: ${response.status}`);
+      // }
 
-      return dhParams;
+      // const data = await response.json(); // Extract the JSON body from the response
+
+      // let pose = data;
+      let pose;
+
+      // const values = [...pose.position, ...pose.orientation];
+
+      const values = [1, 2, 3, 4, 5, 6];
+
+      const units = ["m", "m", "m", "rad", "rad", "rad"]; // Ensure units correspond to each value
+
+      pose = {
+        x: PoseFactory.getPoseStructure(0, values, units),
+        y: PoseFactory.getPoseStructure(1, values, units),
+        z: PoseFactory.getPoseStructure(2, values, units),
+        rx: PoseFactory.getPoseStructure(3, values, units),
+        ry: PoseFactory.getPoseStructure(4, values, units),
+        rz: PoseFactory.getPoseStructure(5, values, units),
+      };
+
+      const defaultPose: Pose = {
+        x: { entity: { value: 0, unit: "m" }, selectedType: "VALUE", value: 0 },
+        y: { entity: { value: 0, unit: "m" }, selectedType: "VALUE", value: 0 },
+        z: { entity: { value: 0, unit: "m" }, selectedType: "VALUE", value: 0 },
+        rx: {
+          entity: { value: 0, unit: "rad" },
+          selectedType: "VALUE",
+          value: 0,
+        },
+        ry: {
+          entity: { value: 0, unit: "rad" },
+          selectedType: "VALUE",
+          value: 0,
+        },
+        rz: {
+          entity: { value: 0, unit: "rad" },
+          selectedType: "VALUE",
+          value: 0,
+        },
+      };
+
+      return (pose = pose || defaultPose);
+
+      console.log("pose is", pose);
+      return pose;
     } catch (error) {
-      console.error(
-        `Error parsing DH parameters from Kinematics data: ${error}`
-      );
-      return null;
+      console.error("error in pose", error);
     }
   }
 
-  static async createKinematics(
-    dhParams: any,
-    jointAngles: any
-  ): Promise<Pose> {
-    let jointAnglesArr = Object.values(jointAngles);
-
-    let gg = await forwardKinematics(dhParams, jointAnglesArr);
-    let { eulerAngles, positionVector } = await formatMatrix(gg);
-
-
-    // Convert objects to arrays
-    const eulerAnglesArr = Object.values(eulerAngles);
-    const positionVectorArr = Object.values(positionVector);
-
-    // Combine the arrays for position and Euler angles
-    const values = [...positionVectorArr, ...eulerAnglesArr]; // Merge positionVector and eulerAngles
-    const units = ["m", "m", "m", "rad", "rad", "rad"]; // Ensure units correspond to each value
-
-    // Function to map index to PoseValue
-    const poseValue = (index: number): PoseValue => ({
+  static getPoseStructure(index: any, values: any, units: any) {
+    return {
       entity: {
         value: values[index],
         unit: units[index],
       },
       selectedType: "VALUE",
       value: values[index],
-    });
-
-    return {
-      x: poseValue(0),
-      y: poseValue(1),
-      z: poseValue(2),
-      rx: poseValue(3),
-      ry: poseValue(4),
-      rz: poseValue(5),
     };
   }
 }

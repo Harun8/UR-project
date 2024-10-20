@@ -2,18 +2,22 @@
 import { ContributedNode, Parameters } from "../interfaces/waypoint";
 import { WaypointFactory } from "../factories/move/WaypointFactory";
 import { isArray } from "../utils/ArrayChecker";
-import {getUUID, waypointGUID, waypointParentId} from "../utils/uuid";
+import { getUUID, waypointGUID, waypointParentId } from "../utils/uuid";
 
 export class MoveAdapter {
-  static async convertMoveToJSON(move: any, nodeIDList: string[], pointName: Number): Promise<ContributedNode | null> {
+  static async convertMoveToJSON(
+    move: any,
+    nodeIDList: string[],
+    pointName: Number
+  ): Promise<ContributedNode | null> {
     try {
-      console.log("move", move)
+      console.log("move", move);
       const moveTypeText = move.$.motionType;
       const moveType = moveTypeText === "MoveL" ? "moveL" : "moveJ";
       const speedValue: any = parseFloat(move.$.speed);
-      const accelerationValue:any = parseFloat(move.$.acceleration);
-      const speedUnit = moveType === "moveL" ? "m/s" : "rad/s"
-      const accelerationUnit = moveType === "moveL" ? "m/s^2" : "rad/s^2"
+      const accelerationValue: any = parseFloat(move.$.acceleration);
+      const speedUnit = moveType === "moveL" ? "m/s" : "rad/s";
+      const accelerationUnit = moveType === "moveL" ? "m/s^2" : "rad/s^2";
 
       if (!move.children || !move.children.Waypoint) {
         console.error("No Waypoints found in Move node.");
@@ -26,8 +30,8 @@ export class MoveAdapter {
       // call factory pattern
       const waypoints = await Promise.all(
         waypointsXML
-          .map(WaypointFactory.createWaypoint) // This returns an array of Promises
-          .filter((wp): wp is any => wp !== null) // Filtering out null results
+          .map(WaypointFactory.createWaypoint)
+          .filter((wp): wp is any => wp !== null)
       );
 
       // validation
@@ -38,15 +42,14 @@ export class MoveAdapter {
         return null;
       }
 
-      const newUUID =getUUID();
+      const newUUID = getUUID();
       nodeIDList.push(newUUID); // Add new waypointGUID to nodeIDList
-
 
       const parameters: Parameters = {
         moveType,
         variable: {
           entity: {
-            name: pointName === 0 ? "Point"  : `Point_${pointName}`,
+            name: pointName === 0 ? "Point" : `Point_${pointName}`,
             reference: false,
             type: "$$Variable",
             valueType: "waypoint",
@@ -105,14 +108,19 @@ export class MoveAdapter {
         },
         {
           type: "secondary",
-          value: `S: ${ moveType === "moveL" ? speedValue.toFixed(3) * 1000 : speedValue}  ${speedUnit} `,
+          value: `S: ${
+            moveType === "moveL" ? speedValue.toFixed(3) * 1000 : speedValue
+          }  ${speedUnit} `,
         },
         {
           type: "secondary",
-          value: `A: ${ moveType === "moveL" ? accelerationValue.toFixed(3) * 1000 : accelerationValue} ${accelerationUnit}`,
+          value: `A: ${
+            moveType === "moveL"
+              ? accelerationValue.toFixed(3) * 1000
+              : accelerationValue
+          } ${accelerationUnit}`,
         },
       ];
-
 
       return {
         children: [],
