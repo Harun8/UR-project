@@ -11,7 +11,6 @@ export class MoveAdapter {
     pointName: Number
   ): Promise<ContributedNode | null> {
     try {
-      console.log("move", move);
       const moveTypeText = move.$.motionType;
       const moveType = moveTypeText === "MoveL" ? "moveL" : "moveJ";
       const speedValue: any = parseFloat(move.$.speed);
