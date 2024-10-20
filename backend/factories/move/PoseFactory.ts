@@ -8,31 +8,28 @@ export class PoseFactory {
         .split(",")
         .map((angle: string) => parseFloat(angle.trim()));
 
-      // const response = await fetch(
-      //   "http://localhost:/universal-robots/java-backend/java-backend/rest-api/robot/state/tcp",
-      //   {
-      //     method: "POST", // Set method to POST
-      //     headers: {
-      //       "Content-Type": "application/json", // Ensure correct headers are set
-      //     },
-      //     body: JSON.stringify({
-      //       jointPositions: jointAnglesNumber, // Pass your data here
-      //     }),
-      //   }
-      // );
+      const response = await fetch(
+        "http://localhost:/universal-robots/java-backend/java-backend/rest-api/robot/state/tcp",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            jointPositions: jointAnglesNumber,
+          }),
+        }
+      );
 
-      // if (!response.ok) {
-      //   throw new Error(`HTTP error! status: ${response.status}`);
-      // }
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
-      // const data = await response.json(); // Extract the JSON body from the response
+      const data = await response.json(); // Extract the JSON body from the response
 
-      // let pose = data;
-      let pose;
+      let pose = data;
 
-      // const values = [...pose.position, ...pose.orientation];
-
-      const values = [1, 2, 3, 4, 5, 6];
+      const values = [...pose.position, ...pose.orientation];
 
       const units = ["m", "m", "m", "rad", "rad", "rad"]; // Ensure units correspond to each value
 
@@ -67,9 +64,6 @@ export class PoseFactory {
       };
 
       return (pose = pose || defaultPose);
-
-      console.log("pose is", pose);
-      return pose;
     } catch (error) {
       console.error("error in pose", error);
     }

@@ -1131,8 +1131,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "abc92bdd-320c-535e-d5ed-597238d29652",
-          "parentId": "4f17aeb5-d7f4-ce62-9a6b-5bfa9a8e090e"
+          "guid": "d6e738ff-dd11-39f0-0bd1-c1980fdbcfb2",
+          "parentId": "4948dcdb-feaf-ecf8-6885-a49b37df2cc7"
         },
         {
           "children": [],
@@ -1142,8 +1142,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "59691ce2-5f9a-5ece-33f5-0b7dcd9aa3f8",
-          "parentId": "4f17aeb5-d7f4-ce62-9a6b-5bfa9a8e090e"
+          "guid": "251a1de0-bd98-569f-af22-51212e1d3055",
+          "parentId": "4948dcdb-feaf-ecf8-6885-a49b37df2cc7"
         },
         {
           "children": [],
@@ -1152,8 +1152,8 @@
             "version": "0.0.1",
             "allowsChildren": true
           },
-          "guid": "bd5a7f48-b343-24db-be74-7eace461ae0d",
-          "parentId": "4f17aeb5-d7f4-ce62-9a6b-5bfa9a8e090e"
+          "guid": "465d2e6b-10ca-9acc-35d0-769c183c36c3",
+          "parentId": "4948dcdb-feaf-ecf8-6885-a49b37df2cc7"
         },
         {
           "children": [],
@@ -1163,8 +1163,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "f4ceb21c-ee3c-7838-ac18-98dc8439a131",
-          "parentId": "4f17aeb5-d7f4-ce62-9a6b-5bfa9a8e090e"
+          "guid": "85d1d30c-6024-2654-2dce-9daa0d1f6512",
+          "parentId": "4948dcdb-feaf-ecf8-6885-a49b37df2cc7"
         },
         {
           "children": [],
@@ -1174,8 +1174,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "2dea4224-83de-c452-0644-9fe023c49d36",
-          "parentId": "4f17aeb5-d7f4-ce62-9a6b-5bfa9a8e090e"
+          "guid": "e57c6ce7-ea38-b101-eaff-bf55de4baa3e",
+          "parentId": "4948dcdb-feaf-ecf8-6885-a49b37df2cc7"
         },
         {
           "children": [
@@ -1193,7 +1193,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "7b784e35-b1a6-8ffc-6a5f-bc867549f9c7"
+                      "declaredByID": "1eb528f6-c75c-1bf0-2839-f518a2998841"
                     },
                     "selectedType": "VALUE",
                     "value": "Point"
@@ -1291,8 +1291,8 @@
                   }
                 }
               },
-              "guid": "7b784e35-b1a6-8ffc-6a5f-bc867549f9c7",
-              "parentId": "c4eaa73d-1ea9-8e8f-788e-b7951bf2301d",
+              "guid": "1eb528f6-c75c-1bf0-2839-f518a2998841",
+              "parentId": "07cc157c-fa6b-93bd-5116-820293f1e057",
               "programLabel": [
                 {
                   "type": "primary",
@@ -1334,7 +1334,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "d1847906-1959-b1ec-1258-b247c8511d8d"
+                      "declaredByID": "8cbf531f-7359-b4b3-04ef-bb4af07bac16"
                     },
                     "selectedType": "VALUE",
                     "value": "Point_1"
@@ -1432,8 +1432,8 @@
                   }
                 }
               },
-              "guid": "d1847906-1959-b1ec-1258-b247c8511d8d",
-              "parentId": "c4eaa73d-1ea9-8e8f-788e-b7951bf2301d",
+              "guid": "8cbf531f-7359-b4b3-04ef-bb4af07bac16",
+              "parentId": "07cc157c-fa6b-93bd-5116-820293f1e057",
               "programLabel": [
                 {
                   "type": "primary",
@@ -1475,7 +1475,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "49405994-2c90-dd45-2b84-55d947947610"
+                      "declaredByID": "6d191958-52bf-3807-30ff-2e764b3f38f0"
                     },
                     "selectedType": "VALUE",
                     "value": "Point_2"
@@ -1573,8 +1573,8 @@
                   }
                 }
               },
-              "guid": "49405994-2c90-dd45-2b84-55d947947610",
-              "parentId": "c4eaa73d-1ea9-8e8f-788e-b7951bf2301d",
+              "guid": "6d191958-52bf-3807-30ff-2e764b3f38f0",
+              "parentId": "07cc157c-fa6b-93bd-5116-820293f1e057",
               "programLabel": [
                 {
                   "type": "primary",
@@ -1616,7 +1616,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "2499ca75-b6e9-f664-2fe1-af45efd541e8"
+                      "declaredByID": "c96915ac-a964-2206-7de7-f4f967a75233"
                     },
                     "selectedType": "VALUE",
                     "value": "Point_3"
@@ -1714,8 +1714,8 @@
                   }
                 }
               },
-              "guid": "2499ca75-b6e9-f664-2fe1-af45efd541e8",
-              "parentId": "c4eaa73d-1ea9-8e8f-788e-b7951bf2301d",
+              "guid": "c96915ac-a964-2206-7de7-f4f967a75233",
+              "parentId": "07cc157c-fa6b-93bd-5116-820293f1e057",
               "programLabel": [
                 {
                   "type": "primary",
@@ -1757,7 +1757,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "996a0816-aacb-d0b0-4bec-822436d885c0"
+                      "declaredByID": "9bdf977f-3237-855c-b95b-1c5a824d3af4"
                     },
                     "selectedType": "VALUE",
                     "value": "Point_4"
@@ -1855,8 +1855,8 @@
                   }
                 }
               },
-              "guid": "996a0816-aacb-d0b0-4bec-822436d885c0",
-              "parentId": "c4eaa73d-1ea9-8e8f-788e-b7951bf2301d",
+              "guid": "9bdf977f-3237-855c-b95b-1c5a824d3af4",
+              "parentId": "07cc157c-fa6b-93bd-5116-820293f1e057",
               "programLabel": [
                 {
                   "type": "primary",
@@ -1898,7 +1898,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "748f60b8-761f-5038-f5cf-8e697e67c84b"
+                      "declaredByID": "52e4f0cc-8532-ac21-9e0d-03be6daca679"
                     },
                     "selectedType": "VALUE",
                     "value": "Point_5"
@@ -1996,8 +1996,8 @@
                   }
                 }
               },
-              "guid": "748f60b8-761f-5038-f5cf-8e697e67c84b",
-              "parentId": "c4eaa73d-1ea9-8e8f-788e-b7951bf2301d",
+              "guid": "52e4f0cc-8532-ac21-9e0d-03be6daca679",
+              "parentId": "07cc157c-fa6b-93bd-5116-820293f1e057",
               "programLabel": [
                 {
                   "type": "primary",
@@ -2039,7 +2039,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "0658b3f3-80e0-07c6-d8c5-6f727e9f1931"
+                      "declaredByID": "60b88ffc-40ce-c90b-7c77-bee7ad26c5a7"
                     },
                     "selectedType": "VALUE",
                     "value": "Point_6"
@@ -2137,8 +2137,8 @@
                   }
                 }
               },
-              "guid": "0658b3f3-80e0-07c6-d8c5-6f727e9f1931",
-              "parentId": "c4eaa73d-1ea9-8e8f-788e-b7951bf2301d",
+              "guid": "60b88ffc-40ce-c90b-7c77-bee7ad26c5a7",
+              "parentId": "07cc157c-fa6b-93bd-5116-820293f1e057",
               "programLabel": [
                 {
                   "type": "primary",
@@ -2180,7 +2180,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "bd046831-d24a-5828-bba9-2aa11c735767"
+                      "declaredByID": "69e40f54-73e9-4e7b-7f98-203282f74cd6"
                     },
                     "selectedType": "VALUE",
                     "value": "Point_7"
@@ -2278,8 +2278,8 @@
                   }
                 }
               },
-              "guid": "bd046831-d24a-5828-bba9-2aa11c735767",
-              "parentId": "c4eaa73d-1ea9-8e8f-788e-b7951bf2301d",
+              "guid": "69e40f54-73e9-4e7b-7f98-203282f74cd6",
+              "parentId": "07cc157c-fa6b-93bd-5116-820293f1e057",
               "programLabel": [
                 {
                   "type": "primary",
@@ -2321,7 +2321,7 @@
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "a9062361-737b-6f10-bbb5-51cdf77adf71"
+                      "declaredByID": "0ebc0f6a-d8cb-5c70-fbba-7ce6098df972"
                     },
                     "selectedType": "VALUE",
                     "value": "Point_8"
@@ -2419,8 +2419,8 @@
                   }
                 }
               },
-              "guid": "a9062361-737b-6f10-bbb5-51cdf77adf71",
-              "parentId": "c4eaa73d-1ea9-8e8f-788e-b7951bf2301d",
+              "guid": "0ebc0f6a-d8cb-5c70-fbba-7ce6098df972",
+              "parentId": "07cc157c-fa6b-93bd-5116-820293f1e057",
               "programLabel": [
                 {
                   "type": "primary",
@@ -2458,8 +2458,8 @@
               "loopForever": false
             }
           },
-          "guid": "c4eaa73d-1ea9-8e8f-788e-b7951bf2301d",
-          "parentId": "4f17aeb5-d7f4-ce62-9a6b-5bfa9a8e090e",
+          "guid": "07cc157c-fa6b-93bd-5116-820293f1e057",
+          "parentId": "4948dcdb-feaf-ecf8-6885-a49b37df2cc7",
           "programLabel": [
             {
               "type": "secondary",
@@ -2518,7 +2518,7 @@
           "name": "skinkekutter2"
         }
       },
-      "guid": "4f17aeb5-d7f4-ce62-9a6b-5bfa9a8e090e"
+      "guid": "4948dcdb-feaf-ecf8-6885-a49b37df2cc7"
     },
     "programInformation": {
       "name": "skinkekutter2",
@@ -2533,22 +2533,22 @@
       "script": "",
       "nodeIDList": [
         "00000000-0000-0000-0000-000000000000",
-        "4f17aeb5-d7f4-ce62-9a6b-5bfa9a8e090e",
-        "abc92bdd-320c-535e-d5ed-597238d29652",
-        "59691ce2-5f9a-5ece-33f5-0b7dcd9aa3f8",
-        "bd5a7f48-b343-24db-be74-7eace461ae0d",
-        "f4ceb21c-ee3c-7838-ac18-98dc8439a131",
-        "2dea4224-83de-c452-0644-9fe023c49d36",
-        "c4eaa73d-1ea9-8e8f-788e-b7951bf2301d",
-        "7b784e35-b1a6-8ffc-6a5f-bc867549f9c7",
-        "d1847906-1959-b1ec-1258-b247c8511d8d",
-        "49405994-2c90-dd45-2b84-55d947947610",
-        "2499ca75-b6e9-f664-2fe1-af45efd541e8",
-        "996a0816-aacb-d0b0-4bec-822436d885c0",
-        "748f60b8-761f-5038-f5cf-8e697e67c84b",
-        "0658b3f3-80e0-07c6-d8c5-6f727e9f1931",
-        "bd046831-d24a-5828-bba9-2aa11c735767",
-        "a9062361-737b-6f10-bbb5-51cdf77adf71"
+        "4948dcdb-feaf-ecf8-6885-a49b37df2cc7",
+        "d6e738ff-dd11-39f0-0bd1-c1980fdbcfb2",
+        "251a1de0-bd98-569f-af22-51212e1d3055",
+        "465d2e6b-10ca-9acc-35d0-769c183c36c3",
+        "85d1d30c-6024-2654-2dce-9daa0d1f6512",
+        "e57c6ce7-ea38-b101-eaff-bf55de4baa3e",
+        "07cc157c-fa6b-93bd-5116-820293f1e057",
+        "1eb528f6-c75c-1bf0-2839-f518a2998841",
+        "8cbf531f-7359-b4b3-04ef-bb4af07bac16",
+        "6d191958-52bf-3807-30ff-2e764b3f38f0",
+        "c96915ac-a964-2206-7de7-f4f967a75233",
+        "9bdf977f-3237-855c-b95b-1c5a824d3af4",
+        "52e4f0cc-8532-ac21-9e0d-03be6daca679",
+        "60b88ffc-40ce-c90b-7c77-bee7ad26c5a7",
+        "69e40f54-73e9-4e7b-7f98-203282f74cd6",
+        "0ebc0f6a-d8cb-5c70-fbba-7ce6098df972"
       ]
     }
   }

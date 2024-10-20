@@ -12,7 +12,6 @@ import {
   waypointGUID,
   waypointParentId,
 } from "./utils/uuid";
-import { isArray } from "./utils/ArrayChecker";
 import { MoveAdapter } from "./adapters/MoveAdapter";
 import { application } from "./utils/application";
 import {
