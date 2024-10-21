@@ -1,8 +1,6 @@
 import {
   Waypoint,
-  JointAngles,
-  Pose,
-  PoseValue,
+
 } from "../../interfaces/waypoint";
 import { isArray } from "../../utils/ArrayChecker";
 import { JointAnglesFactory } from "./JointAngelsFactory";
