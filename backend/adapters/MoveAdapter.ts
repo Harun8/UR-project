@@ -57,7 +57,7 @@ export class MoveAdapter {
           selectedType: "VALUE",
           value: pointName === 0 ? "Point" : `Point_${pointName}`,
         },
-        waypoint: waypoints[0], // Modify if multiple waypoints are needed
+        waypoint: waypoints[0], 
         advanced: {
           speed: {
             speed: {
