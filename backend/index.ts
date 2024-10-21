@@ -266,7 +266,7 @@ fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
 
         // Write the JSON to a file
         fs.writeFile(
-          "files/output/vo2Check.urpx",
+          "files/output/21-10-2024-skinke.urpx",
           JSON.stringify(finalOutput, null, 2),
           (writeErr) => {
             if (writeErr) {

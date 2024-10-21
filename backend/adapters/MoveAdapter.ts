@@ -12,7 +12,7 @@ export class MoveAdapter {
   ): Promise<ContributedNode | null> {
     try {
       const moveTypeText = move.$.motionType;
-      const moveType = moveTypeText === "MoveL" ? "moveL" : "moveJ";
+      const moveType = moveTypeText.toLowerCase() === "movel" ? "moveL" : "moveJ";
       const speedValue: any = parseFloat(move.$.speed);
       const accelerationValue: any = parseFloat(move.$.acceleration);
       const speedUnit = moveType === "moveL" ? "m/s" : "rad/s";
