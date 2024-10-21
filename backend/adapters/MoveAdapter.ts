@@ -108,7 +108,7 @@ export class MoveAdapter {
         {
           type: "secondary",
           value: `S: ${
-            moveType === "moveL" ? speedValue.toFixed(3) * 1000 : speedValue
+            moveType === "moveL" ? speedValue.toFixed(3) * 1000 : speedValue.toFixed(3)
           }  ${speedUnit} `,
         },
         {
@@ -116,7 +116,7 @@ export class MoveAdapter {
           value: `A: ${
             moveType === "moveL"
               ? accelerationValue.toFixed(3) * 1000
-              : accelerationValue
+              : accelerationValue.toFixed(3)
           } ${accelerationUnit}`,
         },
       ];
