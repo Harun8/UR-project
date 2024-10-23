@@ -1,10 +1,10 @@
-// adapters/MoveAdapter.ts
+// adapters/moveConverter.ts
 import { ContributedNode, Parameters } from "../interfaces/waypoint";
 import { WaypointFactory } from "../factories/move/WaypointFactory";
 import { isArray } from "../utils/ArrayChecker";
 import { getUUID, waypointGUID, waypointParentId } from "../utils/uuid";
 
-export class MoveAdapter {
+export class MoveConverter {
   static async convertMoveToJSON(
     move: any,
     nodeIDList: string[],
@@ -12,7 +12,8 @@ export class MoveAdapter {
   ): Promise<ContributedNode | null> {
     try {
       const moveTypeText = move.$.motionType;
-      const moveType = moveTypeText.toLowerCase() === "movel" ? "moveL" : "moveJ";
+      const moveType =
+        moveTypeText.toLowerCase() === "movel" ? "moveL" : "moveJ";
       const speedValue: any = parseFloat(move.$.speed);
       const accelerationValue: any = parseFloat(move.$.acceleration);
       const speedUnit = moveType === "moveL" ? "m/s" : "rad/s";
@@ -57,7 +58,7 @@ export class MoveAdapter {
           selectedType: "VALUE",
           value: pointName === 0 ? "Point" : `Point_${pointName}`,
         },
-        waypoint: waypoints[0], 
+        waypoint: waypoints[0],
         advanced: {
           speed: {
             speed: {
@@ -108,7 +109,9 @@ export class MoveAdapter {
         {
           type: "secondary",
           value: `S: ${
-            moveType === "moveL" ? speedValue.toFixed(3) * 1000 : speedValue.toFixed(3)
+            moveType === "moveL"
+              ? speedValue.toFixed(3) * 1000
+              : speedValue.toFixed(3)
           }  ${speedUnit} `,
         },
         {

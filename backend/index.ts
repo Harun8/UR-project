@@ -12,7 +12,7 @@ import {
   waypointGUID,
   waypointParentId,
 } from "./utils/uuid";
-import { MoveAdapter } from "./adapters/MoveAdapter";
+import { MoveConverter } from "./converter/MoveConverter";
 import { application } from "./utils/application";
 import {
   ProgramInformation,
@@ -35,7 +35,7 @@ const programLabel = [
   },
 ];
 
-// Define nodeIDList
+// Id's
 const nodeIDList = [
   nil,
   parentId,
@@ -47,14 +47,13 @@ const nodeIDList = [
   waypointGUID, // should not be removed, since the node id relies on it
 ];
 
-// Read the XML file
 fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the XML file:", err);
     return;
   }
 
-  // Parse XML to JS object
+  // xml -> json parser
   const parser = new xml2js.Parser({ explicitArray: false });
   parser.parseString(data, (parseErr: any, result: any) => {
     if (parseErr) {
@@ -62,7 +61,6 @@ fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
       return;
     }
 
-    // Extract program information from the root element
     const urProgram = result.URProgram;
 
     // hardcoded
@@ -76,8 +74,11 @@ fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
       functionsBlockShown: false,
     };
 
+<<<<<<< HEAD
     // Define the urscript object
     // urscript should always be empty therefore redundant teneary operator
+=======
+>>>>>>> a759d0439319c2fb3df7bb33259dc93834d987ee
     const scriptContent = urProgram.Script ? urProgram.Script : "";
     const urscript: URScript = {
       script: scriptContent,
@@ -92,7 +93,6 @@ fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
       return;
     }
 
-    // Function to convert moves to nodes
     async function convertMovesToNodes(
       moves: any[]
     ): Promise<ContributedNode[]> {
@@ -100,12 +100,12 @@ fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
         let pointName = 0;
         const convertedMoves = await Promise.all(
           moves.map((move) => {
-            const result = MoveAdapter.convertMoveToJSON(
+            const result = MoveConverter.convertMoveToJSON(
               move,
               nodeIDList,
               pointName
             );
-            pointName++; // Increment pointName for each iteration
+            pointName++;
             return result;
           })
         );
@@ -122,7 +122,6 @@ fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
       }
     }
 
-    // Function to create the final output object
     function createFinalOutput(convertedMoves: ContributedNode[]): any {
       return {
         application,
