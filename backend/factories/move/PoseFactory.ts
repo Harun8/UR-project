@@ -24,13 +24,13 @@ export class PoseFactory {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const data = await response.json(); // Extract the JSON body from the response
+      const data = await response.json();
 
       let pose = data;
 
       const values = [...pose.position, ...pose.orientation];
 
-      const units = ["m", "m", "m", "rad", "rad", "rad"]; // Ensure units correspond to each value
+      const units = ["m", "m", "m", "rad", "rad", "rad"];
 
       pose = {
         x: PoseFactory.getPoseStructure(0, values, units),
