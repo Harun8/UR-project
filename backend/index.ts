@@ -21,10 +21,13 @@ import {
 } from "./interfaces/waypoint";
 import { findAllMoves } from "./utils/XMLHelper";
 
+// flyt til interface fiæ
 interface programLabel {
   type: string;
   value: string;
 }
+
+// flyt 
 const programLabel = [
   {
     type: "secondary",
@@ -74,6 +77,7 @@ fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
     };
 
     // Define the urscript object
+    // urscript should always be empty therefore redundant teneary operator
     const scriptContent = urProgram.Script ? urProgram.Script : "";
     const urscript: URScript = {
       script: scriptContent,
