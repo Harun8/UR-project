@@ -96,13 +96,11 @@ let movesNodesAndForceNodes:any
 if (moves.length === 0) {
   console.error("No Move nodes found in the XML file.");
 } else {
-  console.log(moves)
   // Separate moves by those under a Force node and those that are not
   const movesWithinForce = moves.filter(m => m.withinForce).map(m => m.move);
    movesOutsideForce = moves.filter(m => !m.withinForce).map(m => m.move);
   const forceNodes = moves.filter((node) => node.force).map(node => node.force);
 
-  console.log(movesWithinForce.length)
 
   // console.log("forceNodes", forceNodes, "movesWithinForce", movesWithinForce )
   
@@ -114,34 +112,34 @@ if (moves.length === 0) {
 
 }
 
-    async function convertMovesToNodes(
-      moves: any[]
-    ): Promise<ContributedNode[]> {
-      try {
-        let pointName = 0;
-        const convertedMoves = await Promise.all(
-          moves.map((move) => {
-            const result = MoveConverter.convertMoveToJSON(
-              move,
-              nodeIDList,
-              pointName
-            );
-            pointName++;
-            return result;
-          })
-        );
+    // async function convertMovesToNodes(
+    //   moves: any[]
+    // ): Promise<ContributedNode[]> {
+    //   try {
+    //     let pointName = 0;
+    //     const convertedMoves = await Promise.all(
+    //       moves.map((move) => {
+    //         const result = MoveConverter.convertMoveToJSON(
+    //           move,
+    //           nodeIDList,
+    //           pointName
+    //         );
+    //         pointName++;
+    //         return result;
+    //       })
+    //     );
 
-        // Filter out any null results
-        const nonNullMoves: ContributedNode[] = convertedMoves.filter(
-          (move): move is ContributedNode => move !== null
-        );
+    //     // Filter out any null results
+    //     const nonNullMoves: ContributedNode[] = convertedMoves.filter(
+    //       (move): move is ContributedNode => move !== null
+    //     );
 
-        return nonNullMoves;
-      } catch (error) {
-        console.error("Error converting moves to nodes:", error);
-        throw error; // Rethrow the error to be handled upstream if necessary
-      }
-    }
+    //     return nonNullMoves;
+    //   } catch (error) {
+    //     console.error("Error converting moves to nodes:", error);
+    //     throw error; // Rethrow the error to be handled upstream if necessary
+    //   }
+    // }
 
     function createFinalOutput(convertedMoves: ContributedNode[],convertedForceNode :any): any {
       return {
@@ -285,11 +283,10 @@ children: convertedForceNode
     async function writeFile(moves: any[]) {
       try {
         // Convert moves to nodes
-        const convertedMoves = await convertMovesToNodes(movesOutsideForce);
+        //const convertedMoves = await convertMovesToNodes(movesOutsideForce);
 
-        console.log("before create final output",movesNodesAndForceNodes)
         // Create the final output object
-        const finalOutput = createFinalOutput(convertedMoves, movesNodesAndForceNodes);
+        const finalOutput = createFinalOutput([], movesNodesAndForceNodes);
 
         // Write the JSON to a file
         fs.writeFile(

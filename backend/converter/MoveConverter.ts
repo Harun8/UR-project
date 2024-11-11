@@ -23,7 +23,7 @@ export class MoveConverter {
         console.error("No Waypoints found in Move node.");
         return null;
       }
-
+      console.log("move.children.Waypoint", move.children.Waypoint)
       // validation
       const waypointsXML = isArray(move.children.Waypoint);
 
@@ -123,6 +123,8 @@ export class MoveConverter {
           } ${accelerationUnit}`,
         },
       ];
+
+      console.log("parameters", parameters);
 
       return {
         children: [],

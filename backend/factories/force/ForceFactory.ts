@@ -148,6 +148,7 @@ export class ForceFactory {
         moves: any[]
       ): Promise<ContributedNode[]> {
         try {
+          console
           let pointName = 0;
           const convertedMoves = await Promise.all(
             moves.map((move) => {
@@ -161,10 +162,11 @@ export class ForceFactory {
             })
           );
 
+          console.log('convertedMoves', convertedMoves)
         
   
           // Filter out any null results
-          const nonNullMoves: ContributedNode[] = convertedMoves.filter(
+          const nonNullMoves: any = convertedMoves.filter(
             (move): move is ContributedNode => move !== null
           );
   

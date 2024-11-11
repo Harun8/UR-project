@@ -9,7 +9,6 @@ export function findAllNodes(node: any, nodes: any[] = [], withinForce: boolean 
     return nodes;
   }
 
-  console.log('Processing node:', node);
 
   // Check if the current node is a Force node and update the withinForce flag
   const isForceNode = node['$']?.['type'] === 'Simple' || !!node.Force;
