@@ -14,28 +14,26 @@ export class MoveConverter {
       const moveTypeText = move.$.motionType;
       const moveType =
         moveTypeText.toLowerCase() === "movel" ? "moveL" : "moveJ";
-      const speedValue = parseFloat(move.$.speed);
-      const accelerationValue = parseFloat(move.$.acceleration);
+      const speedValue: any = parseFloat(move.$.speed);
+      const accelerationValue: any = parseFloat(move.$.acceleration);
       const speedUnit = moveType === "moveL" ? "m/s" : "rad/s";
-      const accelerationUnit = moveType === "moveL" ? "m/s²" : "rad/s²";
+      const accelerationUnit = moveType === "moveL" ? "m/s^2" : "rad/s^2";
 
       if (!move.children || !move.children.Waypoint) {
         console.error("No Waypoints found in Move node.");
         return null;
       }
 
-      // Extract waypoints
-      const waypointsXML = isArray(move.children.Waypoint);
+      // Ensure waypointsXML is an array
+      const waypointsXML = Array.isArray(move.children.Waypoint)
+        ? move.children.Waypoint
+        : [move.children.Waypoint];
+      console.log("waypointsXML", waypointsXML);
 
-      // Create waypoints using the factory
-      const waypoints = await Promise.all(
-        waypointsXML
-          .map((wpXML: any, index: number) =>
-            WaypointFactory.createWaypoint(wpXML, index + pointName)
-          )
-          .filter((wp): wp is any => wp !== null)
-      );
+      // Call createWaypoints with waypointsXML
+      const waypoints = await WaypointFactory.createWaypoints(waypointsXML);
 
+      // Validation
       if (waypoints.length === 0) {
         console.error(
           "No valid waypoints could be created from the Move node."
@@ -44,25 +42,29 @@ export class MoveConverter {
       }
 
       const newUUID = getUUID();
-      nodeIDList.push(newUUID);
+      nodeIDList.push(newUUID); // Add new UUID to nodeIDList
 
       // Build variables for each waypoint
-      const variables = waypoints.map((wp: any, index: number) => ({
+      const variables = waypoints.map((wp, index) => ({
         entity: {
-          name: `Point_${pointName + index}`,
+          name:
+            pointName === 0
+              ? `Point_${index}`
+              : `Point_${pointName + index}`,
           reference: false,
           type: "$$Variable",
           valueType: "waypoint",
           declaredByID: newUUID,
         },
         selectedType: "VALUE",
-        value: `Point_${pointName + index}`,
+        value:
+          pointName === 0 ? `Point_${index}` : `Point_${pointName + index}`,
       }));
 
       const parameters: Parameters = {
         moveType,
         variables,
-        waypoint,
+        waypoints,
         advanced: {
           speed: {
             speed: {
@@ -99,6 +101,14 @@ export class MoveConverter {
         },
         {
           type: "secondary",
+          value: waypoints[0].frame || "",
+        },
+        {
+          type: "secondary",
+          value: waypoints[0].tcp.name || "",
+        },
+        {
+          type: "secondary",
           value: moveType === "moveL" ? "Linear" : "Joint",
         },
         {
@@ -119,6 +129,8 @@ export class MoveConverter {
         },
       ];
 
+      console.log("parameters", parameters);
+
       return {
         children: [],
         contributedNode: {
@@ -128,7 +140,7 @@ export class MoveConverter {
           parameters,
         },
         guid: newUUID,
-        parentId: waypointGUID, // Adjust if necessary
+        parentId: waypointGUID,
         programLabel,
       };
     } catch (error) {

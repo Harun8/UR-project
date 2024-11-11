@@ -50,22 +50,39 @@ export interface AdvancedParameters {
   };
 }
 
+// interfaces/waypoint.ts
 export interface Parameters {
-  moveType?: string;
-  variable?: {
-    entity: {
-      name: string;
-      reference: boolean;
-      type: string;
-      valueType: string;
-      declaredByID: string;
+  moveType: string;
+  variables: any[];
+  waypoints: any[];
+  advanced: {
+    speed: {
+      speed: {
+        entity: {
+          value: number;
+          unit: string;
+        };
+        selectedType: string;
+        value: number;
+      };
+      acceleration: {
+        entity: {
+          value: number;
+          unit: string;
+        };
+        selectedType: string;
+        value: number;
+      };
     };
-    selectedType: string;
-    value: string;
+    blend: {
+      enabled: boolean;
+    };
+    transform: {
+      transform: boolean;
+    };
   };
-  waypoint?: Waypoint;
-  advanced?: AdvancedParameters;
 }
+
 
 export interface ProgramInformation {
   name: string;
