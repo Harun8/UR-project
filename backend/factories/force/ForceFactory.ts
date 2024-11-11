@@ -63,7 +63,7 @@ interface ForceNode {
 export class ForceFactory {
 
       
-      static async convertForceNode(forceNode: any, moveNodesWithinForceNode: any): Promise<ForceContributedNode> {
+      static async convertForceNode(forceNode: any, moveNodesWithinForceNode: any): Promise<any> {
         const selectionValue = forceNode.selection.$.value; // e.g., "0, 0, 1, 0, 0, 0"
         const selectionArray = selectionValue.split(',').map((s:any) => parseInt(s.trim(), 10)); // make it an array, parse to integer
       
@@ -77,7 +77,6 @@ export class ForceFactory {
 
         let getMoveNode = await ForceFactory.convertMovesToNodes(moveNodesWithinForceNode)
 
-        console.log("getMoveNode in force factory", getMoveNode)
       
         for (let i = 0; i < 3; i++) {
           const axis = axisLabels[i];
@@ -138,14 +137,11 @@ export class ForceFactory {
           parameters: parameters,
         };
 
-        console.log("force lavet ", 
-          {
-            getMoveNode,
-            contributedNode
-          }
 
-        )
-        return contributedNode ;
+        return {
+          contributedForceNode: getMoveNode[0],
+          contributedNode: contributedNode
+        }
       }
 
       static async convertMovesToNodes(

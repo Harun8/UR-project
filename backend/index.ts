@@ -56,7 +56,7 @@ fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
 
   // xml -> json parser
   const parser = new xml2js.Parser({ explicitArray: false });
-  parser.parseString(data, (parseErr: any, result: any) => {
+  parser.parseString(data, async (parseErr: any, result: any) => {
     
 
     if (parseErr) {
@@ -91,6 +91,7 @@ fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
 const moves = findAllNodes(result);
 
 let movesOutsideForce:any;
+let movesNodesAndForceNodes:any 
 
 if (moves.length === 0) {
   console.error("No Move nodes found in the XML file.");
@@ -101,9 +102,11 @@ if (moves.length === 0) {
    movesOutsideForce = moves.filter(m => !m.withinForce).map(m => m.move);
   const forceNodes = moves.filter((node) => node.force).map(node => node.force);
 
+  console.log(movesWithinForce.length)
+
   // console.log("forceNodes", forceNodes, "movesWithinForce", movesWithinForce )
   
-  let movesNodesAndForceNodes = ForceFactory.convertForceNode(forceNodes[0], movesWithinForce)
+   movesNodesAndForceNodes = await ForceFactory.convertForceNode(forceNodes[0], movesWithinForce)
 
 //  console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
 
@@ -140,7 +143,7 @@ if (moves.length === 0) {
       }
     }
 
-    function createFinalOutput(convertedMoves: ContributedNode[]): any {
+    function createFinalOutput(convertedMoves: ContributedNode[],convertedForceNode :any): any {
       return {
         application,
         program: {
@@ -201,6 +204,8 @@ if (moves.length === 0) {
                 },
                 guid: randomId5,
                 parentId: parentId,
+              }, {
+children: convertedForceNode
               },
               {
                 children: convertedMoves, // Ensure this is the resolved array
@@ -282,8 +287,9 @@ if (moves.length === 0) {
         // Convert moves to nodes
         const convertedMoves = await convertMovesToNodes(movesOutsideForce);
 
+        console.log("before create final output",movesNodesAndForceNodes)
         // Create the final output object
-        const finalOutput = createFinalOutput(convertedMoves);
+        const finalOutput = createFinalOutput(convertedMoves, movesNodesAndForceNodes);
 
         // Write the JSON to a file
         fs.writeFile(

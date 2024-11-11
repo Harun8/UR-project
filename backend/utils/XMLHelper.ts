@@ -4,11 +4,12 @@ export interface MoveNode {
   withinForce: boolean;
 }
 
-export function findAllNodes(node: any, nodes: MoveNode[] = [], withinForce: boolean = false): MoveNode[] {
-  // Return immediately if node is not an object
+export function findAllNodes(node: any, nodes: any[] = [], withinForce: boolean = false): any[] {
   if (!node || typeof node !== 'object') {
     return nodes;
   }
+
+  console.log('Processing node:', node);
 
   // Check if the current node is a Force node and update the withinForce flag
   const isForceNode = node['$']?.['type'] === 'Simple' || !!node.Force;
