@@ -2,39 +2,40 @@
 import { ContributedNode, Parameters } from "../interfaces/waypoint";
 import { WaypointFactory } from "../factories/move/WaypointFactory";
 import { isArray } from "../utils/ArrayChecker";
-import { getUUID, waypointGUID, waypointParentId } from "../utils/uuid";
+import { getUUID, waypointGUID } from "../utils/uuid";
 
 export class MoveConverter {
   static async convertMoveToJSON(
     move: any,
     nodeIDList: string[],
-    pointName: Number
+    pointName: number
   ): Promise<ContributedNode | null> {
     try {
       const moveTypeText = move.$.motionType;
       const moveType =
         moveTypeText.toLowerCase() === "movel" ? "moveL" : "moveJ";
-      const speedValue: any = parseFloat(move.$.speed);
-      const accelerationValue: any = parseFloat(move.$.acceleration);
+      const speedValue = parseFloat(move.$.speed);
+      const accelerationValue = parseFloat(move.$.acceleration);
       const speedUnit = moveType === "moveL" ? "m/s" : "rad/s";
-      const accelerationUnit = moveType === "moveL" ? "m/s^2" : "rad/s^2";
+      const accelerationUnit = moveType === "moveL" ? "m/s²" : "rad/s²";
 
       if (!move.children || !move.children.Waypoint) {
         console.error("No Waypoints found in Move node.");
         return null;
       }
-      console.log("move.children.Waypoint", move.children.Waypoint)
-      // validation
+
+      // Extract waypoints
       const waypointsXML = isArray(move.children.Waypoint);
 
-      // call factory pattern
+      // Create waypoints using the factory
       const waypoints = await Promise.all(
         waypointsXML
-          .map(WaypointFactory.createWaypoint)
+          .map((wpXML: any, index: number) =>
+            WaypointFactory.createWaypoint(wpXML, index + pointName)
+          )
           .filter((wp): wp is any => wp !== null)
       );
 
-      // validation
       if (waypoints.length === 0) {
         console.error(
           "No valid waypoints could be created from the Move node."
@@ -43,22 +44,25 @@ export class MoveConverter {
       }
 
       const newUUID = getUUID();
-      nodeIDList.push(newUUID); // Add new waypointGUID to nodeIDList
+      nodeIDList.push(newUUID);
+
+      // Build variables for each waypoint
+      const variables = waypoints.map((wp: any, index: number) => ({
+        entity: {
+          name: `Point_${pointName + index}`,
+          reference: false,
+          type: "$$Variable",
+          valueType: "waypoint",
+          declaredByID: newUUID,
+        },
+        selectedType: "VALUE",
+        value: `Point_${pointName + index}`,
+      }));
 
       const parameters: Parameters = {
         moveType,
-        variable: {
-          entity: {
-            name: pointName === 0 ? "Point" : `Point_${pointName}`,
-            reference: false,
-            type: "$$Variable",
-            valueType: "waypoint",
-            declaredByID: newUUID,
-          },
-          selectedType: "VALUE",
-          value: pointName === 0 ? "Point" : `Point_${pointName}`,
-        },
-        waypoint: waypoints[0],
+        variables,
+        waypoint,
         advanced: {
           speed: {
             speed: {
@@ -91,16 +95,7 @@ export class MoveConverter {
       const programLabel = [
         {
           type: "primary",
-          // hardcoded
-          value: pointName === 0 ? "Point" : `Point_${pointName}`,
-        },
-        {
-          type: "secondary",
-          value: waypoints[0].frame || "",
-        },
-        {
-          type: "secondary",
-          value: waypoints[0].tcp.name || "",
+          value: `Move (${waypoints.length} waypoints)`,
         },
         {
           type: "secondary",
@@ -110,21 +105,19 @@ export class MoveConverter {
           type: "secondary",
           value: `S: ${
             moveType === "moveL"
-              ? speedValue.toFixed(3) * 1000
+              ? (speedValue * 1000).toFixed(3)
               : speedValue.toFixed(3)
-          }  ${speedUnit} `,
+          } ${speedUnit}`,
         },
         {
           type: "secondary",
           value: `A: ${
             moveType === "moveL"
-              ? accelerationValue.toFixed(3) * 1000
+              ? (accelerationValue * 1000).toFixed(3)
               : accelerationValue.toFixed(3)
           } ${accelerationUnit}`,
         },
       ];
-
-      console.log("parameters", parameters);
 
       return {
         children: [],
@@ -134,8 +127,8 @@ export class MoveConverter {
           allowsChildren: false,
           parameters,
         },
-        guid: newUUID, // Use the same guid as desired output
-        parentId: waypointGUID, // Parent guid
+        guid: newUUID,
+        parentId: waypointGUID, // Adjust if necessary
         programLabel,
       };
     } catch (error) {
