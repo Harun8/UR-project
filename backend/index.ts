@@ -13,13 +13,14 @@ import {
   waypointParentId,
 } from "./utils/uuid";
 import { MoveConverter } from "./converter/MoveConverter";
+import { ForceFactory} from "./factories/force/ForceFactory"
 import { application } from "./utils/application";
 import {
   ProgramInformation,
   URScript,
   ContributedNode,
 } from "./interfaces/waypoint";
-import { findAllMoves } from "./utils/XMLHelper";
+import { findAllNodes } from "./utils/XMLHelper";
 
 // flyt til interface fiæ
 interface programLabel {
@@ -47,7 +48,7 @@ const nodeIDList = [
   waypointGUID, // should not be removed, since the node id relies on it
 ];
 
-fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
+fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the XML file:", err);
     return;
@@ -56,6 +57,8 @@ fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
   // xml -> json parser
   const parser = new xml2js.Parser({ explicitArray: false });
   parser.parseString(data, (parseErr: any, result: any) => {
+    
+
     if (parseErr) {
       console.error("Error parsing the XML file:", parseErr);
       return;
@@ -74,24 +77,39 @@ fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
       functionsBlockShown: false,
     };
 
-<<<<<<< HEAD
     // Define the urscript object
     // urscript should always be empty therefore redundant teneary operator
-=======
->>>>>>> a759d0439319c2fb3df7bb33259dc93834d987ee
     const scriptContent = urProgram.Script ? urProgram.Script : "";
     const urscript: URScript = {
       script: scriptContent,
       nodeIDList,
     };
 
-    // Find all Move nodes
-    const moves = findAllMoves(result);
 
-    if (moves.length === 0) {
-      console.error("No Move nodes found in the XML file.");
-      return;
-    }
+
+// Assuming 'result' is your parsed JSON object
+const moves = findAllNodes(result);
+
+let movesOutsideForce:any;
+
+if (moves.length === 0) {
+  console.error("No Move nodes found in the XML file.");
+} else {
+  console.log(moves)
+  // Separate moves by those under a Force node and those that are not
+  const movesWithinForce = moves.filter(m => m.withinForce).map(m => m.move);
+   movesOutsideForce = moves.filter(m => !m.withinForce).map(m => m.move);
+  const forceNodes = moves.filter((node) => node.force).map(node => node.force);
+
+  // console.log("forceNodes", forceNodes, "movesWithinForce", movesWithinForce )
+  
+  let movesNodesAndForceNodes = ForceFactory.convertForceNode(forceNodes[0], movesWithinForce)
+
+//  console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
+
+
+
+}
 
     async function convertMovesToNodes(
       moves: any[]
@@ -262,7 +280,7 @@ fs.readFile("files/input/skinkekutterFull.urp", "utf8", (err, data) => {
     async function writeFile(moves: any[]) {
       try {
         // Convert moves to nodes
-        const convertedMoves = await convertMovesToNodes(moves);
+        const convertedMoves = await convertMovesToNodes(movesOutsideForce);
 
         // Create the final output object
         const finalOutput = createFinalOutput(convertedMoves);
