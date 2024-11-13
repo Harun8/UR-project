@@ -112,34 +112,34 @@ console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
 
 }
 
-    // async function convertMovesToNodes(
-    //   moves: any[]
-    // ): Promise<ContributedNode[]> {
-    //   try {
-    //     let pointName = 0;
-    //     const convertedMoves = await Promise.all(
-    //       moves.map((move) => {
-    //         const result = MoveConverter.convertMoveToJSON(
-    //           move,
-    //           nodeIDList,
-    //           pointName
-    //         );
-    //         pointName++;
-    //         return result;
-    //       })
-    //     );
+    async function convertMovesToNodes(
+      moves: any[]
+    ): Promise<ContributedNode[]> {
+      try {
+        let pointName = 0;
+        const convertedMoves = await Promise.all(
+          moves.map((move) => {
+            const result = MoveConverter.convertMoveToJSON(
+              move,
+              nodeIDList,
+              pointName
+            );
+            pointName++;
+            return result;
+          })
+        );
 
-    //     // Filter out any null results
-    //     const nonNullMoves: ContributedNode[] = convertedMoves.filter(
-    //       (move): move is ContributedNode => move !== null
-    //     );
+        // Filter out any null results
+        const nonNullMoves: ContributedNode[] = convertedMoves.filter(
+          (move): move is ContributedNode => move !== null
+        );
 
-    //     return nonNullMoves;
-    //   } catch (error) {
-    //     console.error("Error converting moves to nodes:", error);
-    //     throw error; // Rethrow the error to be handled upstream if necessary
-    //   }
-    // }
+        return nonNullMoves;
+      } catch (error) {
+        console.error("Error converting moves to nodes:", error);
+        throw error; // Rethrow the error to be handled upstream if necessary
+      }
+    }
 
     function createFinalOutput(convertedMoves: ContributedNode[],convertedForceNode :any): any {
       return {
@@ -247,16 +247,16 @@ console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
     async function writeFile(moves: any[]) {
       try {
         // Convert moves to nodes
-        //const convertedMoves = await convertMovesToNodes(movesOutsideForce);
+        const convertedMoves = await convertMovesToNodes(movesOutsideForce);
 
         // Create the final output object
         console.log("index",movesNodesAndForceNodes)
-        const finalOutput = createFinalOutput([], movesNodesAndForceNodes);
+        const finalOutput = createFinalOutput(convertedMoves, movesNodesAndForceNodes);
 
 
         // Write the JSON to a file
         fs.writeFile(
-          "files/output/21-10-2024-skinke.urpx",
+          "files/output/forceConvert1.urpx",
           JSON.stringify(finalOutput, null, 2),
           (writeErr) => {
             if (writeErr) {

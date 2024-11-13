@@ -82,7 +82,11 @@ export class MoveConverter {
                 selectedType: "VALUE",
                 value: accelerationValue,
               },
+              motionValue: "Classic",
+              optiMoveSpeed: 30,
+              optiMoveAcceleration: 9,
             },
+
             blend: {
               enabled: false,
             },

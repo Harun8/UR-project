@@ -1131,8 +1131,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "781859f7-88d8-320f-a7aa-e400151c47c9",
-          "parentId": "50f8a0a5-b690-f3d2-5db1-e27d197b587f"
+          "guid": "0f10dcce-9b82-289b-73f8-22c0ec34faf2",
+          "parentId": "8d2a0136-499a-37e3-5ab5-52575f74e2cb"
         },
         {
           "children": [],
@@ -1142,8 +1142,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "d1371412-0b12-f43a-954d-b6be013cc045",
-          "parentId": "50f8a0a5-b690-f3d2-5db1-e27d197b587f"
+          "guid": "59980c0e-072f-563a-6a84-79cb648c19c6",
+          "parentId": "8d2a0136-499a-37e3-5ab5-52575f74e2cb"
         },
         {
           "children": [],
@@ -1152,8 +1152,8 @@
             "version": "0.0.1",
             "allowsChildren": true
           },
-          "guid": "36a49632-65b2-e373-1f1d-1068e95e8b21",
-          "parentId": "50f8a0a5-b690-f3d2-5db1-e27d197b587f"
+          "guid": "1ec3225c-eb3f-44ec-665c-9eda16ea6adb",
+          "parentId": "8d2a0136-499a-37e3-5ab5-52575f74e2cb"
         },
         {
           "children": [],
@@ -1163,8 +1163,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "7aef3e9b-4b05-92ec-ee60-c2593bf9b568",
-          "parentId": "50f8a0a5-b690-f3d2-5db1-e27d197b587f"
+          "guid": "7de12b56-50e0-a5c4-7b2c-2fd667936dc5",
+          "parentId": "8d2a0136-499a-37e3-5ab5-52575f74e2cb"
         },
         {
           "children": [],
@@ -1174,8 +1174,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "fed3730e-4439-f621-d534-0adffc720d0f",
-          "parentId": "50f8a0a5-b690-f3d2-5db1-e27d197b587f"
+          "guid": "59c98fd5-4dd0-20d4-6158-9e9ed53ada98",
+          "parentId": "8d2a0136-499a-37e3-5ab5-52575f74e2cb"
         },
         {
           "children": [
@@ -1195,7 +1195,7 @@
                           "reference": false,
                           "type": "$$Variable",
                           "valueType": "waypoint",
-                          "declaredByID": "1dd28856-bef5-3255-1a76-6929567b0347"
+                          "declaredByID": "448b02c8-a6da-7d61-b4b1-5cd2f781ce96"
                         },
                         "selectedType": "VALUE",
                         "value": "Point_0"
@@ -1282,7 +1282,10 @@
                             },
                             "selectedType": "VALUE",
                             "value": 1.3962634015954636
-                          }
+                          },
+                          "motionValue": "Classic",
+                          "optiMoveSpeed": 30,
+                          "optiMoveAcceleration": 9
                         },
                         "blend": {
                           "enabled": false
@@ -1293,8 +1296,8 @@
                       }
                     }
                   },
-                  "guid": "1dd28856-bef5-3255-1a76-6929567b0347",
-                  "parentId": "e31c1904-e36b-8f08-5174-7576ca814d37",
+                  "guid": "448b02c8-a6da-7d61-b4b1-5cd2f781ce96",
+                  "parentId": "408d0fe3-33c6-91db-7508-773388a38552",
                   "programLabel": [
                     {
                       "type": "primary",
@@ -1351,7 +1354,7 @@
                           "reference": false,
                           "type": "$$Variable",
                           "valueType": "waypoint",
-                          "declaredByID": "17933f78-aceb-59c8-2314-a257b270c88a"
+                          "declaredByID": "620a8a5b-09c3-4235-aee7-f17db579bdff"
                         },
                         "selectedType": "VALUE",
                         "value": "Point_1"
@@ -1438,7 +1441,10 @@
                             },
                             "selectedType": "VALUE",
                             "value": 1.3962634015954636
-                          }
+                          },
+                          "motionValue": "Classic",
+                          "optiMoveSpeed": 30,
+                          "optiMoveAcceleration": 9
                         },
                         "blend": {
                           "enabled": false
@@ -1449,8 +1455,8 @@
                       }
                     }
                   },
-                  "guid": "17933f78-aceb-59c8-2314-a257b270c88a",
-                  "parentId": "e31c1904-e36b-8f08-5174-7576ca814d37",
+                  "guid": "620a8a5b-09c3-4235-aee7-f17db579bdff",
+                  "parentId": "408d0fe3-33c6-91db-7508-773388a38552",
                   "programLabel": [
                     {
                       "type": "primary",
@@ -1568,8 +1574,8 @@
                   }
                 }
               },
-              "guid": "774e0725-2afd-bdca-74f3-f30a18ce6743",
-              "parentId": "e31c1904-e36b-8f08-5174-7576ca814d37",
+              "guid": "a52a873e-71df-63b9-3683-20e27a84e2fb",
+              "parentId": "408d0fe3-33c6-91db-7508-773388a38552",
               "programLabel": [
                 {
                   "type": "secondary",
@@ -1587,8 +1593,8 @@
               "loopForever": false
             }
           },
-          "guid": "e31c1904-e36b-8f08-5174-7576ca814d37",
-          "parentId": "50f8a0a5-b690-f3d2-5db1-e27d197b587f",
+          "guid": "408d0fe3-33c6-91db-7508-773388a38552",
+          "parentId": "8d2a0136-499a-37e3-5ab5-52575f74e2cb",
           "programLabel": [
             {
               "type": "secondary",
@@ -1606,7 +1612,7 @@
           "name": "forcecon"
         }
       },
-      "guid": "50f8a0a5-b690-f3d2-5db1-e27d197b587f"
+      "guid": "8d2a0136-499a-37e3-5ab5-52575f74e2cb"
     },
     "programInformation": {
       "name": "forcecon",
@@ -1621,16 +1627,16 @@
       "script": "",
       "nodeIDList": [
         "00000000-0000-0000-0000-000000000000",
-        "50f8a0a5-b690-f3d2-5db1-e27d197b587f",
-        "781859f7-88d8-320f-a7aa-e400151c47c9",
-        "d1371412-0b12-f43a-954d-b6be013cc045",
-        "36a49632-65b2-e373-1f1d-1068e95e8b21",
-        "7aef3e9b-4b05-92ec-ee60-c2593bf9b568",
-        "fed3730e-4439-f621-d534-0adffc720d0f",
-        "e31c1904-e36b-8f08-5174-7576ca814d37",
-        "1dd28856-bef5-3255-1a76-6929567b0347",
-        "17933f78-aceb-59c8-2314-a257b270c88a",
-        "774e0725-2afd-bdca-74f3-f30a18ce6743"
+        "8d2a0136-499a-37e3-5ab5-52575f74e2cb",
+        "0f10dcce-9b82-289b-73f8-22c0ec34faf2",
+        "59980c0e-072f-563a-6a84-79cb648c19c6",
+        "1ec3225c-eb3f-44ec-665c-9eda16ea6adb",
+        "7de12b56-50e0-a5c4-7b2c-2fd667936dc5",
+        "59c98fd5-4dd0-20d4-6158-9e9ed53ada98",
+        "408d0fe3-33c6-91db-7508-773388a38552",
+        "448b02c8-a6da-7d61-b4b1-5cd2f781ce96",
+        "620a8a5b-09c3-4235-aee7-f17db579bdff",
+        "a52a873e-71df-63b9-3683-20e27a84e2fb"
       ]
     }
   }

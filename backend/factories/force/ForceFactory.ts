@@ -83,7 +83,7 @@ export class ForceFactory {
 
     // Generate a new UUID for the force node
     const forceNodeId = waypointGUID ;
-    nodeIDList.push(forceNodeId);
+    //nodeIDList.push(forceNodeId);
 
     // Call move converter for move node(s) within force node
     let getMoveNode = await ForceFactory.convertMovesToNodes(
