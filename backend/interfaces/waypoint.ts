@@ -49,12 +49,22 @@ export interface AdvancedParameters {
     transform: boolean;
   };
 }
-
 // interfaces/waypoint.ts
+
 export interface Parameters {
   moveType: string;
-  variables: any[];
-  waypoints: any[];
+  variable: {
+    entity: {
+      name: string;
+      reference: boolean;
+      type: string;
+      valueType: string;
+      declaredByID: string;
+    };
+    selectedType: string;
+    value: string;
+  };
+  waypoint: any; // Define the structure of a waypoint if you have it
   advanced: {
     speed: {
       speed: {
@@ -82,6 +92,7 @@ export interface Parameters {
     };
   };
 }
+
 
 
 export interface ProgramInformation {

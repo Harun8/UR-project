@@ -1,23 +1,23 @@
 // adapters/moveConverter.ts
 import { ContributedNode, Parameters } from "../interfaces/waypoint";
 import { WaypointFactory } from "../factories/move/WaypointFactory";
-import { isArray } from "../utils/ArrayChecker";
-import { getUUID, waypointGUID } from "../utils/uuid";
+import { getUUID } from "../utils/uuid";
 
 export class MoveConverter {
   static async convertMoveToJSON(
     move: any,
     nodeIDList: string[],
-    pointName: number
-  ): Promise<ContributedNode | null> {
+    pointName: number,
+    parentId: string
+  ): Promise<ContributedNode[] | null> {
     try {
       const moveTypeText = move.$.motionType;
       const moveType =
         moveTypeText.toLowerCase() === "movel" ? "moveL" : "moveJ";
-      const speedValue: any = parseFloat(move.$.speed);
-      const accelerationValue: any = parseFloat(move.$.acceleration);
+      const speedValue: number = parseFloat(move.$.speed);
+      const accelerationValue: number = parseFloat(move.$.acceleration);
       const speedUnit = moveType === "moveL" ? "m/s" : "rad/s";
-      const accelerationUnit = moveType === "moveL" ? "m/s^2" : "rad/s^2";
+      const accelerationUnit = moveType === "moveL" ? "m/s²" : "rad/s²";
 
       if (!move.children || !move.children.Waypoint) {
         console.error("No Waypoints found in Move node.");
@@ -28,7 +28,6 @@ export class MoveConverter {
       const waypointsXML = Array.isArray(move.children.Waypoint)
         ? move.children.Waypoint
         : [move.children.Waypoint];
-      console.log("waypointsXML", waypointsXML);
 
       // Call createWaypoints with waypointsXML
       const waypoints = await WaypointFactory.createWaypoints(waypointsXML);
@@ -41,108 +40,125 @@ export class MoveConverter {
         return null;
       }
 
-      const newUUID = getUUID();
-      nodeIDList.push(newUUID); // Add new UUID to nodeIDList
+      const contributedNodes: ContributedNode[] = [];
 
-      // Build variables for each waypoint
-      const variables = waypoints.map((wp, index) => ({
-        entity: {
-          name:
-            pointName === 0
-              ? `Point_${index}`
-              : `Point_${pointName + index}`,
-          reference: false,
-          type: "$$Variable",
-          valueType: "waypoint",
-          declaredByID: newUUID,
-        },
-        selectedType: "VALUE",
-        value:
-          pointName === 0 ? `Point_${index}` : `Point_${pointName + index}`,
-      }));
+      for (let i = 0; i < waypoints.length; i++) {
+        const waypoint = waypoints[i];
 
-      const parameters: Parameters = {
-        moveType,
-        variables,
-        waypoints,
-        advanced: {
-          speed: {
+        const newUUID = getUUID();
+        nodeIDList.push(newUUID);
+
+        const variableName = `Point_${pointName + i}`;
+
+        const parameters: Parameters = {
+          moveType,
+          variable: {
+            entity: {
+              name: variableName,
+              reference: false,
+              type: "$$Variable",
+              valueType: "waypoint",
+              declaredByID: newUUID,
+            },
+            selectedType: "VALUE",
+            value: variableName,
+          },
+          waypoint,
+          advanced: {
             speed: {
-              entity: {
+              speed: {
+                entity: {
+                  value: speedValue,
+                  unit: speedUnit,
+                },
+                selectedType: "VALUE",
                 value: speedValue,
-                unit: speedUnit,
               },
-              selectedType: "VALUE",
-              value: speedValue,
-            },
-            acceleration: {
-              entity: {
+              acceleration: {
+                entity: {
+                  value: accelerationValue,
+                  unit: accelerationUnit,
+                },
+                selectedType: "VALUE",
                 value: accelerationValue,
-                unit: accelerationUnit,
               },
-              selectedType: "VALUE",
-              value: accelerationValue,
+            },
+            blend: {
+              enabled: false,
+            },
+            transform: {
+              transform: false,
             },
           },
-          blend: {
-            enabled: false,
+        };
+
+        // Build programLabel
+        const programLabel = [
+          {
+            type: "primary",
+            translationKey: "program-node-label.move-to.name.default",
+            interpolateParams: {
+              name: variableName,
+            },
           },
-          transform: {
-            transform: false,
+          {
+            type: "secondary",
+            translationKey:
+              moveType === "moveL"
+                ? "program-node-label.move-to.linear"
+                : "program-node-label.move-to.joint",
           },
-        },
-      };
+          {
+            type: "secondary",
+            translationKey: "program-node-label.single-value",
+            interpolateParams: {
+              value: waypoint.frame || "",
+            },
+          },
+          {
+            type: "secondary",
+            translationKey: "program-node-label.single-value",
+            interpolateParams: {
+              value: waypoint.tcp.name || "",
+            },
+          },
+          {
+            type: "secondary",
+            translationKey: "program-node-label.move-to.speed",
+            interpolateParams: {
+              speed:
+                moveType === "moveL"
+                  ? `${(speedValue * 1000).toFixed(3)} mm/s`
+                  : `${speedValue.toFixed(3)} rad/s`,
+            },
+          },
+          {
+            type: "secondary",
+            translationKey: "program-node-label.move-to.acceleration",
+            interpolateParams: {
+              acceleration:
+                moveType === "moveL"
+                  ? `${(accelerationValue * 1000).toFixed(3)} mm/s²`
+                  : `${accelerationValue.toFixed(3)} rad/s²`,
+            },
+          },
+        ];
 
-      // Build programLabel
-      const programLabel = [
-        {
-          type: "primary",
-          value: `Move (${waypoints.length} waypoints)`,
-        },
-        {
-          type: "secondary",
-          value: waypoints[0].frame || "",
-        },
-        {
-          type: "secondary",
-          value: waypoints[0].tcp.name || "",
-        },
-        {
-          type: "secondary",
-          value: moveType === "moveL" ? "Linear" : "Joint",
-        },
-        {
-          type: "secondary",
-          value: `S: ${
-            moveType === "moveL"
-              ? (speedValue * 1000).toFixed(3)
-              : speedValue.toFixed(3)
-          } ${speedUnit}`,
-        },
-        {
-          type: "secondary",
-          value: `A: ${
-            moveType === "moveL"
-              ? (accelerationValue * 1000).toFixed(3)
-              : accelerationValue.toFixed(3)
-          } ${accelerationUnit}`,
-        },
-      ];
+        contributedNodes.push({
+          children: [],
+          contributedNode: {
+            version: "0.0.3",
+            type: "ur-move-to",
+            allowsChildren: false,
+            parameters,
+          },
+          guid: newUUID,
+          parentId, // Set the parentId to the provided parent node ID
+          programLabel,
+        });
+      }
 
-      console.log("parameters", parameters);
-
-      return {
-        children: [],
-        contributedNode: {
-          version: "0.0.3",
-          type: "ur-move-to",
-          allowsChildren: false,
-          parameters,
-        },
-        guid: newUUID,
-        parentId: waypointGUID,
-        programLabel,
-      };
+      return contributedNodes;
     } catch (error) {
       console.error(`Error converting Move to JSON: ${error}`);
       return null;

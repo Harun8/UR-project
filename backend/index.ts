@@ -104,9 +104,9 @@ if (moves.length === 0) {
 
   // console.log("forceNodes", forceNodes, "movesWithinForce", movesWithinForce )
   
-   movesNodesAndForceNodes = await ForceFactory.convertForceNode(forceNodes[0], movesWithinForce)
+   movesNodesAndForceNodes = await ForceFactory.convertForceNode(forceNodes[0], movesWithinForce, "generateId")
 
-//  console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
+console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
 
 
 
@@ -203,7 +203,11 @@ if (moves.length === 0) {
                 guid: randomId5,
                 parentId: parentId,
               }, {
-children: convertedForceNode
+children: 
+[
+  convertedForceNode
+]
+
               },
               {
                 children: convertedMoves, // Ensure this is the resolved array
@@ -287,6 +291,7 @@ children: convertedForceNode
 
         // Create the final output object
         const finalOutput = createFinalOutput([], movesNodesAndForceNodes);
+
 
         // Write the JSON to a file
         fs.writeFile(
