@@ -104,7 +104,7 @@ if (moves.length === 0) {
 
   // console.log("forceNodes", forceNodes, "movesWithinForce", movesWithinForce )
   
-   movesNodesAndForceNodes = await ForceFactory.convertForceNode(forceNodes[0], movesWithinForce, "generateId")
+  movesNodesAndForceNodes = await ForceFactory.convertForceNode(forceNodes[0], movesWithinForce, waypointGUID, nodeIDList);
 
 console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
 
@@ -203,14 +203,14 @@ console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
                 guid: randomId5,
                 parentId: parentId,
               }, {
-children: 
-[
-  convertedForceNode
-]
+                children: [
+                  convertedForceNode,
+                  ...convertedMoves // Ensure this is the resolved array
+                ],
 
-              },
-              {
-                children: convertedMoves, // Ensure this is the resolved array
+              
+              
+                //children: convertedMoves, // Ensure this is the resolved array
                 contributedNode: {
                   type: "ur-code",
                   version: "0.0.1",
@@ -226,47 +226,7 @@ children:
               },
             ],
             contributedNode: {
-              children: [
-                {
-                  children: [],
-                  type: "ur-modules",
-                  version: "0.0.1",
-                  allowsChildren: true,
-                  lockChildren: false,
-                },
-                {
-                  type: "ur-functions",
-                  version: "0.0.1",
-                  allowsChildren: true,
-                  lockChildren: false,
-                },
-                {
-                  type: "ur-before-start",
-                  version: "0.0.1",
-                  allowsChildren: true,
-                },
-                {
-                  type: "ur-configuration",
-                  version: "0.0.1",
-                  allowsChildren: true,
-                  parameters: {},
-                },
-                {
-                  type: "ur-status",
-                  version: "0.0.1",
-                  allowsChildren: true,
-                  parameters: {},
-                },
-                {
-                  type: "ur-code",
-                  version: "0.0.1",
-                  allowsChildren: true,
-                  lockChildren: false,
-                  parameters: {
-                    loopForever: false,
-                  },
-                },
-              ],
+
               type: "ur-program",
               version: "0.0.1",
               allowsChildren: true,
@@ -290,6 +250,7 @@ children:
         //const convertedMoves = await convertMovesToNodes(movesOutsideForce);
 
         // Create the final output object
+        console.log("index",movesNodesAndForceNodes)
         const finalOutput = createFinalOutput([], movesNodesAndForceNodes);
 
 

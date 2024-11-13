@@ -6,6 +6,7 @@ import {
   ContributedNode,
 } from "../../interfaces/waypoint";
 import {
+  getUUID,
   nil,
   parentId,
   randomId1,
@@ -65,7 +66,9 @@ export class ForceFactory {
   static async convertForceNode(
     forceNode: any,
     moveNodesWithinForceNode: any,
-    parentId: string // Add parentId as a parameter
+    parentId: string, // Add parentId as a parameter
+    nodeIDList: string[] // Add nodeIDList as a parameter
+
   ): Promise<ContributedNode> {
     const selectionValue = forceNode.selection.$.value; // e.g., "0, 0, 1, 0, 0, 0"
     const selectionArray = selectionValue
@@ -79,7 +82,7 @@ export class ForceFactory {
     const parameters: any = {};
 
     // Generate a new UUID for the force node
-    const forceNodeId = "generateIdHere";
+    const forceNodeId = waypointGUID ;
     nodeIDList.push(forceNodeId);
 
     // Call move converter for move node(s) within force node
@@ -137,8 +140,10 @@ export class ForceFactory {
         value: "",
       },
     };
+    const newUUID = getUUID()
+    nodeIDList.push(newUUID);
 
-    const contributedForceNode: ContributedNode = {
+    const contributedForceNode: any = {
       children: getMoveNode, // Assign move nodes as children
       contributedNode: {
         type: "ur-tool-force",
@@ -146,7 +151,7 @@ export class ForceFactory {
         allowsChildren: true,
         parameters: parameters,
       },
-      guid: forceNodeId,
+      guid: newUUID,
       parentId: parentId, // Set parentId to the provided parent ID
       programLabel: [
         {
@@ -155,12 +160,13 @@ export class ForceFactory {
         },
       ],
     };
-
+    
     // Update parentId for each move node to be the force node's GUID
     getMoveNode.forEach((moveNode: ContributedNode) => {
       moveNode.parentId = forceNodeId;
     });
-
+    
+    // Return the force node with move nodes as children
     return contributedForceNode;
   }
 
@@ -187,9 +193,11 @@ export class ForceFactory {
         })
       );
 
+
       // Flatten the array of arrays
       const flattenedMoves = convertedMoves.flat();
 
+      console.log("flaata",flattenedMoves)
       return flattenedMoves;
     } catch (error) {
       console.error("Error converting moves to nodes:", error);
