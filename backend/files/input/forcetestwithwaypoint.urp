@@ -1,0 +1,65 @@
+<URProgram name="forcetestwithwaypoint" installation="default_4" installationRelativePath="default_4" directory="/programs/usbdisk/new folder_1" createdIn="5.18.0" lastSavedIn="5.18.0" robotSerialNumber="20245388888" createdInPolyscopeProgramVersion="2" lastSavedInPolycopeProgramVersion="2" crcValue="1177625915">
+  <kinematics status="NOT_INITIALIZED" validChecksum="true">
+    <deltaTheta value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+    <a value="0.0, -0.24355, -0.2132, 0.0, 0.0, 0.0"/>
+    <d value="0.15185, 0.0, 0.0, 0.13105, 0.08535, 0.0921"/>
+    <alpha value="1.570796327, 0.0, 0.0, 1.570796327, -1.570796327, 0.0"/>
+    <jointChecksum value="-1374750260, -1374707111, 768941904, -1381775440, -1381702029, -1381674875"/>
+  </kinematics>
+  <children>
+    <InitVariablesNode/>
+    <MainProgram runOnlyOnce="false" InitVariablesNode="false">
+      <children>
+        <Force type="Simple">
+          <feature referencedName="Joint_6_name"/>
+          <selection value="0, 0, 1, 0, 0, 0"/>
+          <wrench value="0.0, 0.0, 5.0, 0.0, 0.0, 0.0"/>
+          <limitsForce value="0.15, 0.15, 0.15, 1.0471975511965976, 1.0471975511965976, 1.0471975511965976"/>
+          <limitsMotion value="0.1, 0.1, 0.1, 0.3490658503988659, 0.3490658503988659, 0.3490658503988659"/>
+          <children>
+            <Move motionType="MoveJ" speed="1.0471975511965976" acceleration="1.3962634015954636" useActiveTCP="true" positionType="CartesianPose" optimoveEnabled="true" optiMovePercentage="30">
+              <feature class="GeomFeatureReference" referencedName="Joint_0_name"/>
+              <children>
+                <Waypoint type="Fixed" name="Waypoint_2" kinematicsFlags="0">
+                  <motionParameters/>
+                  <position>
+                    <JointAngles angles="-0.6006992498980921, -2.955832620660299, 1.2772348562823694, -1.4704804730466385, 1.5397049188613892, -0.09895211855043584"/>
+                    <TCPOffset pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                    <Kinematics status="NOT_INITIALIZED" validChecksum="true">
+                      <deltaTheta value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                      <a value="0.0, -0.24355, -0.2132, 0.0, 0.0, 0.0"/>
+                      <d value="0.15185, 0.0, 0.0, 0.13105, 0.08535, 0.0921"/>
+                      <alpha value="1.570796327, 0.0, 0.0, 1.570796327, -1.570796327, 0.0"/>
+                      <jointChecksum value="-1374750260, -1374707111, 768941904, -1381775440, -1381702029, -1381674875"/>
+                    </Kinematics>
+                  </position>
+                  <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                </Waypoint>
+              </children>
+            </Move>
+          </children>
+        </Force>
+        <Move motionType="MoveJ" speed="1.0471975511965976" acceleration="1.3962634015954636" useActiveTCP="true" positionType="CartesianPose" optimoveEnabled="true" optiMovePercentage="30">
+          <feature class="GeomFeatureReference" reference="../../Force/children/Move/feature"/>
+          <children>
+            <Waypoint type="Fixed" name="Waypoint_1" kinematicsFlags="0">
+              <motionParameters/>
+              <position>
+                <JointAngles angles="-0.601210896168844, -2.9558168850340785, 1.9955175558673304, -2.063535829583639, 1.4951577186584473, -0.09902364412416631"/>
+                <TCPOffset pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                <Kinematics status="NOT_INITIALIZED" validChecksum="true">
+                  <deltaTheta value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  <a value="0.0, -0.24355, -0.2132, 0.0, 0.0, 0.0"/>
+                  <d value="0.15185, 0.0, 0.0, 0.13105, 0.08535, 0.0921"/>
+                  <alpha value="1.570796327, 0.0, 0.0, 1.570796327, -1.570796327, 0.0"/>
+                  <jointChecksum value="-1374750260, -1374707111, 768941904, -1381775440, -1381702029, -1381674875"/>
+                </Kinematics>
+              </position>
+              <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+            </Waypoint>
+          </children>
+        </Move>
+      </children>
+    </MainProgram>
+  </children>
+</URProgram>

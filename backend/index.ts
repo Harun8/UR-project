@@ -48,7 +48,7 @@ const nodeIDList = [
   waypointGUID, // should not be removed, since the node id relies on it
 ];
 
-fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
+fs.readFile("files/input/forcetestwithwaypoint.urp", "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the XML file:", err);
     return;
@@ -101,10 +101,10 @@ if (moves.length === 0) {
    movesOutsideForce = moves.filter(m => !m.withinForce).map(m => m.move);
   const forceNodes = moves.filter((node) => node.force).map(node => node.force);
 
-
+console.log("movewith",movesWithinForce)
   // console.log("forceNodes", forceNodes, "movesWithinForce", movesWithinForce )
   
-  movesNodesAndForceNodes = await ForceFactory.convertForceNode(forceNodes[0], movesWithinForce, waypointGUID, nodeIDList);
+  movesNodesAndForceNodes = movesWithinForce.length > 0 ? await ForceFactory.convertForceNode(forceNodes[0], movesWithinForce, waypointGUID, nodeIDList) : [];
 
 console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
 
@@ -122,7 +122,8 @@ console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
             const result = MoveConverter.convertMoveToJSON(
               move,
               nodeIDList,
-              pointName
+              pointName,
+              waypointGUID
             );
             pointName++;
             return result;
@@ -130,9 +131,9 @@ console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
         );
 
         // Filter out any null results
-        const nonNullMoves: ContributedNode[] = convertedMoves.filter(
-          (move): move is ContributedNode => move !== null
-        );
+        const nonNullMoves: ContributedNode[] = convertedMoves
+          .filter((move): move is ContributedNode[] => move !== null)
+          .flat();
 
         return nonNullMoves;
       } catch (error) {

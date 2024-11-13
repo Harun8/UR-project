@@ -1131,8 +1131,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "0f10dcce-9b82-289b-73f8-22c0ec34faf2",
-          "parentId": "8d2a0136-499a-37e3-5ab5-52575f74e2cb"
+          "guid": "4b175a61-3949-628c-e5fa-a5821c53ae6f",
+          "parentId": "dbcd4df9-747c-20ac-37a6-bfc74a8f386a"
         },
         {
           "children": [],
@@ -1142,8 +1142,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "59980c0e-072f-563a-6a84-79cb648c19c6",
-          "parentId": "8d2a0136-499a-37e3-5ab5-52575f74e2cb"
+          "guid": "ca3a9b0d-7484-3692-8574-3f2f14dc2e5e",
+          "parentId": "dbcd4df9-747c-20ac-37a6-bfc74a8f386a"
         },
         {
           "children": [],
@@ -1152,8 +1152,8 @@
             "version": "0.0.1",
             "allowsChildren": true
           },
-          "guid": "1ec3225c-eb3f-44ec-665c-9eda16ea6adb",
-          "parentId": "8d2a0136-499a-37e3-5ab5-52575f74e2cb"
+          "guid": "ed764fe7-1690-54b3-5de5-805ae0a864a1",
+          "parentId": "dbcd4df9-747c-20ac-37a6-bfc74a8f386a"
         },
         {
           "children": [],
@@ -1163,8 +1163,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "7de12b56-50e0-a5c4-7b2c-2fd667936dc5",
-          "parentId": "8d2a0136-499a-37e3-5ab5-52575f74e2cb"
+          "guid": "d482c251-97d0-09dd-b472-eca453cb3cc4",
+          "parentId": "dbcd4df9-747c-20ac-37a6-bfc74a8f386a"
         },
         {
           "children": [],
@@ -1174,8 +1174,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "59c98fd5-4dd0-20d4-6158-9e9ed53ada98",
-          "parentId": "8d2a0136-499a-37e3-5ab5-52575f74e2cb"
+          "guid": "bc28d151-0bbf-bd6c-ffd7-7a41b78c3bc3",
+          "parentId": "dbcd4df9-747c-20ac-37a6-bfc74a8f386a"
         },
         {
           "children": [
@@ -1195,7 +1195,7 @@
                           "reference": false,
                           "type": "$$Variable",
                           "valueType": "waypoint",
-                          "declaredByID": "448b02c8-a6da-7d61-b4b1-5cd2f781ce96"
+                          "declaredByID": "00472555-855b-35fe-217c-a02a7aaff847"
                         },
                         "selectedType": "VALUE",
                         "value": "Point_0"
@@ -1207,61 +1207,61 @@
                           "id": "708f6642-ea70-6871-7619-14318c664153"
                         },
                         "qNear": {
-                          "base": 1.6759413480758667,
-                          "shoulder": -1.4592706200531502,
-                          "elbow": -1.542250394821167,
-                          "wrist1": -0.13892920434985356,
-                          "wrist2": 1.5770890712738037,
-                          "wrist3": -0.5860641638385218
+                          "base": -0.601210896168844,
+                          "shoulder": -2.9558168850340785,
+                          "elbow": 1.9955175558673304,
+                          "wrist1": -2.063535829583639,
+                          "wrist2": 1.4951577186584473,
+                          "wrist3": -0.09902364412416631
                         },
                         "pose": {
                           "x": {
                             "entity": {
-                              "value": 1,
+                              "value": 0.08547292340880107,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 1
+                            "value": 0.08547292340880107
                           },
                           "y": {
                             "entity": {
-                              "value": 2,
+                              "value": -0.22598243273016566,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 2
+                            "value": -0.22598243273016566
                           },
                           "z": {
                             "entity": {
-                              "value": 3,
+                              "value": 0.4670725097785978,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 3
+                            "value": 0.4670725097785978
                           },
                           "rx": {
                             "entity": {
-                              "value": 4,
+                              "value": -0.8359910278252454,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 4
+                            "value": -0.8359910278252454
                           },
                           "ry": {
                             "entity": {
-                              "value": 5,
+                              "value": 1.5607283877675793,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 5
+                            "value": 1.5607283877675793
                           },
                           "rz": {
                             "entity": {
-                              "value": 6,
+                              "value": -1.8331378773549865,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 6
+                            "value": -1.8331378773549865
                           }
                         }
                       },
@@ -1296,8 +1296,8 @@
                       }
                     }
                   },
-                  "guid": "448b02c8-a6da-7d61-b4b1-5cd2f781ce96",
-                  "parentId": "408d0fe3-33c6-91db-7508-773388a38552",
+                  "guid": "00472555-855b-35fe-217c-a02a7aaff847",
+                  "parentId": "ad839e73-ede4-620e-475d-19f07a6b8b6c",
                   "programLabel": [
                     {
                       "type": "primary",
@@ -1350,14 +1350,14 @@
                       "moveType": "moveJ",
                       "variable": {
                         "entity": {
-                          "name": "Point_1",
+                          "name": "Point_0",
                           "reference": false,
                           "type": "$$Variable",
                           "valueType": "waypoint",
-                          "declaredByID": "620a8a5b-09c3-4235-aee7-f17db579bdff"
+                          "declaredByID": "8849ee27-a422-088a-adf5-a7068586e3a3"
                         },
                         "selectedType": "VALUE",
-                        "value": "Point_1"
+                        "value": "Point_0"
                       },
                       "waypoint": {
                         "frame": "base",
@@ -1366,61 +1366,61 @@
                           "id": "708f6642-ea70-6871-7619-14318c664153"
                         },
                         "qNear": {
-                          "base": 1.6738533973693848,
-                          "shoulder": -1.7310172520079554,
-                          "elbow": -1.1788251399993896,
-                          "wrist1": -0.2742607158473511,
-                          "wrist2": 1.5771238803863525,
-                          "wrist3": -0.5860760847674769
+                          "base": -0.6006992498980921,
+                          "shoulder": -2.955832620660299,
+                          "elbow": 1.2772348562823694,
+                          "wrist1": -1.4704804730466385,
+                          "wrist2": 1.5397049188613892,
+                          "wrist3": -0.09895211855043584
                         },
                         "pose": {
                           "x": {
                             "entity": {
-                              "value": 1,
+                              "value": 0.21715587246071816,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 1
+                            "value": 0.21715587246071816
                           },
                           "y": {
                             "entity": {
-                              "value": 2,
+                              "value": -0.3111178968464152,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 2
+                            "value": -0.3111178968464152
                           },
                           "z": {
                             "entity": {
-                              "value": 3,
+                              "value": 0.493453023433615,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 3
+                            "value": 0.493453023433615
                           },
                           "rx": {
                             "entity": {
-                              "value": 4,
+                              "value": -0.9406566678940592,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 4
+                            "value": -0.9406566678940592
                           },
                           "ry": {
                             "entity": {
-                              "value": 5,
+                              "value": 1.6463452391649047,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 5
+                            "value": 1.6463452391649047
                           },
                           "rz": {
                             "entity": {
-                              "value": 6,
+                              "value": -1.7184937222609837,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 6
+                            "value": -1.7184937222609837
                           }
                         }
                       },
@@ -1455,14 +1455,14 @@
                       }
                     }
                   },
-                  "guid": "620a8a5b-09c3-4235-aee7-f17db579bdff",
-                  "parentId": "408d0fe3-33c6-91db-7508-773388a38552",
+                  "guid": "8849ee27-a422-088a-adf5-a7068586e3a3",
+                  "parentId": "ad839e73-ede4-620e-475d-19f07a6b8b6c",
                   "programLabel": [
                     {
                       "type": "primary",
                       "translationKey": "program-node-label.move-to.name.default",
                       "interpolateParams": {
-                        "name": "Point_1"
+                        "name": "Point_0"
                       }
                     },
                     {
@@ -1574,8 +1574,8 @@
                   }
                 }
               },
-              "guid": "a52a873e-71df-63b9-3683-20e27a84e2fb",
-              "parentId": "408d0fe3-33c6-91db-7508-773388a38552",
+              "guid": "cbe2e361-8797-1cee-c90f-5a5423483a74",
+              "parentId": "ad839e73-ede4-620e-475d-19f07a6b8b6c",
               "programLabel": [
                 {
                   "type": "secondary",
@@ -1593,8 +1593,8 @@
               "loopForever": false
             }
           },
-          "guid": "408d0fe3-33c6-91db-7508-773388a38552",
-          "parentId": "8d2a0136-499a-37e3-5ab5-52575f74e2cb",
+          "guid": "ad839e73-ede4-620e-475d-19f07a6b8b6c",
+          "parentId": "dbcd4df9-747c-20ac-37a6-bfc74a8f386a",
           "programLabel": [
             {
               "type": "secondary",
@@ -1609,13 +1609,13 @@
         "allowsChildren": true,
         "lockChildren": true,
         "parameters": {
-          "name": "forcecon"
+          "name": "forcetestwithwaypoint"
         }
       },
-      "guid": "8d2a0136-499a-37e3-5ab5-52575f74e2cb"
+      "guid": "dbcd4df9-747c-20ac-37a6-bfc74a8f386a"
     },
     "programInformation": {
-      "name": "forcecon",
+      "name": "forcetestwithwaypoint",
       "description": "",
       "createdDate": 1727260350196,
       "lastSavedDate": null,
@@ -1627,16 +1627,16 @@
       "script": "",
       "nodeIDList": [
         "00000000-0000-0000-0000-000000000000",
-        "8d2a0136-499a-37e3-5ab5-52575f74e2cb",
-        "0f10dcce-9b82-289b-73f8-22c0ec34faf2",
-        "59980c0e-072f-563a-6a84-79cb648c19c6",
-        "1ec3225c-eb3f-44ec-665c-9eda16ea6adb",
-        "7de12b56-50e0-a5c4-7b2c-2fd667936dc5",
-        "59c98fd5-4dd0-20d4-6158-9e9ed53ada98",
-        "408d0fe3-33c6-91db-7508-773388a38552",
-        "448b02c8-a6da-7d61-b4b1-5cd2f781ce96",
-        "620a8a5b-09c3-4235-aee7-f17db579bdff",
-        "a52a873e-71df-63b9-3683-20e27a84e2fb"
+        "dbcd4df9-747c-20ac-37a6-bfc74a8f386a",
+        "4b175a61-3949-628c-e5fa-a5821c53ae6f",
+        "ca3a9b0d-7484-3692-8574-3f2f14dc2e5e",
+        "ed764fe7-1690-54b3-5de5-805ae0a864a1",
+        "d482c251-97d0-09dd-b472-eca453cb3cc4",
+        "bc28d151-0bbf-bd6c-ffd7-7a41b78c3bc3",
+        "ad839e73-ede4-620e-475d-19f07a6b8b6c",
+        "00472555-855b-35fe-217c-a02a7aaff847",
+        "8849ee27-a422-088a-adf5-a7068586e3a3",
+        "cbe2e361-8797-1cee-c90f-5a5423483a74"
       ]
     }
   }
