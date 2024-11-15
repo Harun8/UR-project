@@ -68,7 +68,6 @@ export class ForceFactory {
     moveNodesWithinForceNode: any,
     parentId: string, // Add parentId as a parameter
     nodeIDList: string[] // Add nodeIDList as a parameter
-
   ): Promise<ContributedNode> {
     const selectionValue = forceNode.selection.$.value; // e.g., "0, 0, 1, 0, 0, 0"
     const selectionArray = selectionValue
@@ -76,13 +75,15 @@ export class ForceFactory {
       .map((s: any) => parseInt(s.trim(), 10)); // make it an array, parse to integer
 
     const wrenchValue = forceNode.wrench.$.value; // e.g., "0.0, 0.0, 5.0, 0.0, 0.0, 0.0"
-    const wrenchArray = wrenchValue.split(",").map((s: any) => parseFloat(s.trim()));
+    const wrenchArray = wrenchValue
+      .split(",")
+      .map((s: any) => parseFloat(s.trim()));
 
     const axisLabels = ["x", "y", "z"];
     const parameters: any = {};
 
     // Generate a new UUID for the force node
-    const forceNodeId = waypointGUID ;
+    const forceNodeId = waypointGUID;
     //nodeIDList.push(forceNodeId);
 
     // Call move converter for move node(s) within force node
@@ -140,7 +141,7 @@ export class ForceFactory {
         value: "",
       },
     };
-    const newUUID = getUUID()
+    const newUUID = getUUID();
     nodeIDList.push(newUUID);
 
     const contributedForceNode: any = {
@@ -160,12 +161,12 @@ export class ForceFactory {
         },
       ],
     };
-    
+
     // Update parentId for each move node to be the force node's GUID
     getMoveNode.forEach((moveNode: ContributedNode) => {
       moveNode.parentId = forceNodeId;
     });
-    
+
     // Return the force node with move nodes as children
     return contributedForceNode;
   }
@@ -193,11 +194,9 @@ export class ForceFactory {
         })
       );
 
-
       // Flatten the array of arrays
       const flattenedMoves = convertedMoves.flat();
 
-      console.log("flaata",flattenedMoves)
       return flattenedMoves;
     } catch (error) {
       console.error("Error converting moves to nodes:", error);

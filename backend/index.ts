@@ -2,6 +2,7 @@
 import * as fs from "fs";
 import * as xml2js from "xml2js";
 import {
+  getUUID,
   nil,
   parentId,
   randomId1,
@@ -13,7 +14,7 @@ import {
   waypointParentId,
 } from "./utils/uuid";
 import { MoveConverter } from "./converter/MoveConverter";
-import { ForceFactory} from "./factories/force/ForceFactory"
+import { ForceFactory } from "./factories/force/ForceFactory";
 import { application } from "./utils/application";
 import {
   ProgramInformation,
@@ -28,7 +29,7 @@ interface programLabel {
   value: string;
 }
 
-// flyt 
+// flyt
 const programLabel = [
   {
     type: "secondary",
@@ -48,7 +49,7 @@ const nodeIDList = [
   waypointGUID, // should not be removed, since the node id relies on it
 ];
 
-fs.readFile("files/input/forcetestwithwaypoint.urp", "utf8", (err, data) => {
+fs.readFile("files/input/VO.urp", "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the XML file:", err);
     return;
@@ -57,8 +58,6 @@ fs.readFile("files/input/forcetestwithwaypoint.urp", "utf8", (err, data) => {
   // xml -> json parser
   const parser = new xml2js.Parser({ explicitArray: false });
   parser.parseString(data, async (parseErr: any, result: any) => {
-    
-
     if (parseErr) {
       console.error("Error parsing the XML file:", parseErr);
       return;
@@ -85,32 +84,46 @@ fs.readFile("files/input/forcetestwithwaypoint.urp", "utf8", (err, data) => {
       nodeIDList,
     };
 
+    // Assuming 'result' is your parsed JSON object
+    const moves = findAllNodes(result);
 
+    let movesOutsideForce: any;
+    let movesNodesAndForceNodes: any;
 
-// Assuming 'result' is your parsed JSON object
-const moves = findAllNodes(result);
+    if (moves.length === 0) {
+      console.error("No Move nodes found in the XML file.");
+    } else {
+      // Separate moves by those under a Force node and those that are not
+      const movesWithinForce = moves
+        .filter((m) => m.withinForce)
+        .map((m) => m.move);
+      movesOutsideForce = moves
+        .filter((m) => !m.withinForce)
+        .map((m) => m.move);
+      const forceNodes = moves
+        .filter((node) => node.force)
+        .map((node) => node.force);
 
-let movesOutsideForce:any;
-let movesNodesAndForceNodes:any 
+      // console.log(
+      //   "Movesoutside",
+      //   movesOutsideForce.length,
+      //   movesOutsideForce,
 
-if (moves.length === 0) {
-  console.error("No Move nodes found in the XML file.");
-} else {
-  // Separate moves by those under a Force node and those that are not
-  const movesWithinForce = moves.filter(m => m.withinForce).map(m => m.move);
-   movesOutsideForce = moves.filter(m => !m.withinForce).map(m => m.move);
-  const forceNodes = moves.filter((node) => node.force).map(node => node.force);
+      //   "movesWithinForce",
+      //   movesWithinForce.length,
+      //   movesWithinForce
+      // );
 
-console.log("movewith",movesWithinForce)
-  // console.log("forceNodes", forceNodes, "movesWithinForce", movesWithinForce )
-  
-  movesNodesAndForceNodes = movesWithinForce.length > 0 ? await ForceFactory.convertForceNode(forceNodes[0], movesWithinForce, waypointGUID, nodeIDList) : [];
-
-console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
-
-
-
-}
+      movesNodesAndForceNodes =
+        movesWithinForce.length > 0
+          ? await ForceFactory.convertForceNode(
+              forceNodes[0],
+              movesWithinForce,
+              waypointGUID,
+              nodeIDList
+            )
+          : [];
+    }
 
     async function convertMovesToNodes(
       moves: any[]
@@ -142,7 +155,10 @@ console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
       }
     }
 
-    function createFinalOutput(convertedMoves: ContributedNode[],convertedForceNode :any): any {
+    function createFinalOutput(
+      convertedMoves: ContributedNode[],
+      convertedForceNode: any
+    ): any {
       return {
         application,
         program: {
@@ -203,14 +219,13 @@ console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
                 },
                 guid: randomId5,
                 parentId: parentId,
-              }, {
+              },
+              {
                 children: [
-                  convertedForceNode,
-                  ...convertedMoves // Ensure this is the resolved array
+                  ...(convertedForceNode ? [convertedForceNode] : []),
+                  convertedMoves,
                 ],
 
-              
-              
                 //children: convertedMoves, // Ensure this is the resolved array
                 contributedNode: {
                   type: "ur-code",
@@ -227,7 +242,6 @@ console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
               },
             ],
             contributedNode: {
-
               type: "ur-program",
               version: "0.0.1",
               allowsChildren: true,
@@ -248,16 +262,47 @@ console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
     async function writeFile(moves: any[]) {
       try {
         // Convert moves to nodes
-        const convertedMoves = await convertMovesToNodes(movesOutsideForce);
+        const convertedMoves =
+          movesOutsideForce.length > 0
+            ? await convertMovesToNodes(movesOutsideForce)
+            : [];
 
-        // Create the final output object
-        console.log("index",movesNodesAndForceNodes)
-        const finalOutput = createFinalOutput(convertedMoves, movesNodesAndForceNodes);
+        // Update parentId of move nodes
+        const movesParentNodeGUID = getUUID();
+        nodeIDList.push(movesParentNodeGUID);
 
+        convertedMoves.forEach((moveNode) => {
+          moveNode.parentId = movesParentNodeGUID;
+        });
+
+        // Create moves parent node
+        const movesParentNode: any = {
+          children: convertedMoves,
+          contributedNode: {
+            type: "ur-moves-wrapper",
+            version: "0.0.1",
+            allowsChildren: true,
+            parameters: {},
+          },
+          guid: movesParentNodeGUID,
+          parentId: waypointGUID,
+          programLabel: [
+            {
+              type: "secondary",
+              value: "Moves Outside Force Node",
+            },
+          ],
+        };
+
+        // Adjust the final output
+        const finalOutput = createFinalOutput(
+          movesParentNode,
+          movesNodesAndForceNodes
+        );
 
         // Write the JSON to a file
         fs.writeFile(
-          "files/output/forceConvert1.urpx",
+          "files/output/testfile.urpx",
           JSON.stringify(finalOutput, null, 2),
           (writeErr) => {
             if (writeErr) {
@@ -268,9 +313,6 @@ console.log("movesNodesAndForceNodes", movesNodesAndForceNodes)
               "Conversion completed successfully. Output written to output.urpx"
             );
           }
-        );
-        console.log(
-          "Conversion completed successfully. Output written to output.urpx"
         );
       } catch (error) {
         console.error("Error during file writing:", error);

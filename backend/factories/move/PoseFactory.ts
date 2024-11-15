@@ -26,11 +26,9 @@ export class PoseFactory {
 
       const data = await response.json();
 
-
       let pose = data;
 
       const values = [...pose.position, ...pose.orientation];
-  
 
       const units = ["m", "m", "m", "rad", "rad", "rad"];
 

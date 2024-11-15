@@ -11,6 +11,10 @@ export class MoveConverter {
     parentId: string
   ): Promise<ContributedNode[] | null> {
     try {
+      if (!move || !move.$) {
+        console.error("Invalid move object, missing '$' property:", move);
+        return []; // Skip processing this move
+      }
       const moveTypeText = move.$.motionType;
       const moveType =
         moveTypeText.toLowerCase() === "movel" ? "moveL" : "moveJ";
