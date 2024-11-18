@@ -10,7 +10,7 @@ const HomePage = () => {
       <div className=" bg-white flex flex-col py-24 items-center text-center min-h-screen">
         <h1 className="text-7xl font-bold font-sans mb-4 font-extrabold	 text-gray-800 ">
          <span className="title"> PolyScope X </span><br></br>
-          <span> Converter</span>
+          <span>Converter</span>
         </h1>
         <p className="text-gray-500 mb-8"> Convert your PolyScope 5 files to PolyScope x</p>
 
