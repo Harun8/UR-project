@@ -242,47 +242,7 @@ fs.readFile("files/input/VO.urp", "utf8", (err, data) => {
               },
             ],
             contributedNode: {
-              children: [
-                {
-                  children: [],
-                  type: "ur-modules",
-                  version: "0.0.1",
-                  allowsChildren: true,
-                  lockChildren: false
-                },
-                {
-                  type: "ur-functions",
-                  version: "0.0.1",
-                  allowsChildren: true,
-                  lockChildren: false
-                },
-                {
-                  type: "ur-before-start",
-                  version: "0.0.1",
-                  allowsChildren: true
-                },
-                {
-                  type: "ur-configuration",
-                  version: "0.0.1",
-                  allowsChildren: true,
-                  parameters: {}
-                },
-                {
-                  type: "ur-status",
-                  version: "0.0.1",
-                  allowsChildren: true,
-                  parameters: {}
-                },
-                {
-                  type: "ur-code",
-                  version: "0.0.1",
-                  allowsChildren: true,
-                  lockChildren: false,
-                  parameters: {
-                    loopForever: false
-                  }
-                }
-              ],
+            
               type: "ur-program",
               version: "0.0.1",
               allowsChildren: true,
