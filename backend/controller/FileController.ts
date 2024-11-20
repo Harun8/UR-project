@@ -1,7 +1,5 @@
 import { Response, Request } from "express";
-
 import fs from "fs";
-import { Buffer } from "buffer";
 import path from "path";
 import { fileReading } from "../indexSecond";
 
@@ -17,19 +15,24 @@ export const file = async (req: Request, res: Response): Promise<any> => {
     // Read the uploaded file into a buffer
     const buffer = fs.readFileSync(filePath);
 
-    // Convert the buffer back to a string (assumes UTF-8 encoding)
-    const xmlContent = buffer.toString("utf-8");
-
-    console.log("Decoded XML Content:", xmlContent); // could remove the reading part
-
     // Optionally delete the file after processing
     // fs.unlinkSync(filePath);
 
-    await fileReading(filePath);
-    // Send the XML content back to the client or process it further
-    res
-      .status(200)
-      .json({ message: "File processed successfully", xmlContent });
+    const urpxBuffer = await fileReading(filePath);
+
+    // Dynamically set the filename with .urpx extension
+    const originalFileName = path.basename(file.originalname, path.extname(file.originalname));
+    const newFileName = `${originalFileName}.urpx`;
+
+    // Set the appropriate headers for downloading the file
+    res.setHeader("Content-Disposition", `attachment; filename="${newFileName}"`);
+    res.setHeader("Content-Type", "application/octet-stream");
+
+    console.log("urpxBuffer generated:", urpxBuffer);
+
+    // Send the processed file buffer to the client
+    return res.send(urpxBuffer);
+
   } catch (error) {
     console.error("Error processing file:", error);
     res.status(500).json({ err: "Error processing file" });
