@@ -83,7 +83,8 @@ const FileUpload = (props: any) => {
             id="file"
             onChange={handleFileChange}
             style={{ display: "none" }}
-          />
+          /> 
+
         </label>
       </div>
     </>
