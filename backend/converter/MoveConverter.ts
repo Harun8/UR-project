@@ -86,9 +86,6 @@ export class MoveConverter {
                 selectedType: "VALUE",
                 value: accelerationValue,
               },
-              motionValue: "Classic",
-              optiMoveSpeed: 30,
-              optiMoveAcceleration: 9,
             },
 
             blend: {
@@ -104,54 +101,37 @@ export class MoveConverter {
         const programLabel = [
           {
             type: "primary",
-            translationKey: "program-node-label.move-to.name.default",
-            interpolateParams: {
-              name: variableName,
-            },
+            value: `Move (${waypoints.length} waypoints)`,
           },
           {
             type: "secondary",
-            translationKey:
+            value: waypoints[0].frame || "",
+          },
+          {
+            type: "secondary",
+            value: waypoints[0].tcp.name || "",
+          },
+          {
+            type: "secondary",
+            value: moveType === "moveL" ? "Linear" : "Joint",
+          },
+          {
+            type: "secondary",
+            value: `S: ${
               moveType === "moveL"
-                ? "program-node-label.move-to.linear"
-                : "program-node-label.move-to.joint",
+                ? (speedValue * 1000).toFixed(3)
+                : speedValue.toFixed(3)
+            } ${speedUnit}`,
           },
           {
             type: "secondary",
-            translationKey: "program-node-label.single-value",
-            interpolateParams: {
-              value: waypoint.frame || "",
-            },
-          },
-          {
-            type: "secondary",
-            translationKey: "program-node-label.single-value",
-            interpolateParams: {
-              value: waypoint.tcp.name || "",
-            },
-          },
-          {
-            type: "secondary",
-            translationKey: "program-node-label.move-to.speed",
-            interpolateParams: {
-              speed:
-                moveType === "moveL"
-                  ? `${(speedValue * 1000).toFixed(3)} mm/s`
-                  : `${speedValue.toFixed(3)} rad/s`,
-            },
-          },
-          {
-            type: "secondary",
-            translationKey: "program-node-label.move-to.acceleration",
-            interpolateParams: {
-              acceleration:
-                moveType === "moveL"
-                  ? `${(accelerationValue * 1000).toFixed(3)} mm/s²`
-                  : `${accelerationValue.toFixed(3)} rad/s²`,
-            },
+            value: `A: ${
+              moveType === "moveL"
+                ? (accelerationValue * 1000).toFixed(3)
+                : accelerationValue.toFixed(3)
+            } ${accelerationUnit}`,
           },
         ];
-
         contributedNodes.push({
           children: [],
           contributedNode: {

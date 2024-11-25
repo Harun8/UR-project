@@ -83,9 +83,7 @@ export interface Parameters {
         selectedType: string;
         value: number;
       };
-      motionValue: string,
-      optiMoveSpeed: number,
-      optiMoveAcceleration: number,
+
     };
 
     blend: {

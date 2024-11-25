@@ -1131,8 +1131,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "e76656ad-7900-a30b-b76c-7a09aad2f27c",
-          "parentId": "66b254d9-6097-f4f2-a740-fa6d1128f7be"
+          "guid": "a02c260c-3a26-d3f1-7115-c10919dec595",
+          "parentId": "efce524c-5dc5-7340-f298-31ad6d686752"
         },
         {
           "children": [],
@@ -1142,8 +1142,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "401a3038-2e58-6390-3ce2-0bfc0cd068a2",
-          "parentId": "66b254d9-6097-f4f2-a740-fa6d1128f7be"
+          "guid": "dba91eee-6ac2-d2b7-db59-973eebed69f9",
+          "parentId": "efce524c-5dc5-7340-f298-31ad6d686752"
         },
         {
           "children": [],
@@ -1152,8 +1152,8 @@
             "version": "0.0.1",
             "allowsChildren": true
           },
-          "guid": "0701b67d-fa24-9d14-2e3d-d5c974ca6a7c",
-          "parentId": "66b254d9-6097-f4f2-a740-fa6d1128f7be"
+          "guid": "a1cfac89-6159-b11d-58f3-9508393f9a02",
+          "parentId": "efce524c-5dc5-7340-f298-31ad6d686752"
         },
         {
           "children": [],
@@ -1163,8 +1163,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "eb78d1a4-476c-7954-b785-7e40b3186b3f",
-          "parentId": "66b254d9-6097-f4f2-a740-fa6d1128f7be"
+          "guid": "7d69df4c-e529-ec81-b7c2-f04d259259cb",
+          "parentId": "efce524c-5dc5-7340-f298-31ad6d686752"
         },
         {
           "children": [],
@@ -1174,8 +1174,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "e97bdcde-ae55-423e-cb78-7c74cbbe6b03",
-          "parentId": "66b254d9-6097-f4f2-a740-fa6d1128f7be"
+          "guid": "92c3d604-6d11-dfeb-eb61-7ad485e584d3",
+          "parentId": "efce524c-5dc5-7340-f298-31ad6d686752"
         },
         {
           "children": [
@@ -1196,7 +1196,7 @@
                           "reference": false,
                           "type": "$$Variable",
                           "valueType": "waypoint",
-                          "declaredByID": "493db29d-de53-a435-682b-e8af11f310ab"
+                          "declaredByID": "0634ffac-3e57-34ef-e3ea-f2fccd9ff4d1"
                         },
                         "selectedType": "VALUE",
                         "value": "Point_0"
@@ -1218,51 +1218,51 @@
                         "pose": {
                           "x": {
                             "entity": {
-                              "value": 1,
+                              "value": 0,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 1
+                            "value": 0
                           },
                           "y": {
                             "entity": {
-                              "value": 2,
+                              "value": 0,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 2
+                            "value": 0
                           },
                           "z": {
                             "entity": {
-                              "value": 4,
+                              "value": 0,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 4
+                            "value": 0
                           },
                           "rx": {
                             "entity": {
-                              "value": 5,
+                              "value": 0,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 5
+                            "value": 0
                           },
                           "ry": {
                             "entity": {
-                              "value": 6,
+                              "value": 0,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 6
+                            "value": 0
                           },
                           "rz": {
                             "entity": {
-                              "value": 7,
+                              "value": 0,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 7
+                            "value": 0
                           }
                         }
                       },
@@ -1283,10 +1283,7 @@
                             },
                             "selectedType": "VALUE",
                             "value": 1.2
-                          },
-                          "motionValue": "Classic",
-                          "optiMoveSpeed": 30,
-                          "optiMoveAcceleration": 9
+                          }
                         },
                         "blend": {
                           "enabled": false
@@ -1297,47 +1294,32 @@
                       }
                     }
                   },
-                  "guid": "493db29d-de53-a435-682b-e8af11f310ab",
-                  "parentId": "1e3ff977-6004-564f-349e-4f65d5fec377",
+                  "guid": "0634ffac-3e57-34ef-e3ea-f2fccd9ff4d1",
+                  "parentId": "620494de-47d6-5720-0253-645e566d288e",
                   "programLabel": [
                     {
                       "type": "primary",
-                      "translationKey": "program-node-label.move-to.name.default",
-                      "interpolateParams": {
-                        "name": "Point_0"
-                      }
+                      "value": "Move (1 waypoints)"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.move-to.linear"
+                      "value": "base"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.single-value",
-                      "interpolateParams": {
-                        "value": "base"
-                      }
+                      "value": "Tool_flange"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.single-value",
-                      "interpolateParams": {
-                        "value": "Tool_flange"
-                      }
+                      "value": "Linear"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.move-to.speed",
-                      "interpolateParams": {
-                        "speed": "250.000 mm/s"
-                      }
+                      "value": "S: 250.000 m/s"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.move-to.acceleration",
-                      "interpolateParams": {
-                        "acceleration": "1200.000 mm/s²"
-                      }
+                      "value": "A: 1200.000 m/s²"
                     }
                   ]
                 },
@@ -1355,7 +1337,7 @@
                           "reference": false,
                           "type": "$$Variable",
                           "valueType": "waypoint",
-                          "declaredByID": "48be0f3a-69b3-a899-8f5f-a4eada046585"
+                          "declaredByID": "ddaee41a-cc1d-89cd-e53e-1350dbb80455"
                         },
                         "selectedType": "VALUE",
                         "value": "Point_1"
@@ -1377,51 +1359,51 @@
                         "pose": {
                           "x": {
                             "entity": {
-                              "value": 1,
+                              "value": 0,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 1
+                            "value": 0
                           },
                           "y": {
                             "entity": {
-                              "value": 2,
+                              "value": 0,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 2
+                            "value": 0
                           },
                           "z": {
                             "entity": {
-                              "value": 4,
+                              "value": 0,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 4
+                            "value": 0
                           },
                           "rx": {
                             "entity": {
-                              "value": 5,
+                              "value": 0,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 5
+                            "value": 0
                           },
                           "ry": {
                             "entity": {
-                              "value": 6,
+                              "value": 0,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 6
+                            "value": 0
                           },
                           "rz": {
                             "entity": {
-                              "value": 7,
+                              "value": 0,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 7
+                            "value": 0
                           }
                         }
                       },
@@ -1442,10 +1424,7 @@
                             },
                             "selectedType": "VALUE",
                             "value": 1.3962634015954636
-                          },
-                          "motionValue": "Classic",
-                          "optiMoveSpeed": 30,
-                          "optiMoveAcceleration": 9
+                          }
                         },
                         "blend": {
                           "enabled": false
@@ -1456,47 +1435,32 @@
                       }
                     }
                   },
-                  "guid": "48be0f3a-69b3-a899-8f5f-a4eada046585",
-                  "parentId": "1e3ff977-6004-564f-349e-4f65d5fec377",
+                  "guid": "ddaee41a-cc1d-89cd-e53e-1350dbb80455",
+                  "parentId": "620494de-47d6-5720-0253-645e566d288e",
                   "programLabel": [
                     {
                       "type": "primary",
-                      "translationKey": "program-node-label.move-to.name.default",
-                      "interpolateParams": {
-                        "name": "Point_1"
-                      }
+                      "value": "Move (1 waypoints)"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.move-to.joint"
+                      "value": "base"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.single-value",
-                      "interpolateParams": {
-                        "value": "base"
-                      }
+                      "value": "Tool_flange"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.single-value",
-                      "interpolateParams": {
-                        "value": "Tool_flange"
-                      }
+                      "value": "Joint"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.move-to.speed",
-                      "interpolateParams": {
-                        "speed": "1.047 rad/s"
-                      }
+                      "value": "S: 1.047 rad/s"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.move-to.acceleration",
-                      "interpolateParams": {
-                        "acceleration": "1.396 rad/s²"
-                      }
+                      "value": "A: 1.396 rad/s²"
                     }
                   ]
                 },
@@ -1514,7 +1478,7 @@
                           "reference": false,
                           "type": "$$Variable",
                           "valueType": "waypoint",
-                          "declaredByID": "b37db69f-0bf1-3638-da9e-f8966f523572"
+                          "declaredByID": "e630fd3f-e81b-ff19-8abc-d9c8b7a85ac1"
                         },
                         "selectedType": "VALUE",
                         "value": "Point_2"
@@ -1536,51 +1500,51 @@
                         "pose": {
                           "x": {
                             "entity": {
-                              "value": 1,
+                              "value": 0,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 1
+                            "value": 0
                           },
                           "y": {
                             "entity": {
-                              "value": 2,
+                              "value": 0,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 2
+                            "value": 0
                           },
                           "z": {
                             "entity": {
-                              "value": 4,
+                              "value": 0,
                               "unit": "m"
                             },
                             "selectedType": "VALUE",
-                            "value": 4
+                            "value": 0
                           },
                           "rx": {
                             "entity": {
-                              "value": 5,
+                              "value": 0,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 5
+                            "value": 0
                           },
                           "ry": {
                             "entity": {
-                              "value": 6,
+                              "value": 0,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 6
+                            "value": 0
                           },
                           "rz": {
                             "entity": {
-                              "value": 7,
+                              "value": 0,
                               "unit": "rad"
                             },
                             "selectedType": "VALUE",
-                            "value": 7
+                            "value": 0
                           }
                         }
                       },
@@ -1601,10 +1565,7 @@
                             },
                             "selectedType": "VALUE",
                             "value": 1.3962634015954636
-                          },
-                          "motionValue": "Classic",
-                          "optiMoveSpeed": 30,
-                          "optiMoveAcceleration": 9
+                          }
                         },
                         "blend": {
                           "enabled": false
@@ -1615,47 +1576,32 @@
                       }
                     }
                   },
-                  "guid": "b37db69f-0bf1-3638-da9e-f8966f523572",
-                  "parentId": "1e3ff977-6004-564f-349e-4f65d5fec377",
+                  "guid": "e630fd3f-e81b-ff19-8abc-d9c8b7a85ac1",
+                  "parentId": "620494de-47d6-5720-0253-645e566d288e",
                   "programLabel": [
                     {
                       "type": "primary",
-                      "translationKey": "program-node-label.move-to.name.default",
-                      "interpolateParams": {
-                        "name": "Point_2"
-                      }
+                      "value": "Move (1 waypoints)"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.move-to.joint"
+                      "value": "base"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.single-value",
-                      "interpolateParams": {
-                        "value": "base"
-                      }
+                      "value": "Tool_flange"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.single-value",
-                      "interpolateParams": {
-                        "value": "Tool_flange"
-                      }
+                      "value": "Joint"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.move-to.speed",
-                      "interpolateParams": {
-                        "speed": "1.047 rad/s"
-                      }
+                      "value": "S: 1.047 rad/s"
                     },
                     {
                       "type": "secondary",
-                      "translationKey": "program-node-label.move-to.acceleration",
-                      "interpolateParams": {
-                        "acceleration": "1.396 rad/s²"
-                      }
+                      "value": "A: 1.396 rad/s²"
                     }
                   ]
                 }
@@ -1666,8 +1612,8 @@
                 "allowsChildren": true,
                 "parameters": {}
               },
-              "guid": "1e3ff977-6004-564f-349e-4f65d5fec377",
-              "parentId": "01abac3b-1776-5d43-92b8-a710ef596379",
+              "guid": "620494de-47d6-5720-0253-645e566d288e",
+              "parentId": "6b55ba27-32ce-dbad-982d-2ea73b8424f3",
               "programLabel": [
                 {
                   "type": "secondary",
@@ -1685,8 +1631,8 @@
               "loopForever": false
             }
           },
-          "guid": "01abac3b-1776-5d43-92b8-a710ef596379",
-          "parentId": "66b254d9-6097-f4f2-a740-fa6d1128f7be",
+          "guid": "6b55ba27-32ce-dbad-982d-2ea73b8424f3",
+          "parentId": "efce524c-5dc5-7340-f298-31ad6d686752",
           "programLabel": [
             {
               "type": "secondary",
@@ -1704,7 +1650,7 @@
           "name": "VO"
         }
       },
-      "guid": "66b254d9-6097-f4f2-a740-fa6d1128f7be"
+      "guid": "efce524c-5dc5-7340-f298-31ad6d686752"
     },
     "programInformation": {
       "name": "VO",
@@ -1719,17 +1665,17 @@
       "script": "",
       "nodeIDList": [
         "00000000-0000-0000-0000-000000000000",
-        "66b254d9-6097-f4f2-a740-fa6d1128f7be",
-        "e76656ad-7900-a30b-b76c-7a09aad2f27c",
-        "401a3038-2e58-6390-3ce2-0bfc0cd068a2",
-        "0701b67d-fa24-9d14-2e3d-d5c974ca6a7c",
-        "eb78d1a4-476c-7954-b785-7e40b3186b3f",
-        "e97bdcde-ae55-423e-cb78-7c74cbbe6b03",
-        "01abac3b-1776-5d43-92b8-a710ef596379",
-        "493db29d-de53-a435-682b-e8af11f310ab",
-        "48be0f3a-69b3-a899-8f5f-a4eada046585",
-        "b37db69f-0bf1-3638-da9e-f8966f523572",
-        "1e3ff977-6004-564f-349e-4f65d5fec377"
+        "efce524c-5dc5-7340-f298-31ad6d686752",
+        "a02c260c-3a26-d3f1-7115-c10919dec595",
+        "dba91eee-6ac2-d2b7-db59-973eebed69f9",
+        "a1cfac89-6159-b11d-58f3-9508393f9a02",
+        "7d69df4c-e529-ec81-b7c2-f04d259259cb",
+        "92c3d604-6d11-dfeb-eb61-7ad485e584d3",
+        "6b55ba27-32ce-dbad-982d-2ea73b8424f3",
+        "0634ffac-3e57-34ef-e3ea-f2fccd9ff4d1",
+        "e630fd3f-e81b-ff19-8abc-d9c8b7a85ac1",
+        "ddaee41a-cc1d-89cd-e53e-1350dbb80455",
+        "620494de-47d6-5720-0253-645e566d288e"
       ]
     }
   }
