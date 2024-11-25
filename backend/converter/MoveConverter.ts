@@ -8,7 +8,7 @@ export class MoveConverter {
     move: any,
     nodeIDList: string[],
     pointName: number,
-    parentId: string
+    waypointGUID: string
   ): Promise<ContributedNode[] | null> {
     try {
       if (!move || !move.$) {
@@ -101,7 +101,7 @@ export class MoveConverter {
         const programLabel = [
           {
             type: "primary",
-            value: pointName === 0 ? "Point" : `Point_${pointName}`,
+            value: `Move (${waypoints.length} waypoints)`,
           },
           {
             type: "secondary",
@@ -141,7 +141,7 @@ export class MoveConverter {
             parameters,
           },
           guid: newUUID,
-          parentId, // Set the parentId to the provided parent node ID
+          parentId:waypointGUID, // Set the waypointGUID to the provided parent node ID
           programLabel,
         });
       }

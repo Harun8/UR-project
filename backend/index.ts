@@ -49,7 +49,7 @@ const nodeIDList = [
   waypointGUID, // should not be removed, since the node id relies on it
 ];
 
-fs.readFile("files/input/VO.urp", "utf8", (err, data) => {
+fs.readFile("files/input/cc.urp", "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the XML file:", err);
     return;
@@ -154,11 +154,14 @@ fs.readFile("files/input/VO.urp", "utf8", (err, data) => {
         throw error; // Rethrow the error to be handled upstream if necessary
       }
     }
+  
+  
 
     function createFinalOutput(
-      convertedMoves: ContributedNode[],
+      convertedMoves: any,
       convertedForceNode: any
     ): any {
+      console.log("convertedMoves", convertedMoves)
       return {
         application,
         program: {
@@ -221,10 +224,13 @@ fs.readFile("files/input/VO.urp", "utf8", (err, data) => {
                 parentId: parentId,
               },
               {
-                children: [
-                  ...(convertedForceNode ? [convertedForceNode] : []),
-                  convertedMoves,
-                ],
+             
+   
+                  ...(convertedForceNode.length > 0 ? { forceNode: convertedForceNode } : {}),
+                  children: convertedMoves.children, // Add convertedMoves.children explicitly
+              
+                
+                
 
                 //children: convertedMoves, // Ensure this is the resolved array
                 contributedNode: {
@@ -242,7 +248,47 @@ fs.readFile("files/input/VO.urp", "utf8", (err, data) => {
               },
             ],
             contributedNode: {
-            
+              children: [
+                {
+                  children: [],
+                  type: "ur-modules",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  lockChildren: false
+                },
+                {
+                  type: "ur-functions",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  lockChildren: false
+                },
+                {
+                  type: "ur-before-start",
+                  version: "0.0.1",
+                  allowsChildren: true
+                },
+                {
+                  type: "ur-configuration",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  parameters: {}
+                },
+                {
+                  type: "ur-status",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  parameters: {}
+                },
+                {
+                  type: "ur-code",
+                  version: "0.0.1",
+                  allowsChildren: true,
+                  lockChildren: false,
+                  parameters: {
+                    loopForever: false
+                  }
+                }
+              ],
               type: "ur-program",
               version: "0.0.1",
               allowsChildren: true,
@@ -272,28 +318,12 @@ fs.readFile("files/input/VO.urp", "utf8", (err, data) => {
         const movesParentNodeGUID = getUUID();
         nodeIDList.push(movesParentNodeGUID);
 
-        convertedMoves.forEach((moveNode) => {
-          moveNode.parentId = movesParentNodeGUID;
-        });
 
         // Create moves parent node
         const movesParentNode: any = {
           children: convertedMoves,
-          contributedNode: {
-            type: "ur-moves-wrapper",
-            version: "0.0.1",
-            allowsChildren: true,
-            parameters: {},
-          },
-          guid: movesParentNodeGUID,
-          parentId: waypointGUID,
-          programLabel: [
-            {
-              type: "secondary",
-              value: "Moves Outside Force Node",
-            },
-          ],
-        };
+      };
+      
 
         // Adjust the final output
         const finalOutput = createFinalOutput(
