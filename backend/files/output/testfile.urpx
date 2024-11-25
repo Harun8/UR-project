@@ -1131,8 +1131,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "a02c260c-3a26-d3f1-7115-c10919dec595",
-          "parentId": "efce524c-5dc5-7340-f298-31ad6d686752"
+          "guid": "d175b397-2c53-7ed8-1c8d-2747417ba192",
+          "parentId": "0e2e7adc-feca-9cdf-7e4b-8b2282a771e9"
         },
         {
           "children": [],
@@ -1142,8 +1142,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "dba91eee-6ac2-d2b7-db59-973eebed69f9",
-          "parentId": "efce524c-5dc5-7340-f298-31ad6d686752"
+          "guid": "2205c4ca-479a-34a2-dde7-8247851e8a53",
+          "parentId": "0e2e7adc-feca-9cdf-7e4b-8b2282a771e9"
         },
         {
           "children": [],
@@ -1152,8 +1152,8 @@
             "version": "0.0.1",
             "allowsChildren": true
           },
-          "guid": "a1cfac89-6159-b11d-58f3-9508393f9a02",
-          "parentId": "efce524c-5dc5-7340-f298-31ad6d686752"
+          "guid": "dd011fae-68f3-effe-3564-440a096e4bf9",
+          "parentId": "0e2e7adc-feca-9cdf-7e4b-8b2282a771e9"
         },
         {
           "children": [],
@@ -1163,8 +1163,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "7d69df4c-e529-ec81-b7c2-f04d259259cb",
-          "parentId": "efce524c-5dc5-7340-f298-31ad6d686752"
+          "guid": "8e01c593-92d0-929c-025a-4c08f761e5f1",
+          "parentId": "0e2e7adc-feca-9cdf-7e4b-8b2282a771e9"
         },
         {
           "children": [],
@@ -1174,8 +1174,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "92c3d604-6d11-dfeb-eb61-7ad485e584d3",
-          "parentId": "efce524c-5dc5-7340-f298-31ad6d686752"
+          "guid": "6035eb45-7f41-bb70-2e00-0a2401aa5e95",
+          "parentId": "0e2e7adc-feca-9cdf-7e4b-8b2282a771e9"
         },
         {
           "children": [
@@ -1196,7 +1196,7 @@
                           "reference": false,
                           "type": "$$Variable",
                           "valueType": "waypoint",
-                          "declaredByID": "0634ffac-3e57-34ef-e3ea-f2fccd9ff4d1"
+                          "declaredByID": "602e505e-4a13-ed3f-4885-25cf5f37f52c"
                         },
                         "selectedType": "VALUE",
                         "value": "Point_0"
@@ -1294,12 +1294,12 @@
                       }
                     }
                   },
-                  "guid": "0634ffac-3e57-34ef-e3ea-f2fccd9ff4d1",
-                  "parentId": "620494de-47d6-5720-0253-645e566d288e",
+                  "guid": "602e505e-4a13-ed3f-4885-25cf5f37f52c",
+                  "parentId": "5b56c813-71b5-901c-83cd-492be0c75701",
                   "programLabel": [
                     {
                       "type": "primary",
-                      "value": "Move (1 waypoints)"
+                      "value": "Point"
                     },
                     {
                       "type": "secondary",
@@ -1337,7 +1337,7 @@
                           "reference": false,
                           "type": "$$Variable",
                           "valueType": "waypoint",
-                          "declaredByID": "ddaee41a-cc1d-89cd-e53e-1350dbb80455"
+                          "declaredByID": "ccd90eea-565f-ec3b-e0b1-e1ad87978cb8"
                         },
                         "selectedType": "VALUE",
                         "value": "Point_1"
@@ -1435,12 +1435,12 @@
                       }
                     }
                   },
-                  "guid": "ddaee41a-cc1d-89cd-e53e-1350dbb80455",
-                  "parentId": "620494de-47d6-5720-0253-645e566d288e",
+                  "guid": "ccd90eea-565f-ec3b-e0b1-e1ad87978cb8",
+                  "parentId": "5b56c813-71b5-901c-83cd-492be0c75701",
                   "programLabel": [
                     {
                       "type": "primary",
-                      "value": "Move (1 waypoints)"
+                      "value": "Point_1"
                     },
                     {
                       "type": "secondary",
@@ -1478,7 +1478,7 @@
                           "reference": false,
                           "type": "$$Variable",
                           "valueType": "waypoint",
-                          "declaredByID": "e630fd3f-e81b-ff19-8abc-d9c8b7a85ac1"
+                          "declaredByID": "e066a0a6-2719-8f57-d0b9-df090d72cedd"
                         },
                         "selectedType": "VALUE",
                         "value": "Point_2"
@@ -1576,12 +1576,12 @@
                       }
                     }
                   },
-                  "guid": "e630fd3f-e81b-ff19-8abc-d9c8b7a85ac1",
-                  "parentId": "620494de-47d6-5720-0253-645e566d288e",
+                  "guid": "e066a0a6-2719-8f57-d0b9-df090d72cedd",
+                  "parentId": "5b56c813-71b5-901c-83cd-492be0c75701",
                   "programLabel": [
                     {
                       "type": "primary",
-                      "value": "Move (1 waypoints)"
+                      "value": "Point_2"
                     },
                     {
                       "type": "secondary",
@@ -1612,8 +1612,8 @@
                 "allowsChildren": true,
                 "parameters": {}
               },
-              "guid": "620494de-47d6-5720-0253-645e566d288e",
-              "parentId": "6b55ba27-32ce-dbad-982d-2ea73b8424f3",
+              "guid": "5b56c813-71b5-901c-83cd-492be0c75701",
+              "parentId": "f4ffed09-fba5-66ee-cd71-00dc20ce3008",
               "programLabel": [
                 {
                   "type": "secondary",
@@ -1631,8 +1631,8 @@
               "loopForever": false
             }
           },
-          "guid": "6b55ba27-32ce-dbad-982d-2ea73b8424f3",
-          "parentId": "efce524c-5dc5-7340-f298-31ad6d686752",
+          "guid": "f4ffed09-fba5-66ee-cd71-00dc20ce3008",
+          "parentId": "0e2e7adc-feca-9cdf-7e4b-8b2282a771e9",
           "programLabel": [
             {
               "type": "secondary",
@@ -1650,7 +1650,7 @@
           "name": "VO"
         }
       },
-      "guid": "efce524c-5dc5-7340-f298-31ad6d686752"
+      "guid": "0e2e7adc-feca-9cdf-7e4b-8b2282a771e9"
     },
     "programInformation": {
       "name": "VO",
@@ -1665,17 +1665,17 @@
       "script": "",
       "nodeIDList": [
         "00000000-0000-0000-0000-000000000000",
-        "efce524c-5dc5-7340-f298-31ad6d686752",
-        "a02c260c-3a26-d3f1-7115-c10919dec595",
-        "dba91eee-6ac2-d2b7-db59-973eebed69f9",
-        "a1cfac89-6159-b11d-58f3-9508393f9a02",
-        "7d69df4c-e529-ec81-b7c2-f04d259259cb",
-        "92c3d604-6d11-dfeb-eb61-7ad485e584d3",
-        "6b55ba27-32ce-dbad-982d-2ea73b8424f3",
-        "0634ffac-3e57-34ef-e3ea-f2fccd9ff4d1",
-        "e630fd3f-e81b-ff19-8abc-d9c8b7a85ac1",
-        "ddaee41a-cc1d-89cd-e53e-1350dbb80455",
-        "620494de-47d6-5720-0253-645e566d288e"
+        "0e2e7adc-feca-9cdf-7e4b-8b2282a771e9",
+        "d175b397-2c53-7ed8-1c8d-2747417ba192",
+        "2205c4ca-479a-34a2-dde7-8247851e8a53",
+        "dd011fae-68f3-effe-3564-440a096e4bf9",
+        "8e01c593-92d0-929c-025a-4c08f761e5f1",
+        "6035eb45-7f41-bb70-2e00-0a2401aa5e95",
+        "f4ffed09-fba5-66ee-cd71-00dc20ce3008",
+        "602e505e-4a13-ed3f-4885-25cf5f37f52c",
+        "ccd90eea-565f-ec3b-e0b1-e1ad87978cb8",
+        "e066a0a6-2719-8f57-d0b9-df090d72cedd",
+        "5b56c813-71b5-901c-83cd-492be0c75701"
       ]
     }
   }

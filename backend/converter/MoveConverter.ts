@@ -101,7 +101,7 @@ export class MoveConverter {
         const programLabel = [
           {
             type: "primary",
-            value: `Move (${waypoints.length} waypoints)`,
+            value: pointName === 0 ? "Point" : `Point_${pointName}`,
           },
           {
             type: "secondary",
