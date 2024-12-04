@@ -49,7 +49,7 @@ const nodeIDList = [
   waypointGUID, // should not be removed, since the node id relies on it
 ];
 
-fs.readFile("files/input/cc.urp", "utf8", (err, data) => {
+fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the XML file:", err);
     return;
@@ -123,11 +123,15 @@ fs.readFile("files/input/cc.urp", "utf8", (err, data) => {
               nodeIDList
             )
           : [];
-    }
+          console.log("outputtt", movesWithinForce, movesNodesAndForceNodes)
+
+        }
 
     async function convertMovesToNodes(
       moves: any[]
     ): Promise<ContributedNode[]> {
+
+      if (moves[0] === undefined) return []
       try {
         let pointName = 0;
         const convertedMoves = await Promise.all(
@@ -226,8 +230,8 @@ fs.readFile("files/input/cc.urp", "utf8", (err, data) => {
               {
              
    
-                  ...(convertedForceNode.length > 0 ? { forceNode: convertedForceNode } : {}),
-                  children: convertedMoves.children, // Add convertedMoves.children explicitly
+                convertedForceNode,
+                                  children: convertedMoves.children, // Add convertedMoves.children explicitly
               
                 
                 
@@ -324,6 +328,7 @@ fs.readFile("files/input/cc.urp", "utf8", (err, data) => {
           children: convertedMoves,
       };
       
+      console.log("to final output", movesNodesAndForceNodes, movesParentNode)
 
         // Adjust the final output
         const finalOutput = createFinalOutput(

@@ -11,6 +11,8 @@ export class MoveConverter {
     waypointGUID: string
   ): Promise<ContributedNode[] | null> {
     try {
+      console.debug("Debug: Received move object in MoveConverter:", move);
+
       if (!move || !move.$) {
         console.error("Invalid move object, missing '$' property:", move);
         return []; // Skip processing this move
