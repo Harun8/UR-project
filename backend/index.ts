@@ -165,7 +165,18 @@ fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
       convertedMoves: any,
       convertedForceNode: any
     ): any {
-      console.log("convertedMoves", convertedMoves)
+      console.log("convertedMoves", convertedForceNode)
+
+      if (convertedForceNode && Array.isArray(convertedForceNode.children)) {
+        const force = convertedForceNode.contributedNode;
+      
+        // Ensure you're not adding the same reference to itself (prevent circular reference)
+        if (force && !convertedForceNode.children.includes(force)) {
+          convertedForceNode.children.push({contributedNode: force});
+        }
+      }
+      
+
       return {
         application,
         program: {
@@ -228,8 +239,9 @@ fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
                 parentId: parentId,
               },
               {
-                ...(convertedMoves.children && convertedMoves.children.length > 0 ? { children: convertedMoves.children } : {}),
+                ...(convertedMoves.children && convertedMoves.children.length > 0 ? { children: convertedMoves.children } : null),
                 ...convertedForceNode, // Spread the properties of convertedForceNode directly
+               
                 contributedNode: {
                   type: "ur-code",
                   version: "0.0.1",
@@ -321,7 +333,7 @@ fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
           children: convertedMoves,
       };
       
-      console.log("to final output", movesNodesAndForceNodes, movesParentNode)
+      console.log("to final output", movesNodesAndForceNodes)
 
         // Adjust the final output
         const finalOutput = createFinalOutput(
