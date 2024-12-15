@@ -228,15 +228,8 @@ fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
                 parentId: parentId,
               },
               {
-             
-   
-                convertedForceNode,
-                                  children: convertedMoves.children, // Add convertedMoves.children explicitly
-              
-                
-                
-
-                //children: convertedMoves, // Ensure this is the resolved array
+                ...(convertedMoves.children && convertedMoves.children.length > 0 ? { children: convertedMoves.children } : {}),
+                ...convertedForceNode, // Spread the properties of convertedForceNode directly
                 contributedNode: {
                   type: "ur-code",
                   version: "0.0.1",
@@ -249,7 +242,7 @@ fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
                 guid: waypointGUID,
                 parentId: parentId,
                 programLabel: programLabel,
-              },
+              }
             ],
             contributedNode: {
               children: [
