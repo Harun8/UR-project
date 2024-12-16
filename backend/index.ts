@@ -248,12 +248,7 @@ fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
               {
                 ...(convertedMoves.children && convertedMoves.children.length > 0 ? { children: convertedMoves.children } : null),
                 ...convertedForceNode, // Spread the properties of convertedForceNode directly
-
-
-                guid: forceGuid,
-                parentId: forceParentId,
-                programLabel: forceProgramLabel,
-    
+               
                 contributedNode: {
                   type: "ur-code",
                   version: "0.0.1",
@@ -375,3 +370,5 @@ fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
     writeFile(moves);
   });
 });
+
+//TT
