@@ -175,8 +175,15 @@ fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
           convertedForceNode.children.push({contributedNode: force});
         }
       }
-      
-
+      const {
+        contributedNode: forceContributedNode,
+        guid: forceGuid,
+        parentId: forceParentId,
+        programLabel: forceProgramLabel,
+        children: forceChildren = [],
+        ...rest // Any other fields that may exist
+      } = convertedForceNode;
+    
       return {
         application,
         program: {
@@ -241,7 +248,12 @@ fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
               {
                 ...(convertedMoves.children && convertedMoves.children.length > 0 ? { children: convertedMoves.children } : null),
                 ...convertedForceNode, // Spread the properties of convertedForceNode directly
-               
+
+
+                guid: forceGuid,
+                parentId: forceParentId,
+                programLabel: forceProgramLabel,
+    
                 contributedNode: {
                   type: "ur-code",
                   version: "0.0.1",
@@ -251,10 +263,9 @@ fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
                     loopForever: false,
                   },
                 },
-                guid: waypointGUID,
-                parentId: parentId,
-                programLabel: programLabel,
-              }
+  
+              },
+      
             ],
             contributedNode: {
               children: [
