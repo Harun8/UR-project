@@ -49,7 +49,7 @@ const nodeIDList = [
   waypointGUID, // should not be removed, since the node id relies on it
 ];
 
-fs.readFile("files/input/forcecon.urp", "utf8", (err, data) => {
+fs.readFile("files/input/VO.urp", "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the XML file:", err);
     return;

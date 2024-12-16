@@ -1131,8 +1131,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "08063832-f5fe-6cc2-526f-85ac63f60f2a",
-          "parentId": "bf7eff64-c3cd-f5aa-1b56-5f330881a079"
+          "guid": "713e7d04-1a30-76a1-92e2-3e841baad6c9",
+          "parentId": "e24f46fb-7310-18b4-5f81-ddac5b5c4359"
         },
         {
           "children": [],
@@ -1142,8 +1142,8 @@
             "allowsChildren": true,
             "lockChildren": false
           },
-          "guid": "8aea86fd-fd60-a9fd-3c7e-b144f4190b19",
-          "parentId": "bf7eff64-c3cd-f5aa-1b56-5f330881a079"
+          "guid": "eb0fae0d-02ff-98ac-060b-be5c43b45582",
+          "parentId": "e24f46fb-7310-18b4-5f81-ddac5b5c4359"
         },
         {
           "children": [],
@@ -1152,8 +1152,8 @@
             "version": "0.0.1",
             "allowsChildren": true
           },
-          "guid": "be2f2213-d886-f8f4-2aed-2bfe461378e2",
-          "parentId": "bf7eff64-c3cd-f5aa-1b56-5f330881a079"
+          "guid": "dd6049cc-640d-10a0-bb28-84f57db470c6",
+          "parentId": "e24f46fb-7310-18b4-5f81-ddac5b5c4359"
         },
         {
           "children": [],
@@ -1163,8 +1163,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "ecc43343-6dc3-c48c-5c07-95230b7ac4b3",
-          "parentId": "bf7eff64-c3cd-f5aa-1b56-5f330881a079"
+          "guid": "68f926b1-b216-0810-065b-0bfcec994716",
+          "parentId": "e24f46fb-7310-18b4-5f81-ddac5b5c4359"
         },
         {
           "children": [],
@@ -1174,8 +1174,8 @@
             "allowsChildren": true,
             "parameters": {}
           },
-          "guid": "6d15bc68-619a-9e24-51dd-adf3a233f3fc",
-          "parentId": "bf7eff64-c3cd-f5aa-1b56-5f330881a079"
+          "guid": "735b5f3e-deea-dccc-62fa-d48aeb9497a1",
+          "parentId": "e24f46fb-7310-18b4-5f81-ddac5b5c4359"
         },
         {
           "children": [
@@ -1186,14 +1186,14 @@
                 "type": "ur-move-to",
                 "allowsChildren": false,
                 "parameters": {
-                  "moveType": "moveJ",
+                  "moveType": "moveL",
                   "variable": {
                     "entity": {
                       "name": "Point_0",
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "3e66e7f6-500b-ad76-bdfb-afb6398a7b6a"
+                      "declaredByID": "f8300896-c352-51aa-0658-210e47f6b3c6"
                     },
                     "selectedType": "VALUE",
                     "value": "Point_0"
@@ -1205,61 +1205,202 @@
                       "id": "708f6642-ea70-6871-7619-14318c664153"
                     },
                     "qNear": {
-                      "base": 1.6759413480758667,
-                      "shoulder": -1.4592706200531502,
-                      "elbow": -1.542250394821167,
-                      "wrist1": -0.13892920434985356,
-                      "wrist2": 1.5770890712738037,
-                      "wrist3": -0.5860641638385218
+                      "base": 1.7681137323379517,
+                      "shoulder": -0.0729023975184937,
+                      "elbow": -1.5152231454849243,
+                      "wrist1": -0.010091261272766161,
+                      "wrist2": 1.4839117527008057,
+                      "wrist3": 1.766408920288086
                     },
                     "pose": {
                       "x": {
                         "entity": {
-                          "value": 0,
+                          "value": 0.19947091066675487,
                           "unit": "m"
                         },
                         "selectedType": "VALUE",
-                        "value": 0
+                        "value": 0.19947091066675487
                       },
                       "y": {
                         "entity": {
-                          "value": 0,
+                          "value": -0.28850498208128583,
                           "unit": "m"
                         },
                         "selectedType": "VALUE",
-                        "value": 0
+                        "value": -0.28850498208128583
                       },
                       "z": {
                         "entity": {
-                          "value": 0,
+                          "value": 0.47681578760768645,
                           "unit": "m"
                         },
                         "selectedType": "VALUE",
-                        "value": 0
+                        "value": 0.47681578760768645
                       },
                       "rx": {
                         "entity": {
-                          "value": 0,
+                          "value": 0.049562100988624166,
                           "unit": "rad"
                         },
                         "selectedType": "VALUE",
-                        "value": 0
+                        "value": 0.049562100988624166
                       },
                       "ry": {
                         "entity": {
-                          "value": 0,
+                          "value": 0.09543163554367433,
                           "unit": "rad"
                         },
                         "selectedType": "VALUE",
-                        "value": 0
+                        "value": 0.09543163554367433
                       },
                       "rz": {
                         "entity": {
-                          "value": 0,
+                          "value": 1.9609752466477326,
                           "unit": "rad"
                         },
                         "selectedType": "VALUE",
-                        "value": 0
+                        "value": 1.9609752466477326
+                      }
+                    }
+                  },
+                  "advanced": {
+                    "speed": {
+                      "speed": {
+                        "entity": {
+                          "value": 0.25,
+                          "unit": "m/s"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.25
+                      },
+                      "acceleration": {
+                        "entity": {
+                          "value": 1.2,
+                          "unit": "m/s²"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 1.2
+                      }
+                    },
+                    "blend": {
+                      "enabled": false
+                    },
+                    "transform": {
+                      "transform": false
+                    }
+                  }
+                }
+              },
+              "guid": "f8300896-c352-51aa-0658-210e47f6b3c6",
+              "parentId": "8c8de556-99e8-4413-9237-b3e58bca2b8c",
+              "programLabel": [
+                {
+                  "type": "primary",
+                  "value": "Move (1 waypoints)"
+                },
+                {
+                  "type": "secondary",
+                  "value": "base"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Tool_flange"
+                },
+                {
+                  "type": "secondary",
+                  "value": "Linear"
+                },
+                {
+                  "type": "secondary",
+                  "value": "S: 250.000 m/s"
+                },
+                {
+                  "type": "secondary",
+                  "value": "A: 1200.000 m/s²"
+                }
+              ]
+            },
+            {
+              "children": [],
+              "contributedNode": {
+                "version": "0.0.3",
+                "type": "ur-move-to",
+                "allowsChildren": false,
+                "parameters": {
+                  "moveType": "moveJ",
+                  "variable": {
+                    "entity": {
+                      "name": "Point_1",
+                      "reference": false,
+                      "type": "$$Variable",
+                      "valueType": "waypoint",
+                      "declaredByID": "5a450674-0b59-9601-06be-2121b9440fa1"
+                    },
+                    "selectedType": "VALUE",
+                    "value": "Point_1"
+                  },
+                  "waypoint": {
+                    "frame": "base",
+                    "tcp": {
+                      "name": "Tool_flange",
+                      "id": "708f6642-ea70-6871-7619-14318c664153"
+                    },
+                    "qNear": {
+                      "base": -3.0129669348346155,
+                      "shoulder": -0.0721922677806397,
+                      "elbow": -1.5143110752105713,
+                      "wrist1": -0.010099009876586962,
+                      "wrist2": 1.4838674068450928,
+                      "wrist3": 1.7663249969482422
+                    },
+                    "pose": {
+                      "x": {
+                        "entity": {
+                          "value": 0.30202116742895907,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.30202116742895907
+                      },
+                      "y": {
+                        "entity": {
+                          "value": 0.17926764276570886,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.17926764276570886
+                      },
+                      "z": {
+                        "entity": {
+                          "value": 0.4765148457827351,
+                          "unit": "m"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.4765148457827351
+                      },
+                      "rx": {
+                        "entity": {
+                          "value": 0.03264441992667193,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": 0.03264441992667193
+                      },
+                      "ry": {
+                        "entity": {
+                          "value": -0.12524654009138397,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -0.12524654009138397
+                      },
+                      "rz": {
+                        "entity": {
+                          "value": -2.8159224789760025,
+                          "unit": "rad"
+                        },
+                        "selectedType": "VALUE",
+                        "value": -2.8159224789760025
                       }
                     }
                   },
@@ -1291,12 +1432,12 @@
                   }
                 }
               },
-              "guid": "3e66e7f6-500b-ad76-bdfb-afb6398a7b6a",
-              "parentId": "693624e9-0c66-ea6b-2fa6-be6a42a1846b",
+              "guid": "5a450674-0b59-9601-06be-2121b9440fa1",
+              "parentId": "8c8de556-99e8-4413-9237-b3e58bca2b8c",
               "programLabel": [
                 {
                   "type": "primary",
-                  "value": "Move (2 waypoints)"
+                  "value": "Move (1 waypoints)"
                 },
                 {
                   "type": "secondary",
@@ -1330,14 +1471,14 @@
                   "moveType": "moveJ",
                   "variable": {
                     "entity": {
-                      "name": "Point_1",
+                      "name": "Point_2",
                       "reference": false,
                       "type": "$$Variable",
                       "valueType": "waypoint",
-                      "declaredByID": "5814d492-71c9-4e55-8351-27542a1a3480"
+                      "declaredByID": "110070f6-fd5b-fea1-a0b5-b6f732c278c1"
                     },
                     "selectedType": "VALUE",
-                    "value": "Point_1"
+                    "value": "Point_2"
                   },
                   "waypoint": {
                     "frame": "base",
@@ -1346,61 +1487,61 @@
                       "id": "708f6642-ea70-6871-7619-14318c664153"
                     },
                     "qNear": {
-                      "base": 1.6738533973693848,
-                      "shoulder": -1.7310172520079554,
-                      "elbow": -1.1788251399993896,
-                      "wrist1": -0.2742607158473511,
-                      "wrist2": 1.5771238803863525,
-                      "wrist3": -0.5860760847674769
+                      "base": -3.0003934542285364,
+                      "shoulder": -3.0519305668272914,
+                      "elbow": 1.443259064351217,
+                      "wrist1": 3.305760069484375,
+                      "wrist2": -0.015386883412496388,
+                      "wrist3": -1.5514124075519007
                     },
                     "pose": {
                       "x": {
                         "entity": {
-                          "value": 0,
+                          "value": -0.3632036626648823,
                           "unit": "m"
                         },
                         "selectedType": "VALUE",
-                        "value": 0
+                        "value": -0.3632036626648823
                       },
                       "y": {
                         "entity": {
-                          "value": 0,
+                          "value": 0.17375448602606022,
                           "unit": "m"
                         },
                         "selectedType": "VALUE",
-                        "value": 0
+                        "value": 0.17375448602606022
                       },
                       "z": {
                         "entity": {
-                          "value": 0,
+                          "value": 0.398861252982567,
                           "unit": "m"
                         },
                         "selectedType": "VALUE",
-                        "value": 0
+                        "value": 0.398861252982567
                       },
                       "rx": {
                         "entity": {
-                          "value": 0,
+                          "value": -0.006664143428003974,
                           "unit": "rad"
                         },
                         "selectedType": "VALUE",
-                        "value": 0
+                        "value": -0.006664143428003974
                       },
                       "ry": {
                         "entity": {
-                          "value": 0,
+                          "value": -2.0728257347418317,
                           "unit": "rad"
                         },
                         "selectedType": "VALUE",
-                        "value": 0
+                        "value": -2.0728257347418317
                       },
                       "rz": {
                         "entity": {
-                          "value": 0,
+                          "value": -2.083394697651296,
                           "unit": "rad"
                         },
                         "selectedType": "VALUE",
-                        "value": 0
+                        "value": -2.083394697651296
                       }
                     }
                   },
@@ -1432,12 +1573,12 @@
                   }
                 }
               },
-              "guid": "5814d492-71c9-4e55-8351-27542a1a3480",
-              "parentId": "693624e9-0c66-ea6b-2fa6-be6a42a1846b",
+              "guid": "110070f6-fd5b-fea1-a0b5-b6f732c278c1",
+              "parentId": "8c8de556-99e8-4413-9237-b3e58bca2b8c",
               "programLabel": [
                 {
                   "type": "primary",
-                  "value": "Move (2 waypoints)"
+                  "value": "Move (1 waypoints)"
                 },
                 {
                   "type": "secondary",
@@ -1471,8 +1612,8 @@
               "loopForever": false
             }
           },
-          "guid": "693624e9-0c66-ea6b-2fa6-be6a42a1846b",
-          "parentId": "bf7eff64-c3cd-f5aa-1b56-5f330881a079",
+          "guid": "8c8de556-99e8-4413-9237-b3e58bca2b8c",
+          "parentId": "e24f46fb-7310-18b4-5f81-ddac5b5c4359",
           "programLabel": [
             {
               "type": "secondary",
@@ -1528,13 +1669,13 @@
         "allowsChildren": true,
         "lockChildren": true,
         "parameters": {
-          "name": "forcecon"
+          "name": "VO"
         }
       },
-      "guid": "bf7eff64-c3cd-f5aa-1b56-5f330881a079"
+      "guid": "e24f46fb-7310-18b4-5f81-ddac5b5c4359"
     },
     "programInformation": {
-      "name": "forcecon",
+      "name": "VO",
       "description": "",
       "createdDate": 1727260350196,
       "lastSavedDate": null,
@@ -1546,17 +1687,17 @@
       "script": "",
       "nodeIDList": [
         "00000000-0000-0000-0000-000000000000",
-        "bf7eff64-c3cd-f5aa-1b56-5f330881a079",
-        "08063832-f5fe-6cc2-526f-85ac63f60f2a",
-        "8aea86fd-fd60-a9fd-3c7e-b144f4190b19",
-        "be2f2213-d886-f8f4-2aed-2bfe461378e2",
-        "ecc43343-6dc3-c48c-5c07-95230b7ac4b3",
-        "6d15bc68-619a-9e24-51dd-adf3a233f3fc",
-        "693624e9-0c66-ea6b-2fa6-be6a42a1846b",
-        "3e66e7f6-500b-ad76-bdfb-afb6398a7b6a",
-        "5814d492-71c9-4e55-8351-27542a1a3480",
-        "0f0d4081-95f0-83b7-b617-01c1c98b00c7",
-        "19b89f1f-271d-8137-fa0b-fe4f2ada892f"
+        "e24f46fb-7310-18b4-5f81-ddac5b5c4359",
+        "713e7d04-1a30-76a1-92e2-3e841baad6c9",
+        "eb0fae0d-02ff-98ac-060b-be5c43b45582",
+        "dd6049cc-640d-10a0-bb28-84f57db470c6",
+        "68f926b1-b216-0810-065b-0bfcec994716",
+        "735b5f3e-deea-dccc-62fa-d48aeb9497a1",
+        "8c8de556-99e8-4413-9237-b3e58bca2b8c",
+        "110070f6-fd5b-fea1-a0b5-b6f732c278c1",
+        "5a450674-0b59-9601-06be-2121b9440fa1",
+        "f8300896-c352-51aa-0658-210e47f6b3c6",
+        "78cf5f7f-d2aa-623c-9044-2fd70692df55"
       ]
     }
   }
