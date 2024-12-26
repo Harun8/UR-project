@@ -4,7 +4,7 @@ describe("File upload conversion test", () => {
     // one second is not good should tell cypress to wait for it to render fully
     cy.visit("http://localhost:5173").wait(1000);
     // cy.get(`[ data-testid="upload-file-btn"]`).should("exist").click();
-    cy.get('input[type="file"]').selectFile("cypress/fixtures/ficCV.pdf", {
+    cy.get('input[type="file"]').selectFile("cypress/fixtures/cc.urp", {
       force: true,
     });
     cy.get(`[ data-testid="convert-btn"]`).should("exist").click();

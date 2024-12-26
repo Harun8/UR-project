@@ -1,6 +1,7 @@
 import "../styles/Homepage.css";
 import FileUpload from "../components/FileUpload";
 import { useEffect, useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
 const HomePage = () => {
   const [file, setFile] = useState(false);
   useEffect(() => {
@@ -24,10 +25,11 @@ const HomePage = () => {
   
       if (!response.ok) {
     
+        errorToast()
         throw new Error("Failed to process the file");
-      }
-  
-      // Get the response as a blob (binary large object)
+      } else {
+        successToast()
+              // Get the response as a blob (binary large object)
       const blob = await response.blob();
   
       // Create a URL for the blob
@@ -51,15 +53,24 @@ const HomePage = () => {
       // Cleanup
       window.URL.revokeObjectURL(url);
       document.body.removeChild(a);
+      }
+  
+
     } catch (error) {
       console.error("Error in convertFile:", error);
     } finally {
   
     }
   };
+
+  const successToast = () => toast.success('File successfully converted!');
+  const errorToast = () => toast.error('Error converting your file');
+
+
   
   return (
     <>
+    <Toaster></Toaster>
       <div className=" bg-white flex flex-col py-24 items-center text-center min-h-screen">
         <h1 className="text-7xl font-bold font-sans mb-4 font-extrabold	 text-gray-800 ">
           <span className="title"> PolyScope X </span>
