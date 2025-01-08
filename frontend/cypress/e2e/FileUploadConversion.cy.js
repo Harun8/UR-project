@@ -1,7 +1,10 @@
 
 describe("File upload conversion test", () => {
   it("should be able to upload and convert a .urp file (PS5) to a compatible .urpx file (PSX)", () => {
+    
     // one second is not good should tell cypress to wait for it to render fully
+    cy.viewport('macbook-15')
+
     cy.visit("http://localhost:5173").wait(1000);
     // cy.get(`[ data-testid="upload-file-btn"]`).should("exist").click();
     cy.get('input[type="file"]').selectFile("cypress/fixtures/cc.urp", {

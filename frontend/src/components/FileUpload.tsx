@@ -75,7 +75,7 @@ const FileUpload = (props: any) => {
           </div>
           <div className="text">
             <span>
-              {fileName || "Click to upload image or drag and drop here"}
+              {fileName || "Valid file types: .urp"}
             </span>
           </div>
           <input 
